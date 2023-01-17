@@ -9,7 +9,7 @@ class Trajectory:
         self.as_list = as_list
 
     def save(self, file: str):
-        with open(file, "r") as f:
+        with open(file, "w+") as f:
             json.dump(self.as_list, f)
         return self
 

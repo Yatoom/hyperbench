@@ -17,6 +17,11 @@ class Optimizer(ABC):
     def __init__(self):
         pass
 
+    @property
+    @abstractmethod
+    def name(self):
+        pass
+
     @abstractmethod
     def initialize(self, tae_runner: Callable, rng: np.random.RandomState, data: Data, budget: int,
                    target_algorithm: TargetAlgorithm):
@@ -33,10 +38,15 @@ class Optimizer(ABC):
 
 class SMACBasedOptimizer(Optimizer):
 
-    def __init__(self, optimizer, **kwargs):
+    def __init__(self, optimizer, name, **kwargs):
         self.optimizer = optimizer
+        self._name = name
         self.kwargs = kwargs
         self.initialized_optimizer = None
+
+    @property
+    def name(self):
+        return self._name
 
     def initialize(self, tae_runner, rng, data, budget, target_algorithm):
         scenario = Scenario({

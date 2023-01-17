@@ -13,11 +13,12 @@ tasks = [125920, 49, 146819, 29, 15, 3913, 3, 10101, 9971, 146818, 3917, 37, 391
 benchmark = Benchmark(
     budget=10,
     transformer=Imputer(),
+    output_folder="results/",
     scoring='balanced_accuracy',
     seeds=[2268061101, 2519249986, 338403738],
     target_algorithms=[RandomForestFactory.build()],
     datasets=[OpenMLDataset(task) for task in tasks],
-    optimizers=[SMACBasedOptimizer(SMAC4HPO)],
+    optimizers=[SMACBasedOptimizer(SMAC4HPO, "smac")],
     search_eval_splits=StratifiedShuffleSplit(
         n_splits=1, test_size=0.25, random_state=0
     ),

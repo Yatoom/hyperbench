@@ -1,3 +1,4 @@
+import os
 from dataclasses import dataclass
 
 from rich.progress import Progress, TextColumn, BarColumn, MofNCompleteColumn, TimeRemainingColumn, TimeElapsedColumn
@@ -16,6 +17,7 @@ class Benchmark:
     budget: int
     transformer: Transformer
     scoring: str
+    output_folder: str
 
     seeds: list[int]
     target_algorithms: list[TargetAlgorithm]
@@ -48,8 +50,7 @@ class BenchmarkRunner:
     def loop_seeds(self):
         self.progress.reset(self.track_seeds)
         for seed in self.benchmark.seeds:
-            rng = np.random.RandomState(seed)
-            self.loop_targets(rng)
+            self.loop_targets(seed)
             self.progress.update(self.track_seeds, advance=1)
 
     def loop_targets(self, seed):
@@ -78,18 +79,30 @@ class BenchmarkRunner:
             new_search_set, new_eval_set = self.benchmark.transformer.transform(search_set, eval_set)
 
             self.progress.reset(self.track_stage)
-            self.search_stage(seed, target, new_search_set, optimizer)
+            search_trajectory = self.search_stage(seed, target, new_search_set, optimizer)
             self.progress.update(self.track_stage, advance=1)
-            self.evaluation_stage(optimizer, target, new_search_set, new_eval_set)
+            eval_trajectory = self.evaluation_stage(target, new_search_set, new_eval_set, search_trajectory)
             self.progress.update(self.track_stage, advance=1)
+
+            self.save(search_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "search")
+            self.save(eval_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "eval")
             self.progress.update(self.track_splits, advance=1)
 
+    def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
+        seed = str(seed)
+        path = os.path.join(self.benchmark.output_folder, seed, target, dataset, optimizer)
+        file = os.path.join(path, f"{stage}.json")
+        os.makedirs(path, exist_ok=True)
+        trajectory.save(file)
+
     def search_stage(self, seed, target, dataset, optimizer):
+        rng = np.random.RandomState(seed)
         tae_runner = get_config_evaluator(target, dataset, self.benchmark, self.progress, self.track_iterations)
-        optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, target)
+        optimizer.initialize(tae_runner, rng, dataset, self.benchmark.budget, target)
         optimizer.search()
         self.progress.reset(self.track_iterations)
+        return optimizer.get_trajectory()
 
-    def evaluation_stage(self, optimizer, target, search_set, eval_set):
-        search_trajectory = optimizer.get_trajectory()
+    def evaluation_stage(self, target, search_set, eval_set, search_trajectory):
         eval_trajectory = replay_trajectory(search_trajectory, self.benchmark.scoring, target, search_set, eval_set)
+        return eval_trajectory
