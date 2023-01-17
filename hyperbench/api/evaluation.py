@@ -6,7 +6,7 @@ import numpy as np
 from hyperbench.api.trajectory import Trajectory
 
 
-def get_config_evaluator(target_algorithm, data, benchmark):
+def get_config_evaluator(target_algorithm, data, benchmark, progress, loop_iterations):
     def evaluate(config: Configuration, seed: int):
         # Initialize algorithm
         algorithm = target_algorithm.initialize(seed, **dict(config))
@@ -16,8 +16,7 @@ def get_config_evaluator(target_algorithm, data, benchmark):
             algorithm, data.X, data.y, n_jobs=-1, cv=benchmark.train_test_splits, scoring=benchmark.scoring
         )
 
-        print(score)
-
+        progress.update(loop_iterations, advance=1)
         return 1 - np.mean(score)
 
     return evaluate
