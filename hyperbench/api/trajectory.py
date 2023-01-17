@@ -1,4 +1,6 @@
+import dataclasses
 import json
+from dataclasses import dataclass
 
 import numpy as np
 
@@ -10,7 +12,7 @@ class Trajectory:
 
     def save(self, file: str):
         with open(file, "w+") as f:
-            json.dump(self.as_list, f)
+            json.dump([dataclasses.asdict(e) for e in self.as_list], f, indent=2)
         return self
 
     @staticmethod
@@ -24,8 +26,8 @@ class Trajectory:
         y = np.arange(0, max_time, step_size)
 
         for t in self.as_list:
-            index = np.digitize(t['at_time'], x)
-            y[index:] = t['loss']
+            index = np.digitize(t.at_time, x)
+            y[index:] = t.loss
 
         return x, y
 
@@ -35,7 +37,16 @@ class Trajectory:
         y = np.arange(0, max_iter)
 
         for t in self.as_list:
-            index = t['at_iteration']
-            y[index:] = t['loss']
+            index = t.at_iteration
+            y[index:] = t.loss
 
         return x, y
+
+
+@dataclass
+class Entry:
+    conf: dict
+    loss: float
+    at_iteration: int
+    at_time: any
+    seeds: list[int]

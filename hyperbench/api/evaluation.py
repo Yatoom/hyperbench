@@ -1,3 +1,5 @@
+from dataclasses import replace
+
 from ConfigSpace import Configuration
 from sklearn.metrics import get_scorer
 from sklearn.model_selection import cross_val_score
@@ -29,11 +31,12 @@ def replay_trajectory(trajectory: Trajectory, scoring, target_algorithm, search_
 
     for item in trajectory.as_list:
         losses = []
-        for seed in item['seeds']:
-            algorithm = target_algorithm.initialize(seed, **dict(item['conf']))
+        for seed in item.seeds:
+            algorithm = target_algorithm.initialize(seed, **item.conf)
             algorithm.fit(search_data.X, search_data.y)
             loss = 1 - scorer(algorithm, eval_data.X, eval_data.y)
             losses.append(loss)
-        results.append({**item, "loss": np.mean(losses)})
+
+        results.append(replace(item, loss=np.mean(losses)))
 
     return Trajectory(results)

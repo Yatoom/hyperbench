@@ -9,7 +9,7 @@ from smac.scenario.scenario import Scenario
 
 from hyperbench.api.dataset import Data
 from hyperbench.api.target_algorithm import TargetAlgorithm
-from hyperbench.api.trajectory import Trajectory
+from hyperbench.api.trajectory import Trajectory, Entry
 
 
 class Optimizer(ABC):
@@ -69,13 +69,13 @@ class SMACBasedOptimizer(Optimizer):
     def get_trajectory(self) -> Trajectory:
         map_id_to_seeds = self.get_trajectory_seeds()
         return Trajectory([
-            {
-                "conf": entry.incumbent,
-                "loss": entry.train_perf,
-                "at_iteration": entry.ta_runs,
-                "at_time": entry.wallclock_time,
-                "seeds": map_id_to_seeds[entry.incumbent_id]
-            }
+            Entry(
+                conf=dict(entry.incumbent),
+                loss=entry.train_perf,
+                at_iteration=entry.ta_runs,
+                at_time=entry.wallclock_time,
+                seeds=map_id_to_seeds[entry.incumbent_id]
+            )
             for entry in self.initialized_optimizer.get_trajectory()
         ])
 
