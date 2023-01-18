@@ -90,7 +90,7 @@ class BenchmarkRunner:
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
         seed = str(seed)
-        path = os.path.join(self.benchmark.output_folder, seed, target, dataset, optimizer)
+        path = os.path.join(self.benchmark.output_folder, optimizer, target, seed, dataset)
         file = os.path.join(path, f"{stage}.json")
         os.makedirs(path, exist_ok=True)
         trajectory.save(file)

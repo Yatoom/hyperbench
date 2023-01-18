@@ -18,12 +18,14 @@ class Trajectory:
     @staticmethod
     def load(file: str):
         with open(file, "r") as f:
-            return Trajectory(json.load(f))
+            data = json.load(f)
+            entries = [Entry(e['conf'], e['loss'], e['at_iteration'], e['at_time'], e['seeds']) for e in data]
+            return Trajectory(entries)
 
     def get_loss_over_time(self, max_time, step_size=1):
 
         x = np.arange(0, max_time, step_size)
-        y = np.arange(0, max_time, step_size)
+        y = np.zeros_like(x)
 
         for t in self.as_list:
             index = np.digitize(t.at_time, x)
@@ -34,13 +36,13 @@ class Trajectory:
     def get_loss_per_iteration(self, max_iter):
 
         x = np.arange(0, max_iter)
-        y = np.arange(0, max_iter)
+        y = np.zeros_like(x, dtype=float)
 
         for t in self.as_list:
             index = t.at_iteration
             y[index:] = t.loss
 
-        return x, y
+        return x[:-1], y[1:]
 
 
 @dataclass
