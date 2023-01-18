@@ -26,6 +26,11 @@ def filter_on(dataframe, **kwargs):
     return res
 
 
+def rank(dataframe):
+    return dataframe.set_index(['optimizer', 'target', 'seed', 'dataset']).groupby(['target', 'dataset']).rank()\
+        .reset_index()
+
+
 def aggregate_over_seeds(dataframe):
     # Needs dataframe with columns optimizer, target, dataset, seed, *trajectory
     return dataframe.groupby(['optimizer', 'target', 'dataset']).mean().reset_index()

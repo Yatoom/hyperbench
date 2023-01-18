@@ -38,11 +38,12 @@ class Optimizer(ABC):
 
 class SMACBasedOptimizer(Optimizer):
 
-    def __init__(self, optimizer, name, **kwargs):
+    def __init__(self, optimizer, name, budget_multiplier=1, **kwargs):
         self.optimizer = optimizer
         self._name = name
         self.kwargs = kwargs
         self.initialized_optimizer = None
+        self.budget_multiplier = budget_multiplier
 
     @property
     def name(self):
@@ -51,8 +52,8 @@ class SMACBasedOptimizer(Optimizer):
     def initialize(self, tae_runner, rng, data, budget, target_algorithm):
         scenario = Scenario({
             "run_obj": "quality",
-            "runcount-limit": budget,
-            "ta_run_limit": budget,
+            "runcount-limit": budget * self.budget_multiplier,
+            "ta_run_limit": budget * self.budget_multiplier,
             "deterministic": target_algorithm.is_deterministic,
             "cs": target_algorithm.config_space,
             "maxR": 5,
@@ -72,8 +73,8 @@ class SMACBasedOptimizer(Optimizer):
             Entry(
                 conf=dict(entry.incumbent),
                 loss=entry.train_perf,
-                at_iteration=entry.ta_runs,
-                at_time=entry.wallclock_time,
+                at_iteration=int(np.ceil(entry.ta_runs / self.budget_multiplier)),
+                at_time=entry.wallclock_time / self.budget_multiplier,
                 seeds=map_id_to_seeds[entry.incumbent_id]
             )
             for entry in self.initialized_optimizer.get_trajectory()

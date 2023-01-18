@@ -1,4 +1,5 @@
 from sklearn.model_selection import StratifiedShuffleSplit, ShuffleSplit
+from smac.facade.roar_facade import ROAR
 from smac.facade.smac_hpo_facade import SMAC4HPO
 
 from hyperbench.api.benchmark import Benchmark, BenchmarkRunner
@@ -18,7 +19,7 @@ benchmark = Benchmark(
     seeds=[2268061101, 2519249986, 338403738],
     target_algorithms=[RandomForestFactory.build()],
     datasets=[OpenMLDataset(task) for task in tasks],
-    optimizers=[SMACBasedOptimizer(SMAC4HPO, "smac")],
+    optimizers=[SMACBasedOptimizer(ROAR, "roar_x2", budget_multiplier=2)],
     search_eval_splits=StratifiedShuffleSplit(
         n_splits=1, test_size=0.25, random_state=0
     ),
