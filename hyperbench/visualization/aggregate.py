@@ -1,4 +1,7 @@
 import os
+from functools import reduce
+
+import numpy as np
 import pandas as pd
 import plotly.express as px
 from hyperbench.api.trajectory import Trajectory
@@ -26,22 +29,51 @@ def filter_on(dataframe, **kwargs):
     return res
 
 
+def intersect(dataframe):
+    datasets_per_group = list(dataframe.groupby(["optimizer", "seed", "stage"])["dataset"].agg(list)
+                              .reset_index(drop=True).to_dict().values())
+    common_datasets = reduce(np.intersect1d, datasets_per_group)
+    return dataframe[dataframe["dataset"].isin(common_datasets)]
+
+
+def union(dataframe):
+    stats = overview(dataframe)
+    filtered = stats[stats["datasets"] == stats["datasets"].max()]
+    tags = filtered.optimizer + filtered.seed
+    return dataframe[(dataframe.optimizer + dataframe.seed).isin(tags)]
+
+
+def get_target_algorithms(dataframe):
+    return dataframe.target.unique()
+
+
+def overview(dataframe):
+    filtered = filter_on(dataframe, stage="eval")
+    return filtered.set_index(["optimizer", "seed"])["dataset"] \
+        .groupby(["optimizer", "seed"]).count().reset_index().rename({"dataset": "datasets"}, axis=1)
+
+
+def normalize(dataframe):
+    return dataframe.set_index(["optimizer", "dataset", "seed"]).groupby(["dataset"]) \
+        .transform(lambda x: (x - x.mean()) / x.std()).reset_index()
+
+
 def rank(dataframe):
-    return dataframe.set_index(['optimizer', 'target', 'seed', 'dataset']).groupby(['target', 'dataset']).rank()\
+    return dataframe.set_index(['optimizer', 'seed', 'dataset']).groupby(['dataset']).rank() \
         .reset_index()
 
 
 def aggregate_over_seeds(dataframe):
-    # Needs dataframe with columns optimizer, target, dataset, seed, *trajectory
-    return dataframe.groupby(['optimizer', 'target', 'dataset']).mean().reset_index()
+    # Needs dataframe with columns optimizer, dataset, seed, *trajectory
+    return dataframe.groupby(['optimizer', 'dataset']).mean().reset_index()
 
 
 def aggregate_over_datasets(dataframe):
-    # Needs dataframe with columns optimizer, target, dataset, *trajectory
-    return dataframe.groupby(['optimizer', 'target']).mean().reset_index()
+    # Needs dataframe with columns optimizer, dataset, *trajectory
+    return dataframe.groupby(['optimizer']).mean().reset_index()
 
 
-def visualize(dataframe, target):
-    frame = filter_on(dataframe, target=target).set_index("optimizer").T
+def visualize(dataframe):
+    frame = dataframe.set_index("optimizer").T
     fig = px.line(frame)
     return fig

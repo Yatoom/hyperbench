@@ -16,10 +16,11 @@ benchmark = Benchmark(
     transformer=Imputer(),
     output_folder="results/",
     scoring='balanced_accuracy',
+
     seeds=[2268061101, 2519249986, 338403738],
     target_algorithms=[RandomForestFactory.build()],
     datasets=[OpenMLDataset(task) for task in tasks],
-    optimizers=[SMACBasedOptimizer(ROAR, "roar_x2", budget_multiplier=2)],
+    optimizers=[SMACBasedOptimizer(ROAR, "roar_x3", budget_multiplier=3)],
     search_eval_splits=StratifiedShuffleSplit(
         n_splits=1, test_size=0.25, random_state=0
     ),
