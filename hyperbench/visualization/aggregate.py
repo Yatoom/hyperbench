@@ -7,16 +7,16 @@ import plotly.express as px
 from hyperbench.api.trajectory import Trajectory
 
 
-def get_all_trajectories(directory):
+def get_all_trajectories(directory, iterations=300):
     entries = []
     for currentpath, folders, files in os.walk(directory):
         for file in files:
             if file.endswith(".json"):
                 path = os.path.join(currentpath, file)
                 details = path.replace(".json", "").split("/")[-5:]
-                _, y = Trajectory.load(path).get_loss_per_iteration(10)
+                _, y = Trajectory.load(path).get_loss_per_iteration(iterations)
                 entries.append([*details, y])
-    df = pd.DataFrame(entries, columns=["optimizer", "target", "seed", "dataset", "stage", "trajectory"])
+    df = pd.DataFrame(entries, columns=["target", "optimizer", "seed", "dataset", "stage", "trajectory"])
     expanded = pd.concat([df.drop('trajectory', axis=1), df['trajectory'].apply(pd.Series)], axis=1)
     return expanded
 

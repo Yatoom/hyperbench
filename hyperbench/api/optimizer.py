@@ -49,7 +49,8 @@ class SMACBasedOptimizer(Optimizer):
     def name(self):
         return self._name
 
-    def initialize(self, tae_runner, rng, data, budget, target_algorithm):
+    def initialize(self, tae_runner, seed, data, budget, target_algorithm):
+        rng = np.random.RandomState(seed)
         scenario = Scenario({
             "run_obj": "quality",
             "runcount-limit": budget * self.budget_multiplier,
@@ -57,7 +58,7 @@ class SMACBasedOptimizer(Optimizer):
             "deterministic": target_algorithm.is_deterministic,
             "cs": target_algorithm.config_space,
             "maxR": 5,
-            "output_dir": "./output/smac_output/seed/target_algorithm/task_id",
+            "output_dir": f"./smac_output/{target_algorithm.name}/{seed}/{data.parent.name}",
             "intens_min_chall": 2,
         })
 

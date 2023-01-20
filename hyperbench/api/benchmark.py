@@ -90,15 +90,14 @@ class BenchmarkRunner:
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
         seed = str(seed)
-        path = os.path.join(self.benchmark.output_folder, optimizer, target, seed, dataset)
+        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset)
         file = os.path.join(path, f"{stage}.json")
         os.makedirs(path, exist_ok=True)
         trajectory.save(file)
 
     def search_stage(self, seed, target, dataset, optimizer):
-        rng = np.random.RandomState(seed)
         tae_runner = get_config_evaluator(target, dataset, self.benchmark, self.progress, self.track_iterations)
-        optimizer.initialize(tae_runner, rng, dataset, self.benchmark.budget, target)
+        optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, target)
         optimizer.search()
         self.progress.reset(self.track_iterations)
         return optimizer.get_trajectory()
