@@ -25,9 +25,9 @@ class Trajectory:
     def get_loss_over_time(self, max_time, step_size=1):
 
         x = np.arange(0, max_time, step_size)
-        y = np.zeros_like(x)
+        y = np.full_like(x, np.nan, dtype=float)
 
-        for t in self.as_list:
+        for t in self.as_list[1:]:
             index = np.digitize(t.at_time, x)
             y[index:] = t.loss
 

@@ -7,14 +7,17 @@ import plotly.express as px
 from hyperbench.api.trajectory import Trajectory
 
 
-def get_all_trajectories(directory, iterations=300):
+def get_all_trajectories(directory, iterations=100, time_based=False):
     entries = []
     for currentpath, folders, files in os.walk(directory):
         for file in files:
             if file.endswith(".json"):
                 path = os.path.join(currentpath, file)
                 details = path.replace(".json", "").split("/")[-5:]
-                _, y = Trajectory.load(path).get_loss_per_iteration(iterations)
+                if time_based:
+                    _, y = Trajectory.load(path).get_loss_over_time(iterations)
+                else:
+                    _, y = Trajectory.load(path).get_loss_per_iteration(iterations)
                 entries.append([*details, y])
     df = pd.DataFrame(entries, columns=["target", "optimizer", "seed", "dataset", "stage", "trajectory"])
     expanded = pd.concat([df.drop('trajectory', axis=1), df['trajectory'].apply(pd.Series)], axis=1)
@@ -29,22 +32,26 @@ def filter_on(dataframe, **kwargs):
     return res
 
 
-def intersect(dataframe):
+def live_view(dataframe):
     datasets_per_group = list(dataframe.groupby(["optimizer", "seed", "stage"])["dataset"].agg(list)
                               .reset_index(drop=True).to_dict().values())
     common_datasets = reduce(np.intersect1d, datasets_per_group)
     return dataframe[dataframe["dataset"].isin(common_datasets)]
 
 
-def union(dataframe):
-    stats = overview(dataframe)
-    filtered = stats[stats["datasets"] == stats["datasets"].max()]
-    tags = filtered.optimizer + filtered.seed
-    return dataframe[(dataframe.optimizer + dataframe.seed).isin(tags)]
+def static_view(dataframe):
+    indexed = dataframe.set_index(["optimizer", "seed"])
+    counts = filter_on(indexed, stage="eval").groupby(["optimizer", "seed"]).dataset.count()
+    filtered = indexed[counts == counts.max()]
+    return filtered.reset_index()
 
 
 def get_target_algorithms(dataframe):
     return dataframe.target.unique()
+
+
+def get_datasets(dataframe):
+    return dataframe.dataset.unique()
 
 
 def overview(dataframe):
