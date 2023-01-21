@@ -24,7 +24,7 @@ class Optimizer(ABC):
 
     @abstractmethod
     def initialize(self, tae_runner: Callable, rng: np.random.RandomState, data: Data, budget: int,
-                   target_algorithm: TargetAlgorithm):
+                   time_based: bool, target_algorithm: TargetAlgorithm):
         pass
 
     @abstractmethod
@@ -53,12 +53,12 @@ class SMACBasedOptimizer(Optimizer):
     def name(self):
         return self._name
 
-    def initialize(self, tae_runner, seed, data, budget, target_algorithm):
+    def initialize(self, tae_runner, seed, data, budget, time_based, target_algorithm):
         rng = np.random.RandomState(seed)
         scenario = Scenario({
             "run_obj": "quality",
-            "runcount-limit": budget * self.budget_multiplier,
-            "ta_run_limit": budget * self.budget_multiplier,
+            "ta_run_limit": budget * self.budget_multiplier if not time_based else "inf",
+            "wallclock_limit": budget * self.budget_multiplier if time_based else "inf",
             "deterministic": target_algorithm.is_deterministic,
             "cs": target_algorithm.config_space,
             "maxR": 5,

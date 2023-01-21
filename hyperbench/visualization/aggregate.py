@@ -35,16 +35,23 @@ def load_stats(directory, dataframe, target):
             row = json.load(f)
             row = {**index, **row}
             rows.append(row)
-    return pd.DataFrame(rows).groupby("optimizer")
+    return pd.DataFrame(rows)
 
 
-def get_run_stats(grouped_df):
-    return grouped_df[["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used"]] \
+def get_dataset_stats(df):
+    return df.groupby(["dataset", "dataset_id"])[["ta_time_used"]].mean()\
+        .sort_values(by="ta_time_used", ascending=False).reset_index()
+
+
+def get_run_stats(df):
+    return df.groupby("optimizer")[["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used"]] \
         .agg(lambda x: f"{np.mean(x):.2f} ± {np.std(x):.2f}")
 
-def get_other_stats(grouped_df):
-    return grouped_df[["mean_cost", "inc_changed", "n_configs"]] \
+
+def get_other_stats(df):
+    return df.groupby("optimizer")[["mean_cost", "inc_changed", "n_configs"]] \
         .agg(lambda x: f"{np.mean(x):.2f} ± {np.std(x):.2f}")
+
 
 def filter_on(dataframe, **kwargs):
     res = dataframe.copy()

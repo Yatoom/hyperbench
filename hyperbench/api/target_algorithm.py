@@ -1,7 +1,8 @@
 from abc import abstractmethod
 from dataclasses import dataclass
 
-from ConfigSpace import ConfigurationSpace, Categorical, Float, Integer
+from ConfigSpace import ConfigurationSpace, Categorical, Float, Integer, EqualsCondition
+from catboost import CatBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
 
 
@@ -60,4 +61,47 @@ class RandomForestFactory(TargetAlgorithmFactory):
         config_space.add_hyperparameters(
             [criterion, max_features, min_samples_split, min_samples_leaf, bootstrap]
         )
+        return config_space
+
+class CatboostFactory(TargetAlgorithmFactory):
+    @staticmethod
+    def build():
+        return TargetAlgorithm(
+            name="Catboost",
+            model=CatBoostClassifier,
+            config_space=CatboostFactory.config_space(),
+            preset_params=CatboostFactory.constants(),
+            is_deterministic=False,
+        )
+    @staticmethod
+    def constants():
+        return {
+            "used_ram_limit": "3gb",
+            "eval_metric": "Accuracy",
+            "num_trees": 100,
+            "verbose": False,
+        }
+
+    @staticmethod
+    def config_space():
+        config_space = ConfigurationSpace()
+
+        objective = Categorical("objective", ["MultiClass", "CrossEntropy"])
+        colsample_bylevel = Float('colsample_bylevel', bounds=(0.01, 0.1), log=True)
+        depth = Integer('depth', bounds=(1, 12))
+        boosting_type = Categorical('boosting_type', ["Ordered", "Plain"])
+        bootstrap_type = Categorical('bootstrap_type', ["Bayesian", "Bernoulli", "MVS"])
+        bagging_temperature = Float('bagging_temperature', bounds=(0, 10))
+        subsample = Float("subsample", bounds=(0.1, 1), log=True)
+        learning_rate = Float("learning_rate", bounds=(0.001, 1), log=True)
+
+        c1 = EqualsCondition(bagging_temperature, bootstrap_type, "Bayesian")
+        c2 = EqualsCondition(subsample, bootstrap_type, "Bernoulli")
+
+        config_space.add_hyperparameters([
+            objective, colsample_bylevel, depth, learning_rate,
+            boosting_type, bootstrap_type, bagging_temperature, subsample
+        ])
+
+        config_space.add_conditions([c1, c2])
         return config_space

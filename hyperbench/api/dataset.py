@@ -8,8 +8,8 @@ import openml
 class Data:
     X: np.ndarray
     y: np.ndarray
-    categorical: list[int]
-    numeric: list[int]
+    categorical: np.array
+    numeric: np.array
     parent: "Dataset"
 
     def split(self, *lists_of_indices):
@@ -39,17 +39,18 @@ class Dataset(ABC):
 class OpenMLDataset(Dataset):
 
     def __init__(self, task_id):
-        self.task_id = task_id
+        self.id = task_id
+        self._name = None
 
     @property
     def name(self):
-        return str(self.task_id)
+        return self._name
 
     def load(self):
-        task = openml.tasks.get_task(self.task_id)
-        X, y = task.get_X_and_y()
+        task = openml.tasks.get_task(self.id)
         dataset = task.get_dataset()
+        self._name = dataset.name
+        X, y = task.get_X_and_y()
         categorical = dataset.get_features_by_type("nominal", exclude=[task.target_name])
         numeric = dataset.get_features_by_type("numeric", exclude=[task.target_name])
-
         return Data(X, y, categorical, numeric, self)

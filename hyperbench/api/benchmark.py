@@ -17,6 +17,7 @@ import numpy as np
 @dataclass
 class Benchmark:
     budget: int
+    time_based: bool
     transformer: Transformer
     scoring: str
     output_folder: str
@@ -88,7 +89,7 @@ class BenchmarkRunner:
 
             self.save(search_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "search")
             self.save(eval_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "eval")
-            self.save_stats(stats, seed, target.name, dataset.parent.name, optimizer.name)
+            self.save_stats(stats, seed, target.name, dataset.parent, optimizer.name)
             self.progress.update(self.track_splits, advance=1)
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
@@ -100,15 +101,15 @@ class BenchmarkRunner:
 
     def save_stats(self, stats, seed, target, dataset, optimizer):
         seed = str(seed)
-        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset)
+        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset.name)
         file = os.path.join(path, "stats.json")
         os.makedirs(path, exist_ok=True)
         with open(file, "w+") as f:
-            json.dump(stats, f, indent=2)
+            json.dump({**stats, "dataset_id": dataset.id}, f, indent=2)
 
     def search_stage(self, seed, target, dataset, optimizer):
         tae_runner = get_config_evaluator(target, dataset, self.benchmark, self.progress, self.track_iterations)
-        optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, target)
+        optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, self.benchmark.time_based, target)
         optimizer.search()
         self.progress.reset(self.track_iterations)
         return optimizer.get_trajectory(), optimizer.get_stats()

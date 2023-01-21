@@ -1,14 +1,17 @@
 import streamlit as st
 from hyperbench.visualization import aggregate
+from run_benchmark import benchmark
 
 with st.sidebar:
     st.subheader("Settings")
-    with st.expander("Options", expanded=True):
+    with st.expander("Budget", expanded=True):
         budget = st.radio(
             "Budget type",
             ('Iterations', 'Time'))
-        iterations = st.number_input('Budget size', value=300, step=1 if budget == "Iterations" else None)
+        iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
         all_trajectories = aggregate.get_all_trajectories("results", iterations=iterations, time_based=budget == 'Time')
+
+    with st.expander("Options", expanded=True):
         target = st.selectbox(
             "Choose the target algorithm",
             aggregate.get_target_algorithms(all_trajectories))
@@ -51,17 +54,13 @@ with st.sidebar:
 with st.expander("Experiments", expanded=True):
     st.table(aggregate.overview(filtered))
 
-stats = aggregate.load_stats("results", filtered, target=target)
-with st.expander("Average runtime statistics", expanded=False):
-    st.table(aggregate.get_run_stats(stats))
-with st.expander("Miscellaneous statistics", expanded=False):
-    st.table(aggregate.get_other_stats(stats))
+
 
 # Split by search and eval
 search_trajectories = aggregate.filter_on(filtered, stage="search")
 eval_trajectories = aggregate.filter_on(filtered, stage="eval")
 
-tab1, tab2 = st.tabs(["Search results", "Evaluation results"])
+tab1, tab2, tab3 = st.tabs(["Search results", "Evaluation results", "Statistics"])
 for i, j, k in [("Search set", search_trajectories, tab1), ("Evaluation set", eval_trajectories, tab2)]:
     with k:
         st.subheader("Average loss")
@@ -84,4 +83,11 @@ for i, j, k in [("Search set", search_trajectories, tab1), ("Evaluation set", ev
         f = aggregate.visualize(df)
         st.plotly_chart(f)
 
-
+with tab3:
+    stats = aggregate.load_stats("results", filtered, target=target)
+    with st.expander("Average runtime statistics", expanded=True):
+        st.table(aggregate.get_run_stats(stats))
+    with st.expander("Miscellaneous statistics", expanded=True):
+        st.table(aggregate.get_other_stats(stats))
+    with st.expander("Dataset statistics", expanded=True):
+        st.table(aggregate.get_dataset_stats(stats))

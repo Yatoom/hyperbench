@@ -40,9 +40,9 @@ class Trajectory:
 
         for t in self.as_list:
             index = t.at_iteration
-            y[index:] = t.loss
+            y[index:] = t.loss if t.loss < 2147483647 else np.nan
 
-        return x[:-1], y[1:]
+        return x, y
 
 
 @dataclass
