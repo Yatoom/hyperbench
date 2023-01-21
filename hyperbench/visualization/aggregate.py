@@ -1,3 +1,4 @@
+import json
 import os
 from functools import reduce
 
@@ -11,7 +12,7 @@ def get_all_trajectories(directory, iterations=100, time_based=False):
     entries = []
     for currentpath, folders, files in os.walk(directory):
         for file in files:
-            if file.endswith(".json"):
+            if file.endswith("search.json") or file.endswith("eval.json"):
                 path = os.path.join(currentpath, file)
                 details = path.replace(".json", "").split("/")[-5:]
                 if time_based:
@@ -23,6 +24,27 @@ def get_all_trajectories(directory, iterations=100, time_based=False):
     expanded = pd.concat([df.drop('trajectory', axis=1), df['trajectory'].apply(pd.Series)], axis=1)
     return expanded
 
+
+def load_stats(directory, dataframe, target):
+    indices = dataframe[["optimizer", "seed", "dataset"]]
+    indices["target"] = target
+    rows = []
+    for index in indices.iloc:
+        path = os.path.join(directory, index.target, index.optimizer, index.seed, index.dataset, "stats.json")
+        with open(path, "r") as f:
+            row = json.load(f)
+            row = {**index, **row}
+            rows.append(row)
+    return pd.DataFrame(rows).groupby("optimizer")
+
+
+def get_run_stats(grouped_df):
+    return grouped_df[["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used"]] \
+        .agg(lambda x: f"{np.mean(x):.2f} ± {np.std(x):.2f}")
+
+def get_other_stats(grouped_df):
+    return grouped_df[["mean_cost", "inc_changed", "n_configs"]] \
+        .agg(lambda x: f"{np.mean(x):.2f} ± {np.std(x):.2f}")
 
 def filter_on(dataframe, **kwargs):
     res = dataframe.copy()
@@ -66,7 +88,7 @@ def normalize(dataframe):
 
 
 def rank(dataframe):
-    return dataframe.set_index(['optimizer', 'seed', 'dataset']).groupby(['dataset']).rank() \
+    return dataframe.set_index(['optimizer', 'seed', 'dataset']).groupby(['dataset']).rank(axis=0) \
         .reset_index()
 
 

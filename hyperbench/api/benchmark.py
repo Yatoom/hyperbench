@@ -1,3 +1,5 @@
+import dataclasses
+import json
 import os
 from dataclasses import dataclass
 
@@ -79,13 +81,14 @@ class BenchmarkRunner:
             new_search_set, new_eval_set = self.benchmark.transformer.transform(search_set, eval_set)
 
             self.progress.reset(self.track_stage)
-            search_trajectory = self.search_stage(seed, target, new_search_set, optimizer)
+            search_trajectory, stats = self.search_stage(seed, target, new_search_set, optimizer)
             self.progress.update(self.track_stage, advance=1)
             eval_trajectory = self.evaluation_stage(target, new_search_set, new_eval_set, search_trajectory)
             self.progress.update(self.track_stage, advance=1)
 
             self.save(search_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "search")
             self.save(eval_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "eval")
+            self.save_stats(stats, seed, target.name, dataset.parent.name, optimizer.name)
             self.progress.update(self.track_splits, advance=1)
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
@@ -95,12 +98,20 @@ class BenchmarkRunner:
         os.makedirs(path, exist_ok=True)
         trajectory.save(file)
 
+    def save_stats(self, stats, seed, target, dataset, optimizer):
+        seed = str(seed)
+        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset)
+        file = os.path.join(path, "stats.json")
+        os.makedirs(path, exist_ok=True)
+        with open(file, "w+") as f:
+            json.dump(stats, f, indent=2)
+
     def search_stage(self, seed, target, dataset, optimizer):
         tae_runner = get_config_evaluator(target, dataset, self.benchmark, self.progress, self.track_iterations)
         optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, target)
         optimizer.search()
         self.progress.reset(self.track_iterations)
-        return optimizer.get_trajectory()
+        return optimizer.get_trajectory(), optimizer.get_stats()
 
     def evaluation_stage(self, target, search_set, eval_set, search_trajectory):
         eval_trajectory = replay_trajectory(search_trajectory, self.benchmark.scoring, target, search_set, eval_set)

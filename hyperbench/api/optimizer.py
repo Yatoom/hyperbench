@@ -35,6 +35,10 @@ class Optimizer(ABC):
     def get_trajectory(self) -> Trajectory:
         pass
 
+    @abstractmethod
+    def get_stats(self) -> dict:
+        pass
+
 
 class SMACBasedOptimizer(Optimizer):
 
@@ -58,7 +62,7 @@ class SMACBasedOptimizer(Optimizer):
             "deterministic": target_algorithm.is_deterministic,
             "cs": target_algorithm.config_space,
             "maxR": 5,
-            "output_dir": f"./smac_output/{target_algorithm.name}/{seed}/{data.parent.name}",
+            "output_dir": f"./smac_output/{target_algorithm.name}/{self.name}/{seed}/{data.parent.name}",
             "intens_min_chall": 2,
         })
 
@@ -80,6 +84,18 @@ class SMACBasedOptimizer(Optimizer):
             )
             for entry in self.initialized_optimizer.get_trajectory()
         ])
+
+    def get_stats(self):
+        stats = self.initialized_optimizer.stats
+        return {
+            "mean_cost": np.mean([i.cost for i in self.initialized_optimizer.runhistory.data.values()]),
+            "finished_ta_runs": stats.finished_ta_runs,
+            "inc_changed": stats.inc_changed,
+            "n_configs": stats.n_configs,
+            "submitted_ta_runs": stats.submitted_ta_runs,
+            "ta_time_used": stats.ta_time_used,
+            "wallclock_time_used": stats.wallclock_time_used
+        }
 
     def get_trajectory_seeds(self):
         map_id_to_seeds = defaultdict(list)
