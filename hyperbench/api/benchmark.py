@@ -1,6 +1,7 @@
 import dataclasses
 import json
 import os
+import time
 from dataclasses import dataclass
 
 from rich.progress import Progress, TextColumn, BarColumn, MofNCompleteColumn, TimeRemainingColumn, TimeElapsedColumn
@@ -65,8 +66,7 @@ class BenchmarkRunner:
     def loop_datasets(self, seed, target):
         self.progress.reset(self.track_data)
         for dataset in self.benchmark.datasets:
-            data = dataset.load()
-            self.loop_optimizers(seed, target, data)
+            self.loop_optimizers(seed, target, dataset.data)
             self.progress.update(self.track_data, advance=1)
 
     def loop_optimizers(self, seed, target, dataset):
@@ -82,14 +82,16 @@ class BenchmarkRunner:
             new_search_set, new_eval_set = self.benchmark.transformer.transform(search_set, eval_set)
 
             self.progress.reset(self.track_stage)
+            tic = time.perf_counter()
             search_trajectory, stats = self.search_stage(seed, target, new_search_set, optimizer)
+            toc = time.perf_counter()
             self.progress.update(self.track_stage, advance=1)
             eval_trajectory = self.evaluation_stage(target, new_search_set, new_eval_set, search_trajectory)
             self.progress.update(self.track_stage, advance=1)
 
             self.save(search_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "search")
             self.save(eval_trajectory, seed, target.name, dataset.parent.name, optimizer.name, "eval")
-            self.save_stats(stats, seed, target.name, dataset.parent, optimizer.name)
+            self.save_stats(stats, seed, target.name, dataset.parent, optimizer.name, toc - tic)
             self.progress.update(self.track_splits, advance=1)
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
@@ -99,13 +101,13 @@ class BenchmarkRunner:
         os.makedirs(path, exist_ok=True)
         trajectory.save(file)
 
-    def save_stats(self, stats, seed, target, dataset, optimizer):
+    def save_stats(self, stats, seed, target, dataset, optimizer, timing):
         seed = str(seed)
         path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset.name)
         file = os.path.join(path, "stats.json")
         os.makedirs(path, exist_ok=True)
         with open(file, "w+") as f:
-            json.dump({**stats, "dataset_id": dataset.id}, f, indent=2)
+            json.dump({**stats, "dataset_id": dataset.id, "perf_time": timing}, f, indent=2)
 
     def search_stage(self, seed, target, dataset, optimizer):
         tae_runner = get_config_evaluator(target, dataset, self.benchmark, self.progress, self.track_iterations)

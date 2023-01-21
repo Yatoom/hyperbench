@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 from hyperbench.visualization import aggregate
 from run_benchmark import benchmark
@@ -5,9 +6,7 @@ from run_benchmark import benchmark
 with st.sidebar:
     st.subheader("Settings")
     with st.expander("Budget", expanded=True):
-        budget = st.radio(
-            "Budget type",
-            ('Iterations', 'Time'))
+        budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if benchmark.time_based else 0)
         iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
         all_trajectories = aggregate.get_all_trajectories("results", iterations=iterations, time_based=budget == 'Time')
 
@@ -25,11 +24,6 @@ with st.sidebar:
             filtered = aggregate.live_view(filtered)
         elif view == "Static view":
             filtered = aggregate.static_view(filtered)
-
-    with st.expander("Datasets", expanded=False):
-        list_datasets = aggregate.get_datasets(filtered)
-        datasets = st.multiselect("Select datasets to include", list_datasets, default=list_datasets)
-        filtered = filtered[filtered.dataset.isin(datasets)]
 
     st.subheader("Info")
     with st.expander("About budget"):
@@ -51,43 +45,55 @@ with st.sidebar:
             """
         )
 
-with st.expander("Experiments", expanded=True):
-    st.table(aggregate.overview(filtered))
+main_tab, explorer_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets"])
+with main_tab:
+    with st.expander("Datasets included in results", expanded=False):
+        list_datasets = aggregate.get_datasets(filtered)
+        datasets = st.multiselect("Select datasets to include", list_datasets, default=list_datasets, label_visibility="collapsed")
+        filtered = filtered[filtered.dataset.isin(datasets)]
+    with st.expander("Experiments included in results", expanded=True):
+        st.dataframe(aggregate.overview(filtered), use_container_width=True)
+
+    # Split by search and eval
+    search_trajectories = aggregate.filter_on(filtered, stage="search")
+    eval_trajectories = aggregate.filter_on(filtered, stage="eval")
+
+    tab1, tab2, tab3 = st.tabs(["🧪 Search results", "️🤔 Evaluation results", "📊 Statistics"])
+    for i, j, k in [("Search set", search_trajectories, tab1), ("Evaluation set", eval_trajectories, tab2)]:
+        with k:
+            st.subheader("Average loss")
+            df = aggregate.aggregate_over_seeds(j)
+            df = aggregate.aggregate_over_datasets(df)
+            f = aggregate.visualize(df)
+            st.plotly_chart(f)
+
+            st.subheader("Ranked")
+            df = aggregate.rank(j)
+            df = aggregate.aggregate_over_seeds(df)
+            df = aggregate.aggregate_over_datasets(df)
+            f = aggregate.visualize(df)
+            st.plotly_chart(f)
+
+            st.subheader("Normalized average loss")
+            df = aggregate.normalize(j)
+            df = aggregate.aggregate_over_seeds(df)
+            df = aggregate.aggregate_over_datasets(df)
+            f = aggregate.visualize(df)
+            st.plotly_chart(f)
+
+    with tab3:
+        stats = aggregate.load_stats("results", filtered, target=target)
+        with st.expander("Average runtime statistics", expanded=True):
+            st.dataframe(aggregate.get_run_stats(stats), use_container_width=True)
+        with st.expander("Average runtimes per dataset", expanded=True):
+            optimizer = st.selectbox("Optimizer", stats.optimizer.unique())
+            filtered_on_optimizer = stats[stats.optimizer == optimizer]
+            st.dataframe(aggregate.get_dataset_stats(filtered_on_optimizer), use_container_width=True)
+        with st.expander("Miscellaneous statistics", expanded=True):
+            st.dataframe(aggregate.get_other_stats(stats), use_container_width=True)
+with explorer_tab:
+    table = pd.DataFrame([ds.stats for ds in benchmark.datasets])
+    table['dimension'] = table.n_rows * table.n_columns
+    st.dataframe(table)
 
 
-
-# Split by search and eval
-search_trajectories = aggregate.filter_on(filtered, stage="search")
-eval_trajectories = aggregate.filter_on(filtered, stage="eval")
-
-tab1, tab2, tab3 = st.tabs(["Search results", "Evaluation results", "Statistics"])
-for i, j, k in [("Search set", search_trajectories, tab1), ("Evaluation set", eval_trajectories, tab2)]:
-    with k:
-        st.subheader("Average loss")
-        df = aggregate.aggregate_over_seeds(j)
-        df = aggregate.aggregate_over_datasets(df)
-        f = aggregate.visualize(df)
-        st.plotly_chart(f)
-
-        st.subheader("Ranked")
-        df = aggregate.rank(j)
-        df = aggregate.aggregate_over_seeds(df)
-        df = aggregate.aggregate_over_datasets(df)
-        f = aggregate.visualize(df)
-        st.plotly_chart(f)
-
-        st.subheader("Normalized average loss")
-        df = aggregate.normalize(j)
-        df = aggregate.aggregate_over_seeds(df)
-        df = aggregate.aggregate_over_datasets(df)
-        f = aggregate.visualize(df)
-        st.plotly_chart(f)
-
-with tab3:
-    stats = aggregate.load_stats("results", filtered, target=target)
-    with st.expander("Average runtime statistics", expanded=True):
-        st.table(aggregate.get_run_stats(stats))
-    with st.expander("Miscellaneous statistics", expanded=True):
-        st.table(aggregate.get_other_stats(stats))
-    with st.expander("Dataset statistics", expanded=True):
-        st.table(aggregate.get_dataset_stats(stats))

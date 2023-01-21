@@ -39,8 +39,8 @@ def load_stats(directory, dataframe, target):
 
 
 def get_dataset_stats(df):
-    return df.groupby(["dataset", "dataset_id"])[["ta_time_used", "wallclock_time_used"]].mean()\
-        .sort_values(by="ta_time_used", ascending=False).reset_index()
+    return df.groupby(["optimizer", "dataset"])["ta_time_used", "wallclock_time_used", "submitted_ta_runs"].mean()\
+        .sort_values(by=["optimizer", "wallclock_time_used"], ascending=False).reset_index().set_index("optimizer")
 
 
 def get_run_stats(df):

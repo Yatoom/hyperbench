@@ -1,5 +1,7 @@
 from abc import abstractmethod, ABC
 from dataclasses import dataclass
+from functools import cache
+
 import numpy as np
 import openml
 
@@ -31,26 +33,75 @@ class Dataset(ABC):
     def __init__(self, *args, **kwargs):
         pass
 
+    @property
     @abstractmethod
-    def load(self) -> Data:
+    def data(self) -> Data:
         pass
 
 
-class OpenMLDataset(Dataset):
+class OpenMLDataset(Dataset, ABC):
 
     def __init__(self, task_id):
-        self.id = task_id
-        self._name = None
+        self.task_id = task_id
 
     @property
-    def name(self):
-        return self._name
+    def id(self):
+        return self.task_id
 
-    def load(self):
-        task = openml.tasks.get_task(self.id)
-        dataset = task.get_dataset()
-        self._name = dataset.name
-        X, y = task.get_X_and_y()
-        categorical = dataset.get_features_by_type("nominal", exclude=[task.target_name])
-        numeric = dataset.get_features_by_type("numeric", exclude=[task.target_name])
+    @property
+    @cache
+    def task(self):
+        return openml.tasks.get_task(self.id)
+
+    @property
+    @cache
+    def dataset(self):
+        return self.task.get_dataset()
+
+    @property
+    @cache
+    def name(self):
+        return self.dataset.name
+
+    @property
+    @cache
+    def data(self):
+        X, y = self.task.get_X_and_y()
+        categorical = self.dataset.get_features_by_type("nominal", exclude=[self.task.target_name])
+        numeric = self.dataset.get_features_by_type("numeric", exclude=[self.task.target_name])
         return Data(X, y, categorical, numeric, self)
+
+    @property
+    @cache
+    def n_rows(self):
+        return self.data.X.shape[0]
+
+    @property
+    @cache
+    def n_columns(self):
+        return self.data.X.shape[1]
+
+    @property
+    @cache
+    def n_classes(self):
+        return np.unique(self.data.y).shape[0]
+
+    @property
+    @cache
+    def n_missing(self):
+        return np.isnan(self.data.X).sum()
+
+    @property
+    @cache
+    def stats(self):
+        return {
+            "name": self.name,
+            "n_rows": self.n_rows,
+            "n_columns": self.n_columns,
+            "n_classes": self.n_classes,
+            "n_missing": self.n_missing,
+            "n_numeric": len(self.data.numeric),
+            "n_categorical": len(self.data.categorical),
+            "task_url": f"https://www.openml.org/t/{self.id}",
+            "data_url": f"https://www.openml.org/d/{self.dataset.id}",
+        }
