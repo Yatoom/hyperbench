@@ -39,7 +39,7 @@ def load_stats(directory, dataframe, target):
 
 
 def get_dataset_stats(df):
-    return df.groupby(["dataset", "dataset_id"])[["ta_time_used"]].mean()\
+    return df.groupby(["dataset", "dataset_id"])[["ta_time_used", "wallclock_time_used"]].mean()\
         .sort_values(by="ta_time_used", ascending=False).reset_index()
 
 
