@@ -12,7 +12,7 @@ class SGD(BaseTarget):
     deterministic = False
 
     @staticmethod
-    def init_model(seed, **config):
+    def init_model(seed, metadata, **config):
         return SGDClassifier(**SGD.constants(), **config, random_state=seed)
 
     @staticmethod

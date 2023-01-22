@@ -10,7 +10,7 @@ class SVM(BaseTarget):
     deterministic = False
 
     @staticmethod
-    def init_model(seed, **config):
+    def init_model(seed, metadata, **config):
         return SVC(**SVM.constants(), **config, random_state=seed)
 
     @staticmethod

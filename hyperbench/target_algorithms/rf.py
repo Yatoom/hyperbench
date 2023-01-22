@@ -1,6 +1,6 @@
 from sklearn.linear_model import SGDClassifier
 import ConfigSpace
-
+import numpy as np
 from hyperbench.target_algorithms.base import BaseTarget
 
 
@@ -10,11 +10,10 @@ class RandomForest(BaseTarget):
     deterministic = False
 
     @staticmethod
-    def init_model(seed, **config):
+    def init_model(seed, metadata, **config):
 
-        # Find out what to do with this
-        # n_features = self.train_X.shape[1]
-        # config["max_features"] = int(np.rint(np.power(n_features, config["max_features"])))
+        n_features = metadata.n_columns
+        config["max_features"] = int(np.rint(np.power(n_features, config["max_features"])))
 
         return SGDClassifier(**RandomForest.constants(), **config, random_state=seed)
 

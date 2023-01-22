@@ -21,13 +21,14 @@ class Provider(ABC):
         return self.default_stats()
 
     def default_stats(self):
+        metadata = self.data.metadata
         return {
-            "id": self.id,
-            "name": self.data.name,
-            "n_rows": self.data.n_rows,
-            "n_columns": self.data.n_columns,
-            "n_classes": self.data.n_classes,
-            "n_missing": self.data.n_missing,
-            "n_numeric": len(self.data.numeric),
-            "n_categorical": len(self.data.categorical)
+            "id": metadata.id,
+            "name": metadata.name,
+            "n_rows": metadata.n_rows,
+            "n_columns": metadata.n_columns,
+            "n_classes": metadata.n_classes,
+            "n_missing": metadata.n_missing,
+            "n_numeric": len(metadata.numeric),
+            "n_categorical": len(metadata.categorical)
         }

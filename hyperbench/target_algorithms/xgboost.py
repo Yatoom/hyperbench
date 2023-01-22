@@ -11,14 +11,15 @@ class XGBoost(BaseTarget):
     deterministic = False
 
     @staticmethod
-    def init_model(seed, **config):
+    def init_model(seed, metadata, **config):
 
-        # Find out what to do with this:
-        # if self.n_classes > 2:
-        #     extra_args["objective"] = "multi:softmax"
-        #     extra_args.update({"num_class": self.n_classes})
+        constants = XGBoost.constants()
 
-        return XGBClassifier(**XGBoost.constants(), **config, random_state=seed)
+        if metadata.n_classes > 2:
+            constants["objective"] = "multi:softmax"
+            constants["num_class"] = metadata.n_classes
+
+        return XGBClassifier(**constants, **config, random_state=seed)
 
     @staticmethod
     def constants():

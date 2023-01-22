@@ -7,6 +7,7 @@ from sklearn.metrics import get_scorer
 from sklearn.model_selection import cross_val_score
 
 from hyperbench.dataset import Dataset
+from hyperbench.dataset.metadata import Metadata
 from hyperbench.trajectory import Trajectory
 
 
@@ -23,7 +24,7 @@ class BaseTarget(ABC):
 
     @staticmethod
     @abstractmethod
-    def init_model(seed, **config) -> any:
+    def init_model(seed, metadata: Metadata, **config) -> any:
         pass
 
     @staticmethod
@@ -39,7 +40,7 @@ class BaseTarget(ABC):
     def get_config_evaluator(dataset: Dataset, train_test_splits, scoring, progress, loop_iterations):
         def evaluate(config: Configuration, seed: int):
             # Initialize algorithm
-            algorithm = BaseTarget.init_model(seed, **dict(config))
+            algorithm = BaseTarget.init_model(seed, dataset.metadata, **dict(config))
 
             # Perform cross validation
             score = cross_val_score(
@@ -60,7 +61,7 @@ class BaseTarget(ABC):
         for item in trajectory.as_list:
             losses = []
             for seed in item.seeds:
-                algorithm = BaseTarget.init_model(seed, **item.conf)
+                algorithm = BaseTarget.init_model(seed, search_data.metadata, **item.conf)
                 algorithm.fit(search_data.X, search_data.y)
                 loss = 1 - scorer(algorithm, eval_data.X, eval_data.y)
                 losses.append(loss)
