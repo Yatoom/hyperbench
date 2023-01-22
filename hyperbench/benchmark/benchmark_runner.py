@@ -1,7 +1,9 @@
 import json
 import os
 import time
+from datetime import datetime
 
+from rich.console import Console
 from rich.progress import Progress, TextColumn, BarColumn, MofNCompleteColumn, TimeRemainingColumn, TimeElapsedColumn
 
 
@@ -51,6 +53,8 @@ class BenchmarkRunner:
 
     def loop_splits(self, seed, target, dataset, optimizer):
         self.progress.reset(self.track_splits)
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.progress.console.print(f"[{ts}] {seed} > {target.name} > {dataset.metadata.name} > {optimizer.name}")
         for search_indices, eval_indices in self.benchmark.search_eval_splits.split(dataset.X, dataset.y):
             search_set, eval_set = dataset.split(search_indices, eval_indices)
             new_search_set, new_eval_set = self.benchmark.transformer.transform(search_set, eval_set)
@@ -84,6 +88,7 @@ class BenchmarkRunner:
             json.dump({**stats, "dataset_id": metadata.id, "perf_time": timing}, f, indent=2)
 
     def search_stage(self, seed, target, dataset, optimizer):
+        self.progress.update(self.track_iterations, total=self.benchmark.budget * optimizer.budget_multiplier)
         tae_runner = target.get_config_evaluator(dataset, self.benchmark.train_test_splits, self.benchmark.scoring, self.progress, self.track_iterations)
         optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, self.benchmark.time_based, target)
         optimizer.search()

@@ -97,7 +97,7 @@ with explorer_tab:
     enabled = st.checkbox("Enable explorer")
     if enabled:
         table = pd.DataFrame([ds.stats for ds in benchmark.datasets])
-        table['dimension'] = table.n_rows * table.n_columns
+        table['dimension'] = table.n_rows * (table.n_columns + table.n_classes)
         st.dataframe(table)
 
 

@@ -28,7 +28,7 @@ class Trajectory:
         x = np.arange(0, max_time, step_size)
         y = np.full_like(x, np.nan, dtype=float)
 
-        for t in self.as_list[1:]:
+        for t in self.as_list:
             index = np.digitize(t.at_time, x)
             y[index:] = t.loss
 
@@ -37,10 +37,10 @@ class Trajectory:
     def get_loss_per_iteration(self, max_iter):
 
         x = np.arange(0, max_iter)
-        y = np.zeros_like(x, dtype=float)
+        y = np.full_like(x, np.nan, dtype=float)
 
         for t in self.as_list:
-            index = t.at_iteration
-            y[index:] = t.loss if t.loss < 2147483647 else np.nan
+            index = np.digitize(t.at_iteration, x)
+            y[index:] = t.loss
 
         return x, y

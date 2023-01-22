@@ -25,7 +25,7 @@ class XGBoost(BaseTarget):
         return {
             "booster": "gbtree",
             "objective": "binary:logistic",
-            "n_estimators": 2000,
+            "n_estimators": 100,
             "subsample": 1
         }
 
@@ -34,8 +34,8 @@ class XGBoost(BaseTarget):
         cs = ConfigSpace.ConfigurationSpace(seed=0)
 
         cs.add_hyperparameters([
-            ConfigSpace.Float('eta', (2 ** -10, 1.), default=-.3, log=True),  # learning rate
-            ConfigSpace.Integer('max_depth', (1, 50), default=10, log=True),
+            ConfigSpace.Float('eta', (2 ** -10, 1.), default=0.3, log=True),  # learning rate
+            ConfigSpace.Integer('max_depth', (1, 10), default=10, log=True),
             ConfigSpace.Float('colsample_bytree', (0.1, 1.), default=1., log=False),
             ConfigSpace.Float('reg_lambda', (2 ** -10, 2 ** 10), default=1, log=True)
         ])

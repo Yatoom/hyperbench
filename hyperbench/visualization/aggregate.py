@@ -39,12 +39,12 @@ def load_stats(directory, dataframe, target):
 
 
 def get_dataset_stats(df):
-    return df.groupby(["optimizer", "dataset"])[["ta_time_used", "wallclock_time_used", "submitted_ta_runs"]].mean()\
+    return df.groupby(["optimizer", "dataset"])[["ta_time_used", "wallclock_time_used", "submitted_ta_runs", "perf_time"]].mean()\
         .sort_values(by=["optimizer", "wallclock_time_used"], ascending=False).reset_index().set_index("optimizer")
 
 
 def get_run_stats(df):
-    return df.groupby("optimizer")[["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used"]] \
+    return df.groupby("optimizer")[["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used", "perf_time"]] \
         .agg(lambda x: f"{np.mean(x):.2f} ± {np.std(x):.2f}")
 
 

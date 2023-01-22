@@ -7,32 +7,41 @@ from hyperbench.benchmark import BenchmarkConfig
 from hyperbench.benchmark import BenchmarkRunner
 from hyperbench.provider import OpenMLProvider
 from hyperbench.optimizers import SMACBasedOptimizer
-from hyperbench.target_algorithms import CatboostFactory
-from hyperbench.target_algorithms import RandomForestFactory
+from hyperbench.target_algorithms import SVM, RandomForest, SGD, XGBoost
 from hyperbench.transformer import SimpleTransformer
 
 tasks = openml.study.get_suite(99).tasks
-# 0	CIFAR_10	        167124	93.8039
-# 1	Devnagari-Script	167121	26.7153
-# 2	Fashion-MNIST	    146825	15.4337
-# 3	mnist_784	        3573	7.6295
-# 4	numerai28.6	        167120	3.5865
-# 5	har	                14970	2.6967
-# 6	isolet	            3481	2.5220
-# 7	electricity	        219	    1.8605
-# 8	mfeat-factors	    12	    1.2955
-tasks = [task for task in tasks if task not in [167124, 167121, 146825, 3573, 167120, 14970, 3481, 219, 12]]
+
+# These datasets take too long to evaluate on
+excluded = [
+    167124,	 # CIFAR_10
+    167121,	 # Devnagari-Script
+    146825,	 # Fashion-MNIST
+    3573,	 # mnist_784
+    9910,	 # Bioresponse
+    14970,	 # har
+    167125,	 # Internet-Advertisements
+    3481,	 # isolet
+    9977,	 # nomao
+    146195,	 # connect-4
+    167120,	 # numerai28.6
+    9976,	 # madelon
+    9981,	 # cnae-9
+    6,	     # letter
+]
+tasks = [task for task in tasks if task not in excluded]
+
 
 benchmark = BenchmarkConfig(
-    budget=60,
-    time_based=True,
+    budget=300,
+    time_based=False,
     transformer=SimpleTransformer(),
-    output_folder="results/",
-    scoring="balanced_accuracy", # make_scorer(roc_auc_score, multi_class='ovo'
+    output_folder="results",
+    scoring="balanced_accuracy",  # make_scorer(roc_auc_score, multi_class='ovo'
 
     seeds=[2268061101, 2519249986, 338403738],
-    target_algorithms=[CatboostFactory.build(), RandomForestFactory.build()],
-    datasets=[OpenMLProvider(task).data for task in tasks],
+    target_algorithms=[RandomForest(), XGBoost(), SGD(), SVM()],
+    datasets=[OpenMLProvider(task) for task in tasks],
     optimizers=[
         # SMACBasedOptimizer(ROAR, "roar_x1", budget_multiplier=1)
         SMACBasedOptimizer(ROAR, "roar_x2", budget_multiplier=2),

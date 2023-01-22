@@ -42,16 +42,16 @@ class SMACBasedOptimizer(Optimizer):
         return self.initialized_optimizer.optimize()
 
     def get_trajectory(self) -> Trajectory:
-        map_id_to_seeds = self.get_trajectory_seeds()
+        config_id_to_seeds = self.config_id_to_seeds()
         return Trajectory([
             Entry(
                 conf=dict(entry.incumbent),
                 loss=entry.train_perf,
-                at_iteration=int(np.ceil(entry.ta_runs / self.budget_multiplier)),
+                at_iteration=int(entry.ta_runs) if self.budget_multiplier == 1 else float(entry.ta_runs) / self.budget_multiplier,
                 at_time=entry.wallclock_time / self.budget_multiplier,
-                seeds=map_id_to_seeds[entry.incumbent_id]
+                seeds=self.get_seeds(entry, config_id_to_seeds)
             )
-            for entry in self.initialized_optimizer.get_trajectory()
+            for entry in self.initialized_optimizer.get_trajectory()[1:]  # Skip the first one
         ])
 
     def get_stats(self):
@@ -66,9 +66,13 @@ class SMACBasedOptimizer(Optimizer):
             "wallclock_time_used": stats.wallclock_time_used
         }
 
-    def get_trajectory_seeds(self):
-        map_id_to_seeds = defaultdict(list)
-        for key in self.initialized_optimizer.runhistory.external.keys():
-            map_id_to_seeds[key.config_id].append(key.seed)
+    def get_seeds(self, entry, config_id_to_seeds):
+        opt = self.initialized_optimizer
+        return config_id_to_seeds[opt.runhistory.config_ids[entry.incumbent]]
 
-        return map_id_to_seeds
+    def config_id_to_seeds(self):
+        conf_id_to_seeds = defaultdict(list)
+        for key in self.initialized_optimizer.runhistory.external.keys():
+            conf_id_to_seeds[key.config_id].append(key.seed)
+        return conf_id_to_seeds
+
