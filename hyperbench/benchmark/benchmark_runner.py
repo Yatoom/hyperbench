@@ -63,9 +63,9 @@ class BenchmarkRunner:
             eval_trajectory = self.evaluation_stage(target, new_search_set, new_eval_set, search_trajectory)
             self.progress.update(self.track_stage, advance=1)
 
-            self.save(search_trajectory, seed, target.name, dataset.name, optimizer.name, "search")
-            self.save(eval_trajectory, seed, target.name, dataset.name, optimizer.name, "eval")
-            self.save_stats(stats, seed, target.name, dataset.parent, optimizer.name, toc - tic)
+            self.save(search_trajectory, seed, target.name, dataset.metadata.name, optimizer.name, "search")
+            self.save(eval_trajectory, seed, target.name, dataset.metadata.name, optimizer.name, "eval")
+            self.save_stats(stats, seed, target.name, dataset.metadata, optimizer.name, toc - tic)
             self.progress.update(self.track_splits, advance=1)
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
@@ -75,13 +75,13 @@ class BenchmarkRunner:
         os.makedirs(path, exist_ok=True)
         trajectory.save(file)
 
-    def save_stats(self, stats, seed, target, dataset, optimizer, timing):
+    def save_stats(self, stats, seed, target, metadata, optimizer, timing):
         seed = str(seed)
-        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset._name)
+        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, metadata.name)
         file = os.path.join(path, "stats.json")
         os.makedirs(path, exist_ok=True)
         with open(file, "w+") as f:
-            json.dump({**stats, "dataset_id": dataset.id, "perf_time": timing}, f, indent=2)
+            json.dump({**stats, "dataset_id": metadata.id, "perf_time": timing}, f, indent=2)
 
     def search_stage(self, seed, target, dataset, optimizer):
         tae_runner = target.get_config_evaluator(dataset, self.benchmark.train_test_splits, self.benchmark.scoring, self.progress, self.track_iterations)

@@ -9,8 +9,8 @@ class SimpleTransformer(Transformer):
 
     def update(self, search_set: Dataset, eval_set: Dataset):
         ct = ColumnTransformer([
-            ["most_frequent", SimpleImputer(strategy="most_frequent"), search_set.categorical],
-            ["median", SimpleImputer(strategy="median"), eval_set.numeric]
+            ["most_frequent", SimpleImputer(strategy="most_frequent"), search_set.metadata.categorical],
+            ["median", SimpleImputer(strategy="median"), eval_set.metadata.numeric]
         ])
 
         search_set.X = ct.fit_transform(search_set.X)

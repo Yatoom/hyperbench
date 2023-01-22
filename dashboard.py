@@ -3,12 +3,14 @@ import streamlit as st
 from hyperbench.visualization import aggregate
 from run_benchmark import benchmark
 
+directory = "results"
+
 with st.sidebar:
     st.subheader("Settings")
     with st.expander("Budget", expanded=True):
         budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if benchmark.time_based else 0)
         iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
-        all_trajectories = aggregate.get_all_trajectories("results", iterations=iterations, time_based=budget == 'Time')
+        all_trajectories = aggregate.get_all_trajectories(directory, iterations=iterations, time_based=budget == 'Time')
 
     with st.expander("Options", expanded=True):
         target = st.selectbox(
@@ -82,7 +84,7 @@ with main_tab:
             st.plotly_chart(f)
 
     with tab3:
-        stats = aggregate.load_stats("results", filtered, target=target)
+        stats = aggregate.load_stats(directory, filtered, target=target)
         with st.expander("Average runtime statistics", expanded=True):
             st.dataframe(aggregate.get_run_stats(stats), use_container_width=True)
         with st.expander("Average runtimes per dataset", expanded=True):

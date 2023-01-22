@@ -28,10 +28,10 @@ class SMACBasedOptimizer(Optimizer):
             "run_obj": "quality",
             "ta_run_limit": budget * self.budget_multiplier if not time_based else "inf",
             "wallclock_limit": budget * self.budget_multiplier if time_based else "inf",
-            "deterministic": target_algorithm.is_deterministic,
-            "cs": target_algorithm.config_space,
+            "deterministic": target_algorithm.deterministic,
+            "cs": target_algorithm.config_space(),
             "maxR": 5,
-            "output_dir": f"./smac_output/{target_algorithm.name}/{self.name}/{seed}/{data.parent._name}",
+            "output_dir": f"./smac_output/{target_algorithm.name}/{self.name}/{seed}/{data.metadata.name}",
             "intens_min_chall": 2,
         })
 

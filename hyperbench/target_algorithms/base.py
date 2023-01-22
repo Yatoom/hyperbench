@@ -36,11 +36,10 @@ class BaseTarget(ABC):
     def config_space() -> ConfigurationSpace:
         pass
 
-    @staticmethod
-    def get_config_evaluator(dataset: Dataset, train_test_splits, scoring, progress, loop_iterations):
+    def get_config_evaluator(self, dataset: Dataset, train_test_splits, scoring, progress, loop_iterations):
         def evaluate(config: Configuration, seed: int):
             # Initialize algorithm
-            algorithm = BaseTarget.init_model(seed, dataset.metadata, **dict(config))
+            algorithm = self.init_model(seed, dataset.metadata, **dict(config))
 
             # Perform cross validation
             score = cross_val_score(
@@ -52,8 +51,7 @@ class BaseTarget(ABC):
 
         return evaluate
 
-    @staticmethod
-    def replay_trajectory(trajectory: Trajectory, scoring, search_data, eval_data):
+    def replay_trajectory(self, trajectory: Trajectory, scoring, search_data, eval_data):
 
         scorer = get_scorer(scoring)
         results = []
@@ -61,7 +59,7 @@ class BaseTarget(ABC):
         for item in trajectory.as_list:
             losses = []
             for seed in item.seeds:
-                algorithm = BaseTarget.init_model(seed, search_data.metadata, **item.conf)
+                algorithm = self.init_model(seed, search_data.metadata, **item.conf)
                 algorithm.fit(search_data.X, search_data.y)
                 loss = 1 - scorer(algorithm, eval_data.X, eval_data.y)
                 losses.append(loss)

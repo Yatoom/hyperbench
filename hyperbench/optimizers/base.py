@@ -5,7 +5,7 @@ import numpy as np
 from ConfigSpace import Configuration
 
 from hyperbench.dataset import Dataset
-from hyperbench.target_algorithms import TargetAlgorithm
+from hyperbench.target_algorithms import BaseTarget
 from hyperbench.trajectory.trajectory import Trajectory
 
 
@@ -21,7 +21,7 @@ class Optimizer(ABC):
 
     @abstractmethod
     def initialize(self, tae_runner: Callable, rng: np.random.RandomState, data: Dataset, budget: int,
-                   time_based: bool, target_algorithm: TargetAlgorithm):
+                   time_based: bool, target_algorithm: BaseTarget):
         pass
 
     @abstractmethod

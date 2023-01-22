@@ -1,3 +1,4 @@
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import SGDClassifier
 import ConfigSpace
 import numpy as np
@@ -15,7 +16,7 @@ class RandomForest(BaseTarget):
         n_features = metadata.n_columns
         config["max_features"] = int(np.rint(np.power(n_features, config["max_features"])))
 
-        return SGDClassifier(**RandomForest.constants(), **config, random_state=seed)
+        return RandomForestClassifier(**RandomForest.constants(), **config, random_state=seed)
 
     @staticmethod
     def constants():

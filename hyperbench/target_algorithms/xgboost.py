@@ -1,5 +1,4 @@
 import ConfigSpace
-from sklearn.svm import SVC
 
 from hyperbench.target_algorithms.base import BaseTarget
 from xgboost import XGBClassifier
