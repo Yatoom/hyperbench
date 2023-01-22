@@ -1,43 +1,12 @@
-import time
-from abc import ABC, abstractmethod
 from collections import defaultdict
-from typing import Callable
 
 import numpy as np
 from ConfigSpace import Configuration
 from smac.scenario.scenario import Scenario
 
-from hyperbench.api.dataset import Data
-from hyperbench.api.target_algorithm import TargetAlgorithm
-from hyperbench.api.trajectory import Trajectory, Entry
-
-
-class Optimizer(ABC):
-    @abstractmethod
-    def __init__(self):
-        pass
-
-    @property
-    @abstractmethod
-    def name(self):
-        pass
-
-    @abstractmethod
-    def initialize(self, tae_runner: Callable, rng: np.random.RandomState, data: Data, budget: int,
-                   time_based: bool, target_algorithm: TargetAlgorithm):
-        pass
-
-    @abstractmethod
-    def search(self) -> Configuration:
-        pass
-
-    @abstractmethod
-    def get_trajectory(self) -> Trajectory:
-        pass
-
-    @abstractmethod
-    def get_stats(self) -> dict:
-        pass
+from hyperbench.optimizers.base import Optimizer
+from hyperbench.trajectory.entry import Entry
+from hyperbench.trajectory.trajectory import Trajectory
 
 
 class SMACBasedOptimizer(Optimizer):
@@ -62,7 +31,7 @@ class SMACBasedOptimizer(Optimizer):
             "deterministic": target_algorithm.is_deterministic,
             "cs": target_algorithm.config_space,
             "maxR": 5,
-            "output_dir": f"./smac_output/{target_algorithm.name}/{self.name}/{seed}/{data.parent.name}",
+            "output_dir": f"./smac_output/{target_algorithm.name}/{self.name}/{seed}/{data.parent._name}",
             "intens_min_chall": 2,
         })
 

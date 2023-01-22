@@ -1,15 +1,15 @@
 import openml
-from openml import OpenMLBenchmarkSuite
-from sklearn.metrics import roc_auc_score, make_scorer
 from sklearn.model_selection import StratifiedShuffleSplit, ShuffleSplit
 from smac.facade.roar_facade import ROAR
 from smac.facade.smac_hpo_facade import SMAC4HPO
 
-from hyperbench.api.benchmark import Benchmark, BenchmarkRunner
-from hyperbench.api.dataset import OpenMLDataset
-from hyperbench.api.optimizer import SMACBasedOptimizer
-from hyperbench.api.target_algorithm import RandomForestFactory, CatboostFactory
-from hyperbench.api.transformer import Imputer
+from hyperbench.benchmark import BenchmarkConfig
+from hyperbench.benchmark import BenchmarkRunner
+from hyperbench.provider import OpenMLProvider
+from hyperbench.optimizers import SMACBasedOptimizer
+from hyperbench.target_algorithms import CatboostFactory
+from hyperbench.target_algorithms import RandomForestFactory
+from hyperbench.transformer import SimpleTransformer
 
 tasks = openml.study.get_suite(99).tasks
 # 0	CIFAR_10	        167124	93.8039
@@ -23,16 +23,16 @@ tasks = openml.study.get_suite(99).tasks
 # 8	mfeat-factors	    12	    1.2955
 tasks = [task for task in tasks if task not in [167124, 167121, 146825, 3573, 167120, 14970, 3481, 219, 12]]
 
-benchmark = Benchmark(
-    budget=300,
-    time_based=False,
-    transformer=Imputer(),
+benchmark = BenchmarkConfig(
+    budget=60,
+    time_based=True,
+    transformer=SimpleTransformer(),
     output_folder="results/",
     scoring="balanced_accuracy", # make_scorer(roc_auc_score, multi_class='ovo'
 
     seeds=[2268061101, 2519249986, 338403738],
     target_algorithms=[CatboostFactory.build(), RandomForestFactory.build()],
-    datasets=[OpenMLDataset(task) for task in tasks],
+    datasets=[OpenMLProvider(task).data for task in tasks],
     optimizers=[
         # SMACBasedOptimizer(ROAR, "roar_x1", budget_multiplier=1)
         SMACBasedOptimizer(ROAR, "roar_x2", budget_multiplier=2),

@@ -92,7 +92,7 @@ with main_tab:
         with st.expander("Miscellaneous statistics", expanded=True):
             st.dataframe(aggregate.get_other_stats(stats), use_container_width=True)
 with explorer_tab:
-    table = pd.DataFrame([ds.stats for ds in benchmark.datasets])
+    table = pd.DataFrame([ds.provider.stats for ds in benchmark.datasets])
     table['dimension'] = table.n_rows * table.n_columns
     st.dataframe(table)
 

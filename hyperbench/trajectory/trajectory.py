@@ -1,8 +1,9 @@
 import dataclasses
 import json
-from dataclasses import dataclass
 
 import numpy as np
+
+from hyperbench.trajectory.entry import Entry
 
 
 class Trajectory:
@@ -43,12 +44,3 @@ class Trajectory:
             y[index:] = t.loss if t.loss < 2147483647 else np.nan
 
         return x, y
-
-
-@dataclass
-class Entry:
-    conf: dict
-    loss: float
-    at_iteration: int
-    at_time: any
-    seeds: list[int]

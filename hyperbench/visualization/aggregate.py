@@ -5,7 +5,7 @@ from functools import reduce
 import numpy as np
 import pandas as pd
 import plotly.express as px
-from hyperbench.api.trajectory import Trajectory
+from hyperbench.trajectory.trajectory import Trajectory
 
 
 def get_all_trajectories(directory, iterations=100, time_based=False):
