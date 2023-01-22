@@ -2,9 +2,9 @@ from dataclasses import dataclass
 
 from sklearn.model_selection import BaseShuffleSplit
 
-from hyperbench.dataset.dataset import Dataset
 from hyperbench.optimizers.base import Optimizer
-from hyperbench.target_algorithms.target_algorithm import TargetAlgorithm
+from hyperbench.provider import Provider
+from hyperbench.target_algorithms import BaseTarget
 from hyperbench.transformer.base import Transformer
 
 
@@ -17,8 +17,8 @@ class BenchmarkConfig:
     output_folder: str
 
     seeds: list[int]
-    target_algorithms: list[TargetAlgorithm]
-    datasets: list[Dataset]
+    target_algorithms: list[BaseTarget]
+    datasets: list[Provider]
     optimizers: list[Optimizer]
     search_eval_splits: BaseShuffleSplit
     train_test_splits: BaseShuffleSplit

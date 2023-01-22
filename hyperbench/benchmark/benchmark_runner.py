@@ -1,16 +1,8 @@
 import json
 import os
 import time
-from dataclasses import replace
 
-import numpy as np
-
-from ConfigSpace import Configuration
 from rich.progress import Progress, TextColumn, BarColumn, MofNCompleteColumn, TimeRemainingColumn, TimeElapsedColumn
-from sklearn.metrics import get_scorer
-from sklearn.model_selection import cross_val_score
-
-from hyperbench.trajectory.trajectory import Trajectory
 
 
 class BenchmarkRunner:
@@ -71,9 +63,9 @@ class BenchmarkRunner:
             eval_trajectory = self.evaluation_stage(target, new_search_set, new_eval_set, search_trajectory)
             self.progress.update(self.track_stage, advance=1)
 
-            self.save(search_trajectory, seed, target._name, dataset.parent._name, optimizer._name, "search")
-            self.save(eval_trajectory, seed, target._name, dataset.parent._name, optimizer._name, "eval")
-            self.save_stats(stats, seed, target._name, dataset.parent, optimizer._name, toc - tic)
+            self.save(search_trajectory, seed, target.name, dataset.name, optimizer.name, "search")
+            self.save(eval_trajectory, seed, target.name, dataset.name, optimizer.name, "eval")
+            self.save_stats(stats, seed, target.name, dataset.parent, optimizer.name, toc - tic)
             self.progress.update(self.track_splits, advance=1)
 
     def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
@@ -92,46 +84,13 @@ class BenchmarkRunner:
             json.dump({**stats, "dataset_id": dataset.id, "perf_time": timing}, f, indent=2)
 
     def search_stage(self, seed, target, dataset, optimizer):
-        tae_runner = BenchmarkRunner.get_config_evaluator(target, dataset, self.benchmark, self.progress, self.track_iterations)
+        tae_runner = target.get_config_evaluator(dataset, self.benchmark.train_test_splits, self.benchmark.scoring, self.progress, self.track_iterations)
         optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, self.benchmark.time_based, target)
         optimizer.search()
         self.progress.reset(self.track_iterations)
         return optimizer.get_trajectory(), optimizer.get_stats()
 
     def evaluation_stage(self, target, search_set, eval_set, search_trajectory):
-        eval_trajectory = BenchmarkRunner.replay_trajectory(search_trajectory, self.benchmark.scoring, target, search_set, eval_set)
+        eval_trajectory = target.replay_trajectory(search_trajectory, self.benchmark.scoring, search_set, eval_set)
         return eval_trajectory
 
-    @staticmethod
-    def get_config_evaluator(target_algorithm, data, benchmark, progress, loop_iterations):
-        def evaluate(config: Configuration, seed: int):
-            # Initialize algorithm
-            algorithm = target_algorithm.initialize(seed, **dict(config))
-
-            # Perform cross validation
-            score = cross_val_score(
-                algorithm, data.X, data.y, n_jobs=-1, cv=benchmark.train_test_splits, scoring=benchmark.scoring
-            )
-
-            progress.update(loop_iterations, advance=1)
-            return 1 - np.mean(score)
-
-        return evaluate
-
-    @staticmethod
-    def replay_trajectory(trajectory: Trajectory, scoring, target_algorithm, search_data, eval_data):
-
-        scorer = get_scorer(scoring)
-        results = []
-
-        for item in trajectory.as_list:
-            losses = []
-            for seed in item.seeds:
-                algorithm = target_algorithm.initialize(seed, **item.conf)
-                algorithm.fit(search_data.X, search_data.y)
-                loss = 1 - scorer(algorithm, eval_data.X, eval_data.y)
-                losses.append(loss)
-
-            results.append(replace(item, loss=np.mean(losses)))
-
-        return Trajectory(results)
