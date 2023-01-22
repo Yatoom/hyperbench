@@ -31,11 +31,9 @@ class Dataset:
         return self.X.shape[1]
 
     @property
-    @cache
     def n_classes(self) -> int:
         return np.unique(self.y).shape[0]
 
     @property
-    @cache
     def n_missing(self) -> int:
         return np.isnan(self.X).sum()

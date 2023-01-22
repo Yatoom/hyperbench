@@ -16,12 +16,11 @@ class Provider(ABC):
         pass
 
     @property
-    @cache
-    def stats(self) -> dict:
-        return self.get_stats()
-
     @abstractmethod
-    def get_stats(self):
+    def stats(self) -> dict:
+        return self.default_stats()
+
+    def default_stats(self):
         return {
             "id": self.id,
             "name": self.data.name,

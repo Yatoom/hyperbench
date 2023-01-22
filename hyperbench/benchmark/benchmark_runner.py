@@ -47,8 +47,8 @@ class BenchmarkRunner:
 
     def loop_datasets(self, seed, target):
         self.progress.reset(self.track_data)
-        for dataset in self.benchmark.datasets:
-            self.loop_optimizers(seed, target, dataset.data)
+        for provider in self.benchmark.datasets:
+            self.loop_optimizers(seed, target, provider.data)
             self.progress.update(self.track_data, advance=1)
 
     def loop_optimizers(self, seed, target, dataset):

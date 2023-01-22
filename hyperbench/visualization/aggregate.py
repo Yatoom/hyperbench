@@ -26,8 +26,8 @@ def get_all_trajectories(directory, iterations=100, time_based=False):
 
 
 def load_stats(directory, dataframe, target):
-    indices = dataframe[["optimizer", "seed", "dataset"]]
-    indices["target"] = target
+    indices = dataframe[["optimizer", "seed", "dataset"]].copy()
+    indices.loc[:, "target"] = target
     rows = []
     for index in indices.iloc:
         path = os.path.join(directory, index.target, index.optimizer, index.seed, index.dataset, "stats.json")
@@ -39,7 +39,7 @@ def load_stats(directory, dataframe, target):
 
 
 def get_dataset_stats(df):
-    return df.groupby(["optimizer", "dataset"])["ta_time_used", "wallclock_time_used", "submitted_ta_runs"].mean()\
+    return df.groupby(["optimizer", "dataset"])[["ta_time_used", "wallclock_time_used", "submitted_ta_runs"]].mean()\
         .sort_values(by=["optimizer", "wallclock_time_used"], ascending=False).reset_index().set_index("optimizer")
 
 
@@ -101,12 +101,12 @@ def rank(dataframe):
 
 def aggregate_over_seeds(dataframe):
     # Needs dataframe with columns optimizer, dataset, seed, *trajectory
-    return dataframe.groupby(['optimizer', 'dataset']).mean().reset_index()
+    return dataframe.groupby(['optimizer', 'dataset']).mean(numeric_only=True).reset_index()
 
 
 def aggregate_over_datasets(dataframe):
     # Needs dataframe with columns optimizer, dataset, *trajectory
-    return dataframe.groupby(['optimizer']).mean().reset_index()
+    return dataframe.groupby(['optimizer']).mean(numeric_only=True).reset_index()
 
 
 def visualize(dataframe):
