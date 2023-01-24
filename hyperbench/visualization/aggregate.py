@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime, timedelta
 from functools import reduce
 
 import numpy as np
@@ -38,14 +39,31 @@ def load_stats(directory, dataframe, target):
     return pd.DataFrame(rows)
 
 
+def format_stats_table(df, time_cols=None, int_cols=None):
+    res = df.copy()
+    if time_cols is None:
+        time_cols = ["ta_time_used", "wallclock_time_used", "perf_time"]
+        time_cols = [i for i in time_cols if i in df.columns]
+    if int_cols is None:
+        int_cols = ["submitted_ta_runs", "finished_ta_runs"]
+        int_cols = [i for i in int_cols if i in df.columns]
+    res.loc[:, time_cols] = res[time_cols].applymap(lambda x: str(timedelta(seconds=np.round(x))))
+    res.loc[:, int_cols] = res[int_cols].astype('int')
+    return res
+
+
 def get_dataset_stats(df):
-    return df.groupby(["optimizer", "dataset"])[["ta_time_used", "wallclock_time_used", "submitted_ta_runs", "perf_time"]].mean()\
+    stats = df.groupby(["optimizer", "dataset"])[
+        ["ta_time_used", "wallclock_time_used", "submitted_ta_runs"]].mean(numeric_only=False) \
         .sort_values(by=["optimizer", "wallclock_time_used"], ascending=False).reset_index().set_index("optimizer")
+    return format_stats_table(stats)
 
 
 def get_run_stats(df):
-    return df.groupby("optimizer")[["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used", "perf_time"]] \
-        .agg(lambda x: f"{np.mean(x):.2f} ± {np.std(x):.2f}")
+    stats = df.groupby("optimizer")[
+        ["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used"]] \
+        .agg(['mean', 'std'])
+    return format_stats_table(stats)
 
 
 def get_other_stats(df):
