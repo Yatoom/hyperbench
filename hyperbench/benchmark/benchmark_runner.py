@@ -52,6 +52,8 @@ class BenchmarkRunner:
             self.progress.update(self.track_opt, advance=1)
 
     def loop_splits(self, seed, target, dataset, optimizer):
+        if self.check_if_run_exists(seed, target.name, dataset.metadata, optimizer.name):
+            return False
         self.progress.reset(self.track_splits)
         ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.progress.console.print(f"[{ts}] {seed} > {target.name} > {dataset.metadata.name} > {optimizer.name}")
@@ -86,6 +88,11 @@ class BenchmarkRunner:
         os.makedirs(path, exist_ok=True)
         with open(file, "w+") as f:
             json.dump({**stats, "dataset_id": metadata.id, "perf_time": timing}, f, indent=2)
+
+    def check_if_run_exists(self, seed, target, metadata, optimizer):
+        seed = str(seed)
+        path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, metadata.name)
+        return os.path.exists(path)
 
     def search_stage(self, seed, target, dataset, optimizer):
         self.progress.update(self.track_iterations, total=self.benchmark.budget * optimizer.budget_multiplier)

@@ -18,7 +18,7 @@ class SGD(BaseTarget):
     @staticmethod
     def constants():
         return {
-            "loss": "log",
+            "loss": "log_loss",
             "max_iter": 1000,
             "learning_rate": "adaptive",
             "tol": None
