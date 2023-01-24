@@ -1,0 +1,110 @@
+[
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.0837,
+    "at_iteration": 0.5,
+    "at_time": 0.10097205638885498,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055,
+      1273456267
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 19,
+      "max_features": 0.8108085975288472,
+      "min_samples_leaf": 7,
+      "min_samples_split": 2
+    },
+    "loss": 0.0753,
+    "at_iteration": 10.0,
+    "at_time": 2.190991997718811,
+    "seeds": [
+      705846521,
+      276329748,
+      379248293,
+      1694519055,
+      1273456267
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 46,
+      "max_features": 0.9396674577605478,
+      "min_samples_leaf": 5,
+      "min_samples_split": 6
+    },
+    "loss": 0.0728,
+    "at_iteration": 39.0,
+    "at_time": 8.354650974273682,
+    "seeds": [
+      1694519055,
+      1273456267,
+      379248293,
+      705846521,
+      276329748
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 18,
+      "max_features": 0.5857303332277157,
+      "min_samples_leaf": 5,
+      "min_samples_split": 2
+    },
+    "loss": 0.0726,
+    "at_iteration": 42.0,
+    "at_time": 9.08673906326294,
+    "seeds": [
+      705846521,
+      379248293,
+      1273456267,
+      1694519055,
+      276329748
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 40,
+      "max_features": 0.7826957388127685,
+      "min_samples_leaf": 1,
+      "min_samples_split": 15
+    },
+    "loss": 0.0678,
+    "at_iteration": 77.0,
+    "at_time": 15.37706744670868,
+    "seeds": [
+      1694519055,
+      276329748,
+      379248293,
+      705846521,
+      1273456267
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 15,
+      "max_features": 0.6302688896663496,
+      "min_samples_leaf": 2,
+      "min_samples_split": 3
+    },
+    "loss": 0.0666,
+    "at_iteration": 264.0,
+    "at_time": 50.209420561790466,
+    "seeds": [
+      276329748,
+      1273456267,
+      705846521,
+      1694519055,
+      379248293
+    ]
+  }
+]
