@@ -14,6 +14,7 @@ tasks = openml.study.get_suite(99).tasks
 
 # These datasets take too long to evaluate on
 excluded = [
+    # Dimensions are too high
     167124,	 # CIFAR_10
     167121,	 # Devnagari-Script
     146825,	 # Fashion-MNIST
@@ -28,6 +29,12 @@ excluded = [
     9976,	 # madelon
     9981,	 # cnae-9
     6,	     # letter
+
+    # Too many rows for SVM classifier
+    7592,    # adult
+    219,     # electricity
+    14965,   # bank-marketing
+    167119,  # jungle_chess_2pcs_raw_endgame_complete
 ]
 tasks = [task for task in tasks if task not in excluded]
 

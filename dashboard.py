@@ -1,6 +1,9 @@
+import os
+
 import pandas as pd
 import streamlit as st
 from hyperbench.visualization import aggregate
+from hyperbench.visualization.smac_history import load_leaderboard
 from run_benchmark import benchmark
 
 directory = "results"
@@ -47,7 +50,7 @@ with st.sidebar:
             """
         )
 
-main_tab, explorer_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets"])
+main_tab, explorer_tab, leader_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets", "🥇 Leaderboard"])
 with main_tab:
     with st.expander("Datasets included in results", expanded=False):
         list_datasets = aggregate.get_datasets(filtered)
@@ -100,4 +103,14 @@ with explorer_tab:
         table['dimension'] = table.n_rows * (table.n_columns + table.n_classes)
         st.dataframe(table)
 
-
+with leader_tab:
+    root_folder = "smac_output"
+    target = st.selectbox("target", os.listdir(root_folder))
+    target_folder = os.path.join(root_folder, target)
+    optimizer = st.selectbox("optimizer", os.listdir(target_folder))
+    optimizer_folder = os.path.join(root_folder, target, optimizer)
+    seed = st.selectbox("seed", os.listdir(optimizer_folder))
+    seed_folder = os.path.join(root_folder, target, optimizer, seed)
+    data = st.selectbox("data", os.listdir(seed_folder))
+    data_folder = os.path.join(root_folder, target, optimizer, seed, data)
+    st.dataframe(load_leaderboard("smac_output", target, optimizer, seed, data))
