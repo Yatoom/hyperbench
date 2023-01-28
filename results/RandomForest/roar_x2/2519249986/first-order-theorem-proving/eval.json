@@ -1,0 +1,109 @@
+[
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.5806668684340088,
+    "at_iteration": 0.5,
+    "at_time": 0.3568425178527832,
+    "seeds": [
+      1615023708,
+      330054389,
+      2068916289,
+      556285174,
+      1190614168
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 27,
+      "max_features": 0.9211588252948141,
+      "min_samples_leaf": 16,
+      "min_samples_split": 2
+    },
+    "loss": 0.5692999675748022,
+    "at_iteration": 2.0,
+    "at_time": 3.832143545150757,
+    "seeds": [
+      1615023708,
+      330054389,
+      556285174,
+      2068916289
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 38,
+      "max_features": 0.9636191694739331,
+      "min_samples_leaf": 14,
+      "min_samples_split": 25
+    },
+    "loss": 0.5591777150418171,
+    "at_iteration": 5.5,
+    "at_time": 14.729624032974243,
+    "seeds": [
+      330054389,
+      1615023708,
+      556285174,
+      2068916289,
+      1190614168
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 15,
+      "max_features": 0.8033882225026209,
+      "min_samples_leaf": 7,
+      "min_samples_split": 4
+    },
+    "loss": 0.5313417381323007,
+    "at_iteration": 15.0,
+    "at_time": 28.459949016571045,
+    "seeds": [
+      1190614168,
+      330054389,
+      2068916289,
+      1615023708,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 30,
+      "max_features": 0.5423516415388603,
+      "min_samples_leaf": 2,
+      "min_samples_split": 6
+    },
+    "loss": 0.5067606872667346,
+    "at_iteration": 36.0,
+    "at_time": 43.32657551765442,
+    "seeds": [
+      1615023708,
+      556285174,
+      2068916289,
+      1190614168,
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 34,
+      "max_features": 0.7987449030925651,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.49706357608333107,
+    "at_iteration": 207.0,
+    "at_time": 178.13300251960754,
+    "seeds": [
+      1190614168,
+      2068916289,
+      556285174,
+      1615023708,
+      330054389
+    ]
+  }
+]

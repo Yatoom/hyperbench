@@ -1,0 +1,92 @@
+[
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.1613,
+    "at_iteration": 0.5,
+    "at_time": 0.06349301338195801,
+    "seeds": [
+      1615023708,
+      330054389,
+      556285174,
+      2068916289,
+      1647239623
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 15,
+      "max_features": 0.8033882225026209,
+      "min_samples_leaf": 7,
+      "min_samples_split": 4
+    },
+    "loss": 0.1408,
+    "at_iteration": 11.0,
+    "at_time": 1.350762963294983,
+    "seeds": [
+      1615023708,
+      2068916289,
+      330054389,
+      1647239623,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 9,
+      "max_features": 0.6041242972681976,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2
+    },
+    "loss": 0.0588,
+    "at_iteration": 13.5,
+    "at_time": 1.6889179944992065,
+    "seeds": [
+      1647239623,
+      556285174,
+      330054389,
+      1615023708,
+      2068916289
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 30,
+      "max_features": 0.5423516415388603,
+      "min_samples_leaf": 2,
+      "min_samples_split": 6
+    },
+    "loss": 0.0546,
+    "at_iteration": 33.5,
+    "at_time": 3.7658579349517822,
+    "seeds": [
+      1615023708,
+      1647239623,
+      2068916289,
+      556285174,
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 13,
+      "max_features": 0.11983082185663818,
+      "min_samples_leaf": 2,
+      "min_samples_split": 3
+    },
+    "loss": 0.0395,
+    "at_iteration": 37.5,
+    "at_time": 4.205772399902344,
+    "seeds": [
+      2068916289,
+      1647239623,
+      556285174,
+      330054389,
+      1615023708
+    ]
+  }
+]

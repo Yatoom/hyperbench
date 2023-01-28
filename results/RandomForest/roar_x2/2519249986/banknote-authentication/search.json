@@ -1,0 +1,110 @@
+[
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.0099,
+    "at_iteration": 0.5,
+    "at_time": 0.06034743785858154,
+    "seeds": [
+      1615023708,
+      330054389,
+      556285174,
+      2068916289,
+      1647239623
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 15,
+      "max_features": 0.8033882225026209,
+      "min_samples_leaf": 7,
+      "min_samples_split": 4
+    },
+    "loss": 0.0065,
+    "at_iteration": 11.0,
+    "at_time": 1.0770618915557861,
+    "seeds": [
+      1615023708,
+      2068916289,
+      330054389,
+      1647239623,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 9,
+      "max_features": 0.6041242972681976,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2
+    },
+    "loss": 0.0065,
+    "at_iteration": 13.5,
+    "at_time": 1.3222030401229858,
+    "seeds": [
+      1647239623,
+      556285174,
+      330054389,
+      1615023708,
+      2068916289
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 37,
+      "max_features": 0.717370549174011,
+      "min_samples_leaf": 5,
+      "min_samples_split": 8
+    },
+    "loss": 0.0051,
+    "at_iteration": 57.0,
+    "at_time": 5.277704954147339,
+    "seeds": [
+      330054389,
+      1647239623,
+      2068916289,
+      1615023708,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 8,
+      "max_features": 0.8199196398541937,
+      "min_samples_leaf": 4,
+      "min_samples_split": 5
+    },
+    "loss": 0.0044,
+    "at_iteration": 79.0,
+    "at_time": 7.222025513648987,
+    "seeds": [
+      1647239623,
+      330054389,
+      1615023708,
+      556285174,
+      2068916289
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 26,
+      "max_features": 0.7800651213854484,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.0038,
+    "at_iteration": 123.0,
+    "at_time": 11.27255392074585,
+    "seeds": [
+      2068916289,
+      1647239623,
+      556285174,
+      330054389,
+      1615023708
+    ]
+  }
+]

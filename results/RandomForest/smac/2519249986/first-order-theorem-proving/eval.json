@@ -1,0 +1,109 @@
+[
+  {
+    "conf": {
+      "max_depth": 6,
+      "max_features": 0.3290755869820714,
+      "min_samples_leaf": 11,
+      "min_samples_split": 2
+    },
+    "loss": 0.679438307397586,
+    "at_iteration": 1,
+    "at_time": 0.36277294158935547,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596,
+      1255698179
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 18,
+      "max_features": 0.9707894120365381,
+      "min_samples_leaf": 5,
+      "min_samples_split": 26
+    },
+    "loss": 0.5427017874774812,
+    "at_iteration": 10,
+    "at_time": 19.02110004425049,
+    "seeds": [
+      1255698179,
+      1174876817,
+      1987688596,
+      330054389,
+      388333143
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 39,
+      "max_features": 0.3087822897359729,
+      "min_samples_leaf": 3,
+      "min_samples_split": 7
+    },
+    "loss": 0.522669027613715,
+    "at_iteration": 36,
+    "at_time": 38.36841607093811,
+    "seeds": [
+      1255698179,
+      330054389,
+      1987688596,
+      1174876817,
+      388333143
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 46,
+      "max_features": 0.30459977890403717,
+      "min_samples_leaf": 3,
+      "min_samples_split": 3
+    },
+    "loss": 0.5189783217861402,
+    "at_iteration": 64,
+    "at_time": 57.93740725517273,
+    "seeds": [
+      1174876817,
+      330054389,
+      388333143,
+      1255698179,
+      1987688596
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 47,
+      "max_features": 0.7786392716336281,
+      "min_samples_leaf": 3,
+      "min_samples_split": 3
+    },
+    "loss": 0.5037272213719883,
+    "at_iteration": 70,
+    "at_time": 70.91642808914185,
+    "seeds": [
+      1255698179,
+      330054389,
+      1174876817,
+      388333143,
+      1987688596
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 47,
+      "max_features": 0.878911159584244,
+      "min_samples_leaf": 1,
+      "min_samples_split": 3
+    },
+    "loss": 0.4914166958926354,
+    "at_iteration": 79,
+    "at_time": 102.0839831829071,
+    "seeds": [
+      330054389,
+      1174876817,
+      1255698179,
+      1987688596,
+      388333143
+    ]
+  }
+]

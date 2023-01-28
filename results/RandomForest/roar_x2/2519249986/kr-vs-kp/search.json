@@ -1,0 +1,128 @@
+[
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.0341,
+    "at_iteration": 0.5,
+    "at_time": 0.07934153079986572,
+    "seeds": [
+      1615023708,
+      330054389,
+      2068916289,
+      1647239623,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 27,
+      "max_features": 0.9211588252948141,
+      "min_samples_leaf": 16,
+      "min_samples_split": 2
+    },
+    "loss": 0.0245,
+    "at_iteration": 2.0,
+    "at_time": 0.2966940402984619,
+    "seeds": [
+      1615023708,
+      330054389,
+      556285174,
+      2068916289,
+      1647239623
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 15,
+      "max_features": 0.8033882225026209,
+      "min_samples_leaf": 7,
+      "min_samples_split": 4
+    },
+    "loss": 0.0177,
+    "at_iteration": 13.5,
+    "at_time": 1.7182105779647827,
+    "seeds": [
+      1615023708,
+      330054389,
+      2068916289,
+      1647239623,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 30,
+      "max_features": 0.5423516415388603,
+      "min_samples_leaf": 2,
+      "min_samples_split": 6
+    },
+    "loss": 0.0139,
+    "at_iteration": 35.5,
+    "at_time": 3.847722053527832,
+    "seeds": [
+      1647239623,
+      556285174,
+      2068916289,
+      1615023708,
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 26,
+      "max_features": 0.7800651213854484,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.0123,
+    "at_iteration": 119.0,
+    "at_time": 12.02816104888916,
+    "seeds": [
+      330054389,
+      2068916289,
+      1615023708,
+      1647239623,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 40,
+      "max_features": 0.9733906042371426,
+      "min_samples_leaf": 2,
+      "min_samples_split": 9
+    },
+    "loss": 0.0103,
+    "at_iteration": 134.0,
+    "at_time": 13.819456577301025,
+    "seeds": [
+      1615023708,
+      556285174,
+      2068916289,
+      330054389,
+      1647239623
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 34,
+      "max_features": 0.7987449030925651,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.0071,
+    "at_iteration": 209.5,
+    "at_time": 21.859791040420532,
+    "seeds": [
+      1647239623,
+      556285174,
+      330054389,
+      2068916289,
+      1615023708
+    ]
+  }
+]
