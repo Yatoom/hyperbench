@@ -1,0 +1,3 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000048, 1, 0.000048, colsample_bytree='1.0',eta='0.3',max_depth='10',reg_lambda='1.0'
+16.967910, 0.375100, 16.968627, 1, 0.000717, colsample_bytree='1.0',eta='0.3',max_depth='10',reg_lambda='1.0'

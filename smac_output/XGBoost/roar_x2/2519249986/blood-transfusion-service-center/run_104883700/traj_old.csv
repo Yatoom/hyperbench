@@ -1,0 +1,9 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000054, 1, 0.000054, colsample_bytree='1.0',eta='0.3',max_depth='10',reg_lambda='1.0'
+0.043420, 0.386800, 0.044281, 1, 0.000861, colsample_bytree='1.0',eta='0.3',max_depth='10',reg_lambda='1.0'
+0.310938, 0.319000, 0.323704, 2, 0.012766, colsample_bytree='0.9806458301683194',eta='0.11021240891825923',max_depth='3',reg_lambda='1.2826061465293854'
+0.483291, 0.311300, 0.514829, 3, 0.031538, colsample_bytree='0.7598355216694087',eta='0.2559408304244787',max_depth='1',reg_lambda='0.020661816810732182'
+0.915277, 0.310700, 1.019341, 4, 0.104064, colsample_bytree='0.5459653760496205',eta='0.3325425569944614',max_depth='1',reg_lambda='1.7195333620611977'
+2.793649, 0.305600, 3.527676, 5, 0.734027, colsample_bytree='0.5243799201958682',eta='0.6332998835027808',max_depth='1',reg_lambda='20.971760406869286'
+5.303735, 0.304100, 7.565122, 6, 2.261387, colsample_bytree='0.6849118611577469',eta='0.5916973429161327',max_depth='2',reg_lambda='23.141448782359003'
+7.604739, 0.302400, 11.926692, 7, 4.321954, colsample_bytree='0.537040256160939',eta='0.3964923580484499',max_depth='1',reg_lambda='4.7081838776824165'

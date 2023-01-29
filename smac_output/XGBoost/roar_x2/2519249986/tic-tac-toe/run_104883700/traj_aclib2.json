@@ -1,0 +1,4 @@
+{"cpu_time": 0.0, "wallclock_time": 4.291534423828125e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["colsample_bytree='1.0'", "eta='0.3'", "max_depth='10'", "reg_lambda='1.0'"], "origin": "Default"}
+{"cpu_time": 0.0418550968170166, "wallclock_time": 0.04251694679260254, "evaluations": 1, "cost": 0.0126, "incumbent": ["colsample_bytree='1.0'", "eta='0.3'", "max_depth='10'", "reg_lambda='1.0'"], "origin": "Default"}
+{"cpu_time": 0.12635588645935059, "wallclock_time": 0.1296217441558838, "evaluations": 4, "cost": 0.0, "incumbent": ["colsample_bytree='0.8787311974598232'", "eta='0.5789811375409207'", "max_depth='5'", "reg_lambda='0.0011373846877749554'"], "origin": "Random Search"}
+{"cpu_time": 0.320723295211792, "wallclock_time": 0.3302438259124756, "evaluations": 11, "cost": 0.0, "incumbent": ["colsample_bytree='0.944553396390592'", "eta='0.7771105186723747'", "max_depth='4'", "reg_lambda='6.037064981686672'"], "origin": "Random Search"}

@@ -1,0 +1,4 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000045, 1, 0.000045, alpha='0.001',eta0='0.01'
+0.041590, 0.425400, 0.042727, 1, 0.001137, alpha='0.001',eta0='0.01'
+0.309504, 0.412300, 0.325918, 2, 0.016414, alpha='1.8419909509685855e-05',eta0='0.05046106065359831'

@@ -1,0 +1,11 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005900859832763672, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='0.08611366210550205'", "gamma='0.4942679928374453'"], "origin": "Sobol"}
+{"cpu_time": 0.9489140510559082, "wallclock_time": 0.950294017791748, "evaluations": 1, "cost": 0.723, "incumbent": ["C='0.08611366210550205'", "gamma='0.4942679928374453'"], "origin": "Sobol"}
+{"cpu_time": 5.27691650390625, "wallclock_time": 5.28085994720459, "evaluations": 4, "cost": 0.6338, "incumbent": ["C='19.433598606658386'", "gamma='9.232350409327609'"], "origin": "Sobol"}
+{"cpu_time": 6.939639568328857, "wallclock_time": 6.946224927902222, "evaluations": 6, "cost": 0.5832, "incumbent": ["C='1.0'", "gamma='0.1'"], "origin": null}
+{"cpu_time": 17.710131645202637, "wallclock_time": 17.72859501838684, "evaluations": 18, "cost": 0.5731, "incumbent": ["C='4.532544074901469'", "gamma='0.03382327396632573'"], "origin": "Sobol"}
+{"cpu_time": 26.981008768081665, "wallclock_time": 27.009182929992676, "evaluations": 26, "cost": 0.5698, "incumbent": ["C='490.89071375229827'", "gamma='0.4114559193983836'"], "origin": "Sobol"}
+{"cpu_time": 39.21269655227661, "wallclock_time": 39.258174896240234, "evaluations": 38, "cost": 0.5486, "incumbent": ["C='76.5060885254147'", "gamma='0.08851540004701101'"], "origin": "Sobol"}
+{"cpu_time": 44.694883584976196, "wallclock_time": 44.99426507949829, "evaluations": 44, "cost": 0.5483, "incumbent": ["C='84.47181978955977'", "gamma='0.140578069767372'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 49.20709466934204, "wallclock_time": 49.51461720466614, "evaluations": 49, "cost": 0.5452, "incumbent": ["C='83.25753155294782'", "gamma='0.14524977657248267'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 56.275716066360474, "wallclock_time": 57.141621112823486, "evaluations": 56, "cost": 0.5412, "incumbent": ["C='83.16741714187619'", "gamma='0.19383661249601028'"], "origin": "Local Search"}
+{"cpu_time": 86.7085874080658, "wallclock_time": 91.33934807777405, "evaluations": 86, "cost": 0.5408, "incumbent": ["C='83.16741714187619'", "gamma='0.19484278671734045'"], "origin": "Local Search"}

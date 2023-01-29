@@ -1,0 +1,3 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000290, 1, 0.000290, max_depth='2',max_features='0.4491682695224881',min_samples_leaf='1',min_samples_split='4'
+0.085803, 0.486400, 0.086739, 1, 0.000936, max_depth='2',max_features='0.4491682695224881',min_samples_leaf='1',min_samples_split='4'

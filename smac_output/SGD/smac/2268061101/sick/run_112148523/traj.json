@@ -1,0 +1,3 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005719661712646484, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"alpha": 0.0004126639093412234, "eta0": 0.0017613324954003418}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.20248007774353027, "wallclock_time": 0.20382285118103027, "evaluations": 1, "cost": 0.39, "incumbent": {"alpha": 0.0004126639093412234, "eta0": 0.0017613324954003418}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 2.5857045650482178, "wallclock_time": 2.597127914428711, "evaluations": 13, "cost": 0.2051, "incumbent": {"alpha": 1.3751027885583958e-05, "eta0": 0.0001426968473177047}, "budget": 0, "origin": "Sobol"}

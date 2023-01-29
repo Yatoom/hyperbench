@@ -1,0 +1,33 @@
+{
+  "data": [
+    [
+      [
+        1,
+        null,
+        379248293,
+        0.0
+      ],
+      [
+        0.7744069202402536,
+        0.07352662086486816,
+        {
+          "__enum__": "StatusType.SUCCESS"
+        },
+        1674410348.489485,
+        1674410348.563018,
+        {}
+      ]
+    ]
+  ],
+  "config_origins": {
+    "1": "Sobol"
+  },
+  "configs": {
+    "1": {
+      "max_depth": 2,
+      "max_features": 0.4491682695224881,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    }
+  }
+}

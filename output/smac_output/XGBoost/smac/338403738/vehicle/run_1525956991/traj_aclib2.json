@@ -1,0 +1,2 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005748271942138672, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["colsample_bytree='0.2890479595400393'", "eta='0.02972240058848022'", "max_depth='1'", "reg_lambda='0.23594281684827217'"], "origin": "Sobol"}
+{"cpu_time": 0.04337811470031738, "wallclock_time": 0.04633688926696777, "evaluations": 1, "cost": 0.3036, "incumbent": ["colsample_bytree='0.2890479595400393'", "eta='0.02972240058848022'", "max_depth='1'", "reg_lambda='0.23594281684827217'"], "origin": "Sobol"}

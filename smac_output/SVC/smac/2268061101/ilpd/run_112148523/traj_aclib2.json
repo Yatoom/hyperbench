@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005800724029541016, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='0.08611366210550205'", "gamma='0.4942679928374453'"], "origin": "Sobol"}
+{"cpu_time": 0.013529062271118164, "wallclock_time": 0.014862060546875, "evaluations": 1, "cost": 0.5, "incumbent": ["C='0.08611366210550205'", "gamma='0.4942679928374453'"], "origin": "Sobol"}
+{"cpu_time": 0.0792229175567627, "wallclock_time": 0.08566904067993164, "evaluations": 8, "cost": 0.3548, "incumbent": ["C='69.38389384208695'", "gamma='0.0015531477828170245'"], "origin": "Sobol"}
+{"cpu_time": 0.3071444034576416, "wallclock_time": 0.7397110462188721, "evaluations": 35, "cost": 0.3434, "incumbent": ["C='14.503502131049498'", "gamma='0.001998283751109777'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 0.4574146270751953, "wallclock_time": 2.3032960891723633, "evaluations": 49, "cost": 0.331, "incumbent": ["C='2.370321272182407'", "gamma='0.0019518386345497506'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 0.5628228187561035, "wallclock_time": 3.930204153060913, "evaluations": 59, "cost": 0.3256, "incumbent": ["C='2.597168309090659'", "gamma='0.0019518386345497506'"], "origin": "Local Search"}
+{"cpu_time": 2.5642502307891846, "wallclock_time": 28.104541063308716, "evaluations": 260, "cost": 0.3188, "incumbent": ["C='318.44702508984653'", "gamma='0.0020638464674291716'"], "origin": "Random Search"}
+{"cpu_time": 2.6380138397216797, "wallclock_time": 29.114662170410156, "evaluations": 266, "cost": 0.3134, "incumbent": ["C='665.46600062829'", "gamma='0.002205033624255781'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 2.715581178665161, "wallclock_time": 29.68184494972229, "evaluations": 272, "cost": 0.3131, "incumbent": ["C='815.6786925729501'", "gamma='0.0028394452001126147'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 2.770543336868286, "wallclock_time": 29.765773057937622, "evaluations": 277, "cost": 0.3003, "incumbent": ["C='986.0907245308883'", "gamma='0.002592014393761316'"], "origin": "Random Search (sorted)"}

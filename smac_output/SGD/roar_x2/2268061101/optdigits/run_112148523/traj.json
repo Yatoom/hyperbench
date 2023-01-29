@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 3.5762786865234375e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"alpha": 0.001, "eta0": 0.01}, "budget": 0, "origin": "Default"}
+{"cpu_time": 5.204992055892944, "wallclock_time": 5.205697059631348, "evaluations": 1, "cost": 0.0482, "incumbent": {"alpha": 0.001, "eta0": 0.01}, "budget": 0, "origin": "Default"}
+{"cpu_time": 21.710656881332397, "wallclock_time": 21.716675758361816, "evaluations": 4, "cost": 0.0363, "incumbent": {"alpha": 0.2222611632956835, "eta0": 7.173240601211391e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 77.63443398475647, "wallclock_time": 77.65588474273682, "evaluations": 14, "cost": 0.0343, "incumbent": {"alpha": 0.002374055867675844, "eta0": 5.8767874739523716e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 132.50412392616272, "wallclock_time": 132.53893208503723, "evaluations": 24, "cost": 0.0338, "incumbent": {"alpha": 0.005552327829437055, "eta0": 4.9488396977195885e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 213.88412380218506, "wallclock_time": 213.94902896881104, "evaluations": 39, "cost": 0.0335, "incumbent": {"alpha": 0.00047563268189094034, "eta0": 2.3569613209121685e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 317.253217458725, "wallclock_time": 317.37883496284485, "evaluations": 60, "cost": 0.0333, "incumbent": {"alpha": 0.0001078522055815542, "eta0": 4.9275829905502194e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 431.7723641395569, "wallclock_time": 431.96639490127563, "evaluations": 82, "cost": 0.0332, "incumbent": {"alpha": 0.000318032813290757, "eta0": 5.007167727427295e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 1491.4973442554474, "wallclock_time": 1493.0125949382782, "evaluations": 280, "cost": 0.0327, "incumbent": {"alpha": 0.005656675603570246, "eta0": 1.2752121054386099e-05}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 2043.4422006607056, "wallclock_time": 2046.0973598957062, "evaluations": 383, "cost": 0.0326, "incumbent": {"alpha": 0.0003122483418086424, "eta0": 1.144751280544979e-05}, "budget": 0, "origin": "Random Search"}

@@ -1,0 +1,2 @@
+{"cpu_time": 0.0, "wallclock_time": 3.886222839355469e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["colsample_bytree='1.0'", "eta='0.3'", "max_depth='10'", "reg_lambda='1.0'"], "origin": "Default"}
+{"cpu_time": 0.10268497467041016, "wallclock_time": 0.1033318042755127, "evaluations": 1, "cost": 0.4289, "incumbent": ["colsample_bytree='1.0'", "eta='0.3'", "max_depth='10'", "reg_lambda='1.0'"], "origin": "Default"}

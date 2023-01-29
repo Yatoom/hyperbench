@@ -1,0 +1,11 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0006010532379150391, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["alpha='0.0004126639093412234'", "eta0='0.0017613324954003418'"], "origin": "Sobol"}
+{"cpu_time": 5.592953681945801, "wallclock_time": 5.59470796585083, "evaluations": 1, "cost": 0.0389, "incumbent": ["alpha='0.0004126639093412234'", "eta0='0.0017613324954003418'"], "origin": "Sobol"}
+{"cpu_time": 39.32138109207153, "wallclock_time": 39.33350491523743, "evaluations": 7, "cost": 0.0366, "incumbent": ["alpha='0.10693804138470717'", "eta0='1.4701197301483249e-05'"], "origin": "Sobol"}
+{"cpu_time": 93.56915855407715, "wallclock_time": 93.59323906898499, "evaluations": 17, "cost": 0.0355, "incumbent": ["alpha='1.3751027885583958e-05'", "eta0='0.0001426968473177047'"], "origin": "Sobol"}
+{"cpu_time": 142.9046814441681, "wallclock_time": 142.94243812561035, "evaluations": 26, "cost": 0.035, "incumbent": ["alpha='0.011093798215005723'", "eta0='0.0001899065880253528'"], "origin": "Sobol"}
+{"cpu_time": 176.62750887870789, "wallclock_time": 176.6771309375763, "evaluations": 32, "cost": 0.0335, "incumbent": ["alpha='0.0014439030581155858'", "eta0='2.6843996424460273e-05'"], "origin": "Sobol"}
+{"cpu_time": 266.926794052124, "wallclock_time": 267.82728385925293, "evaluations": 49, "cost": 0.0334, "incumbent": ["alpha='0.0031572547757361784'", "eta0='2.9098032609736703e-05'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 295.17654514312744, "wallclock_time": 296.08780002593994, "evaluations": 54, "cost": 0.033, "incumbent": ["alpha='0.0046341114643742775'", "eta0='2.3053385137121235e-05'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 380.0371549129486, "wallclock_time": 383.2960240840912, "evaluations": 69, "cost": 0.0327, "incumbent": ["alpha='0.004320247845512277'", "eta0='1.4105751777437551e-05'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 433.20184540748596, "wallclock_time": 437.9306118488312, "evaluations": 79, "cost": 0.0327, "incumbent": ["alpha='0.004437794637025094'", "eta0='1.2171863062046654e-05'"], "origin": "Local Search"}
+{"cpu_time": 540.6982750892639, "wallclock_time": 547.7106201648712, "evaluations": 98, "cost": 0.0323, "incumbent": ["alpha='1.4320749064511378e-05'", "eta0='1.16163558125962e-05'"], "origin": "Local Search"}

@@ -1,0 +1,5 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000042, 1, 0.000042, colsample_bytree='1.0',eta='0.3',max_depth='10',reg_lambda='1.0'
+1.121010, 0.045500, 1.121705, 1, 0.000695, colsample_bytree='1.0',eta='0.3',max_depth='10',reg_lambda='1.0'
+21.786722, 0.045300, 21.891256, 2, 0.104534, colsample_bytree='0.9545508300040052',eta='0.5653487635621801',max_depth='2',reg_lambda='5.489750820269845'
+25.289034, 0.044000, 25.404543, 3, 0.115509, colsample_bytree='0.5904773325040954',eta='0.1681817642339831',max_depth='9',reg_lambda='8.698565634443643'
