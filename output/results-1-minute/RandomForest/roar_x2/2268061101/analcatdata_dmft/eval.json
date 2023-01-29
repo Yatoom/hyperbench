@@ -1,0 +1,110 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.4465795275283016,
+    "at_iteration": 0,
+    "at_time": 2.5987625122070312e-05,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1273456267,
+      1702482301
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.4465795275283016,
+    "at_iteration": 1,
+    "at_time": 0.08590996265411377,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1273456267,
+      1702482301
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.8520078546833593,
+      "min_samples_leaf": 10,
+      "min_samples_split": 3
+    },
+    "loss": 0.5928454712029518,
+    "at_iteration": 2,
+    "at_time": 0.2939194440841675,
+    "seeds": [
+      379248293,
+      705846521,
+      276329748
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.15382799706550498,
+      "min_samples_leaf": 14,
+      "min_samples_split": 11
+    },
+    "loss": 0.6110247099671088,
+    "at_iteration": 4,
+    "at_time": 0.5434024333953857,
+    "seeds": [
+      276329748,
+      705846521,
+      379248293,
+      1702482301,
+      1273456267
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.6879460384352224,
+      "min_samples_leaf": 17,
+      "min_samples_split": 20
+    },
+    "loss": 0.6249949596440987,
+    "at_iteration": 9,
+    "at_time": 1.1400508880615234,
+    "seeds": [
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.3234535876952672,
+      "min_samples_leaf": 20,
+      "min_samples_split": 6
+    },
+    "loss": 0.6385379675733355,
+    "at_iteration": 16,
+    "at_time": 2.1041259765625,
+    "seeds": [
+      1273456267,
+      705846521,
+      276329748,
+      1702482301,
+      379248293
+    ]
+  }
+]

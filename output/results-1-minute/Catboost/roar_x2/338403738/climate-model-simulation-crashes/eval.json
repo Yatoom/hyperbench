@@ -1,0 +1,140 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.0316227766,
+      "depth": 7,
+      "learning_rate": 0.1,
+      "random_strength": 0,
+      "bagging_temperature": 5.0
+    },
+    "loss": 0.5,
+    "at_iteration": 0,
+    "at_time": 3.2067298889160156e-05,
+    "seeds": [
+      1841370504,
+      803699248,
+      300080857,
+      328805077,
+      8560109
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.0316227766,
+      "depth": 7,
+      "learning_rate": 0.1,
+      "random_strength": 0,
+      "bagging_temperature": 5.0
+    },
+    "loss": 0.5,
+    "at_iteration": 1,
+    "at_time": 0.03585505485534668,
+    "seeds": [
+      1841370504,
+      803699248,
+      300080857,
+      328805077,
+      8560109
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.05434752055430919,
+      "depth": 8,
+      "learning_rate": 0.17943997169498022,
+      "random_strength": 1
+    },
+    "loss": 0.27941176470588236,
+    "at_iteration": 10,
+    "at_time": 0.5088241100311279,
+    "seeds": [
+      1841370504,
+      803699248
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.06013949273269304,
+      "depth": 5,
+      "learning_rate": 0.5650727511110811,
+      "random_strength": 1,
+      "subsample": 0.3065795223124399
+    },
+    "loss": 0.02450980392156865,
+    "at_iteration": 14,
+    "at_time": 1.0251646041870117,
+    "seeds": [
+      803699248,
+      1841370504,
+      300080857
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.07806839621036603,
+      "depth": 9,
+      "learning_rate": 0.37955552814868776,
+      "random_strength": 1,
+      "subsample": 0.11725132409013052
+    },
+    "loss": 0.014705882352941152,
+    "at_iteration": 44,
+    "at_time": 5.078090071678162,
+    "seeds": [
+      1841370504,
+      328805077,
+      300080857,
+      803699248
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.051231292095446454,
+      "depth": 5,
+      "learning_rate": 0.665086117112698,
+      "random_strength": 1,
+      "bagging_temperature": 4.894081019707319
+    },
+    "loss": 0.10669097827810373,
+    "at_iteration": 234,
+    "at_time": 19.32947051525116,
+    "seeds": [
+      328805077,
+      8560109,
+      1841370504,
+      300080857,
+      803699248
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.06973262725063577,
+      "depth": 9,
+      "learning_rate": 0.6722662450528472,
+      "random_strength": 1,
+      "subsample": 0.6503127006352112
+    },
+    "loss": 0.0,
+    "at_iteration": 612,
+    "at_time": 58.671356081962585,
+    "seeds": [
+      1841370504,
+      8560109,
+      300080857
+    ]
+  }
+]

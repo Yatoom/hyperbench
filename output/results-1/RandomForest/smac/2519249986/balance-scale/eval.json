@@ -1,0 +1,32 @@
+[
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 0.11273773773773765,
+    "at_iteration": 0,
+    "at_time": 0.0004241466522216797,
+    "seeds": [
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 0.11273773773773765,
+    "at_iteration": 1,
+    "at_time": 0.39791417121887207,
+    "seeds": [
+      330054389
+    ]
+  }
+]

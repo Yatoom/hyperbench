@@ -1,0 +1,102 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.15926260687410831,
+      "min_samples_leaf": 8,
+      "min_samples_split": 14
+    },
+    "loss": 0.006925590845244541,
+    "at_iteration": 0,
+    "at_time": 0.0017480850219726562,
+    "seeds": [
+      1799960134,
+      588640566,
+      703525115
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.15926260687410831,
+      "min_samples_leaf": 8,
+      "min_samples_split": 14
+    },
+    "loss": 0.006925590845244541,
+    "at_iteration": 1,
+    "at_time": 0.15262508392333984,
+    "seeds": [
+      1799960134,
+      588640566,
+      703525115
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.4870408521965146,
+      "min_samples_leaf": 3,
+      "min_samples_split": 7
+    },
+    "loss": 0.0,
+    "at_iteration": 7,
+    "at_time": 0.9614429473876953,
+    "seeds": [
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0,
+    "at_iteration": 10,
+    "at_time": 1.4256689548492432,
+    "seeds": [
+      703525115,
+      1799960134,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.7967861536890268,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.00017513134851139257,
+    "at_iteration": 22,
+    "at_time": 3.169607162475586,
+    "seeds": [
+      1799960134,
+      588640566,
+      703525115,
+      1545542502,
+      865830838
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.7967984973819593,
+      "min_samples_leaf": 3,
+      "min_samples_split": 3
+    },
+    "loss": 0.0,
+    "at_iteration": 99,
+    "at_time": 19.998855113983154,
+    "seeds": [
+      1799960134
+    ]
+  }
+]

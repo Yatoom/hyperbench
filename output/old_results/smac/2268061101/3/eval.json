@@ -1,0 +1,99 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.037396833300590515,
+      "min_samples_leaf": 5,
+      "min_samples_split": 3
+    },
+    "loss": 0.044580723244555476,
+    "at_iteration": 0,
+    "at_time": 0.0018169879913330078,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.037396833300590515,
+      "min_samples_leaf": 5,
+      "min_samples_split": 3
+    },
+    "loss": 0.044580723244555476,
+    "at_iteration": 1,
+    "at_time": 0.16905903816223145,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.5851413113996387,
+      "min_samples_leaf": 17,
+      "min_samples_split": 18
+    },
+    "loss": 0.017032486013644488,
+    "at_iteration": 4,
+    "at_time": 0.5760009288787842,
+    "seeds": [
+      2039330014,
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0,
+    "at_iteration": 6,
+    "at_time": 0.8875341415405273,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      572751438,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.6918682856485248,
+      "min_samples_leaf": 1,
+      "min_samples_split": 10
+    },
+    "loss": 0.003706209802307514,
+    "at_iteration": 22,
+    "at_time": 3.1082208156585693,
+    "seeds": [
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.867205059263546,
+      "min_samples_leaf": 1,
+      "min_samples_split": 12
+    },
+    "loss": 0.003269528579600167,
+    "at_iteration": 76,
+    "at_time": 12.71636700630188,
+    "seeds": [
+      572751438
+    ]
+  }
+]

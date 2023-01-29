@@ -1,0 +1,137 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.037396833300590515,
+      "min_samples_leaf": 5,
+      "min_samples_split": 3
+    },
+    "loss": 0.18510417178173177,
+    "at_iteration": 0,
+    "at_time": 0.00177001953125,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.037396833300590515,
+      "min_samples_leaf": 5,
+      "min_samples_split": 3
+    },
+    "loss": 0.18510417178173177,
+    "at_iteration": 1,
+    "at_time": 0.3412468433380127,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.5851413113996387,
+      "min_samples_leaf": 17,
+      "min_samples_split": 18
+    },
+    "loss": 0.2103601293148851,
+    "at_iteration": 4,
+    "at_time": 1.992065668106079,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      572751438
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "entropy",
+      "max_features": 0.9895069096237421,
+      "min_samples_leaf": 15,
+      "min_samples_split": 9
+    },
+    "loss": 0.21036047366364236,
+    "at_iteration": 13,
+    "at_time": 7.577948808670044,
+    "seeds": [
+      2039330014,
+      379248293,
+      572751438,
+      276329748,
+      514572698
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.8496975097805262,
+      "min_samples_leaf": 9,
+      "min_samples_split": 17
+    },
+    "loss": 0.19160711598637248,
+    "at_iteration": 27,
+    "at_time": 15.943428754806519,
+    "seeds": [
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.6918682856485248,
+      "min_samples_leaf": 1,
+      "min_samples_split": 10
+    },
+    "loss": 0.10497475568525398,
+    "at_iteration": 34,
+    "at_time": 21.05448579788208,
+    "seeds": [
+      572751438,
+      379248293,
+      2039330014,
+      276329748,
+      514572698
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "entropy",
+      "max_features": 0.7455729078501463,
+      "min_samples_leaf": 10,
+      "min_samples_split": 2
+    },
+    "loss": 0.19357072120552887,
+    "at_iteration": 49,
+    "at_time": 29.29783868789673,
+    "seeds": [
+      514572698,
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.9628359964117408,
+      "min_samples_leaf": 3,
+      "min_samples_split": 8
+    },
+    "loss": 0.12835760479934544,
+    "at_iteration": 86,
+    "at_time": 50.66733169555664,
+    "seeds": [
+      276329748
+    ]
+  }
+]

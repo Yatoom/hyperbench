@@ -1,0 +1,32 @@
+[
+  {
+    "conf": {
+      "colsample_bytree": 1.0,
+      "eta": 0.3,
+      "max_depth": 10,
+      "reg_lambda": 1.0
+    },
+    "loss": 0.3498272708799024,
+    "at_iteration": 0,
+    "at_time": 2.3603439331054688e-05,
+    "seeds": [
+      705846521,
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "colsample_bytree": 1.0,
+      "eta": 0.3,
+      "max_depth": 10,
+      "reg_lambda": 1.0
+    },
+    "loss": 0.3498272708799024,
+    "at_iteration": 1,
+    "at_time": 0.05167496204376221,
+    "seeds": [
+      705846521,
+      379248293
+    ]
+  }
+]

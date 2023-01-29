@@ -1,0 +1,99 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.010899255497025633,
+      "depth": 5,
+      "learning_rate": 0.013028047195365187,
+      "random_strength": 0,
+      "subsample": 0.8382327005757765
+    },
+    "loss": 0.5,
+    "at_iteration": 0,
+    "at_time": 0.006400108337402344,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.010899255497025633,
+      "depth": 5,
+      "learning_rate": 0.013028047195365187,
+      "random_strength": 0,
+      "subsample": 0.8382327005757765
+    },
+    "loss": 0.5,
+    "at_iteration": 1,
+    "at_time": 0.06293487548828125,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.08305321444104122,
+      "depth": 8,
+      "learning_rate": 0.3088168017341987,
+      "random_strength": 1,
+      "subsample": 0.1717638378553497
+    },
+    "loss": 0.23416119402985078,
+    "at_iteration": 4,
+    "at_time": 0.15624690055847168,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      1877447611,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.03759768573074467,
+      "depth": 10,
+      "learning_rate": 0.7478884823442593,
+      "random_strength": 1,
+      "subsample": 0.16565980968284932
+    },
+    "loss": 0.2524338308457711,
+    "at_iteration": 129,
+    "at_time": 18.274735927581787,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      1209315175,
+      1877447611
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.037442267593468394,
+      "depth": 8,
+      "learning_rate": 0.7494033659042323,
+      "random_strength": 1,
+      "subsample": 0.1657767414057512
+    },
+    "loss": 0.25681592039800993,
+    "at_iteration": 167,
+    "at_time": 46.6431097984314,
+    "seeds": [
+      2039330014,
+      276329748,
+      379248293
+    ]
+  }
+]

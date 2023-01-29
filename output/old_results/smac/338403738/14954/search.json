@@ -1,0 +1,117 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.15926260687410831,
+      "min_samples_leaf": 8,
+      "min_samples_split": 14
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 0.0019450187683105469,
+    "seeds": [
+      1799960134,
+      588640566,
+      703525115
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.15926260687410831,
+      "min_samples_leaf": 8,
+      "min_samples_split": 14
+    },
+    "loss": 0.2423,
+    "at_iteration": 1,
+    "at_time": 0.14441204071044922,
+    "seeds": [
+      1799960134,
+      588640566,
+      703525115
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.4870408521965146,
+      "min_samples_leaf": 3,
+      "min_samples_split": 7
+    },
+    "loss": 0.2041,
+    "at_iteration": 7,
+    "at_time": 0.8405201435089111,
+    "seeds": [
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.2021,
+    "at_iteration": 10,
+    "at_time": 1.2330279350280762,
+    "seeds": [
+      703525115,
+      1799960134,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.36058210955059133,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.1746,
+    "at_iteration": 77,
+    "at_time": 12.209957122802734,
+    "seeds": [
+      1799960134,
+      588640566,
+      703525115,
+      1545542502,
+      865830838
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.36044281542721496,
+      "min_samples_leaf": 1,
+      "min_samples_split": 3
+    },
+    "loss": 0.1706,
+    "at_iteration": 119,
+    "at_time": 26.28795886039734,
+    "seeds": [
+      1799960134
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.3403683413203562,
+      "min_samples_leaf": 1,
+      "min_samples_split": 3
+    },
+    "loss": 0.1655,
+    "at_iteration": 149,
+    "at_time": 35.79587912559509,
+    "seeds": [
+      1545542502
+    ]
+  }
+]

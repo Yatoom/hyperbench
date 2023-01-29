@@ -1,0 +1,30 @@
+[
+  {
+    "conf": {
+      "max_depth": 2,
+      "max_features": 0.4491682695224881,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.36627492877492873,
+    "at_iteration": 0,
+    "at_time": 0.0002899169921875,
+    "seeds": [
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 2,
+      "max_features": 0.4491682695224881,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.36627492877492873,
+    "at_iteration": 1,
+    "at_time": 0.07732582092285156,
+    "seeds": [
+      379248293
+    ]
+  }
+]

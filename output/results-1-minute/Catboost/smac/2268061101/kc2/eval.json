@@ -1,0 +1,97 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.010899255497025633,
+      "depth": 5,
+      "learning_rate": 0.013028047195365187,
+      "random_strength": 0,
+      "subsample": 0.8382327005757765
+    },
+    "loss": 0.5,
+    "at_iteration": 0,
+    "at_time": 0.00633692741394043,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.010899255497025633,
+      "depth": 5,
+      "learning_rate": 0.013028047195365187,
+      "random_strength": 0,
+      "subsample": 0.8382327005757765
+    },
+    "loss": 0.5,
+    "at_iteration": 1,
+    "at_time": 0.060600996017456055,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.08305321444104122,
+      "depth": 8,
+      "learning_rate": 0.3088168017341987,
+      "random_strength": 1,
+      "subsample": 0.1717638378553497
+    },
+    "loss": 0.10700160771704179,
+    "at_iteration": 4,
+    "at_time": 0.21181106567382812,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      1877447611,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.09938952198645858,
+      "depth": 6,
+      "learning_rate": 0.1391535652296684,
+      "random_strength": 0
+    },
+    "loss": 0.10414389067524117,
+    "at_iteration": 29,
+    "at_time": 1.8571398258209229,
+    "seeds": [
+      2039330014,
+      379248293,
+      1877447611,
+      276329748,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.06428794774546254,
+      "depth": 9,
+      "learning_rate": 0.2921793064963662,
+      "random_strength": 0
+    },
+    "loss": 0.0792269560557342,
+    "at_iteration": 92,
+    "at_time": 5.906913995742798,
+    "seeds": [
+      2039330014,
+      276329748,
+      379248293
+    ]
+  }
+]

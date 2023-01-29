@@ -1,0 +1,55 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 5.2928924560546875e-05,
+    "seeds": [
+      1841370504,
+      803699248,
+      300080857,
+      1856201261,
+      1261236325
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.3116,
+    "at_iteration": 1,
+    "at_time": 0.16198182106018066,
+    "seeds": [
+      1841370504,
+      803699248,
+      300080857,
+      1856201261,
+      1261236325
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.4612617471661892,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.3107,
+    "at_iteration": 41,
+    "at_time": 5.75133490562439,
+    "seeds": [
+      1841370504
+    ]
+  }
+]

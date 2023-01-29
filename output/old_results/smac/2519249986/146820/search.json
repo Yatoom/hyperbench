@@ -1,0 +1,104 @@
+[
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 0.0018858909606933594,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 0.0916,
+    "at_iteration": 1,
+    "at_time": 0.17967510223388672,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.9003389906138182,
+      "min_samples_leaf": 10,
+      "min_samples_split": 12
+    },
+    "loss": 0.0737,
+    "at_iteration": 7,
+    "at_time": 1.2381019592285156,
+    "seeds": [
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.8581690667197108,
+      "min_samples_leaf": 7,
+      "min_samples_split": 8
+    },
+    "loss": 0.0701,
+    "at_iteration": 45,
+    "at_time": 8.09835696220398,
+    "seeds": [
+      1174876817,
+      1987688596,
+      330054389,
+      2068916289,
+      414726106
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.9621963370591402,
+      "min_samples_leaf": 5,
+      "min_samples_split": 16
+    },
+    "loss": 0.0662,
+    "at_iteration": 60,
+    "at_time": 10.725775003433228,
+    "seeds": [
+      1174876817,
+      1987688596,
+      414726106,
+      2068916289,
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.9634413866292675,
+      "min_samples_leaf": 2,
+      "min_samples_split": 15
+    },
+    "loss": 0.0604,
+    "at_iteration": 81,
+    "at_time": 17.37095284461975,
+    "seeds": [
+      2068916289
+    ]
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.03487358884971567,
+      "depth": 4,
+      "learning_rate": 0.02278349830007318,
+      "random_strength": 0,
+      "bagging_temperature": 5.363352447748184
+    },
+    "loss": 0.03253983256298787,
+    "at_iteration": 0,
+    "at_time": 0.0063838958740234375,
+    "seeds": [
+      330054389,
+      1174876817
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.03487358884971567,
+      "depth": 4,
+      "learning_rate": 0.02278349830007318,
+      "random_strength": 0,
+      "bagging_temperature": 5.363352447748184
+    },
+    "loss": 0.03253983256298787,
+    "at_iteration": 1,
+    "at_time": 0.0870511531829834,
+    "seeds": [
+      330054389,
+      1174876817
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.020270646473969037,
+      "depth": 7,
+      "learning_rate": 0.4065513947207182,
+      "random_strength": 1
+    },
+    "loss": 0.0,
+    "at_iteration": 4,
+    "at_time": 0.4644811153411865,
+    "seeds": [
+      330054389,
+      1174876817,
+      556285174,
+      866086695,
+      52968435
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.04711498369593159,
+      "depth": 6,
+      "learning_rate": 0.10389607589837978,
+      "random_strength": 1
+    },
+    "loss": 0.0,
+    "at_iteration": 19,
+    "at_time": 3.1397461891174316,
+    "seeds": [
+      330054389,
+      1174876817,
+      52968435,
+      866086695,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.04894159339404349,
+      "depth": 8,
+      "learning_rate": 0.29001715368715947,
+      "random_strength": 0
+    },
+    "loss": 0.0,
+    "at_iteration": 32,
+    "at_time": 6.015183210372925,
+    "seeds": [
+      1174876817,
+      330054389,
+      556285174
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.08883685095271629,
+      "depth": 8,
+      "learning_rate": 0.16210651965264825,
+      "random_strength": 0,
+      "subsample": 0.2787312259670445
+    },
+    "loss": 0.0,
+    "at_iteration": 37,
+    "at_time": 6.8201940059661865,
+    "seeds": [
+      1174876817
+    ]
+  }
+]

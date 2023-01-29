@@ -1,0 +1,96 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.0316227766,
+      "depth": 7,
+      "learning_rate": 0.1,
+      "random_strength": 0,
+      "bagging_temperature": 5.0
+    },
+    "loss": 0.08484848484848487,
+    "at_iteration": 0,
+    "at_time": 3.2901763916015625e-05,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055,
+      1273456267
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.0316227766,
+      "depth": 7,
+      "learning_rate": 0.1,
+      "random_strength": 0,
+      "bagging_temperature": 5.0
+    },
+    "loss": 0.08484848484848487,
+    "at_iteration": 1,
+    "at_time": 0.5475040674209595,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055,
+      1273456267
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.06430564145385859,
+      "depth": 10,
+      "learning_rate": 0.14546177376141595,
+      "random_strength": 0
+    },
+    "loss": 0.00896969696969696,
+    "at_iteration": 5,
+    "at_time": 6.67104697227478,
+    "seeds": [
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.05260078484200304,
+      "depth": 7,
+      "learning_rate": 0.7200317760346702,
+      "random_strength": 0
+    },
+    "loss": 0.00048484848484842136,
+    "at_iteration": 16,
+    "at_time": 16.725783467292786,
+    "seeds": [
+      276329748
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "MVS",
+      "colsample_bylevel": 0.08768580457406842,
+      "depth": 7,
+      "learning_rate": 0.1680443947627689,
+      "random_strength": 1
+    },
+    "loss": 0.009163636363636396,
+    "at_iteration": 21,
+    "at_time": 21.44846248626709,
+    "seeds": [
+      705846521,
+      276329748,
+      379248293,
+      1694519055,
+      1273456267
+    ]
+  }
+]

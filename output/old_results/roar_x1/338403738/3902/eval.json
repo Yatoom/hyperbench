@@ -1,0 +1,101 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0024639724310776987,
+    "at_iteration": 0,
+    "at_time": 5.1975250244140625e-05,
+    "seeds": [
+      1841370504,
+      803699248,
+      300080857,
+      1856201261,
+      1595574730
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0024639724310776987,
+    "at_iteration": 1,
+    "at_time": 0.157789945602417,
+    "seeds": [
+      1841370504,
+      803699248,
+      300080857,
+      1856201261,
+      1595574730
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.6436310033133048,
+      "min_samples_leaf": 13,
+      "min_samples_split": 20
+    },
+    "loss": 0.1107886904761905,
+    "at_iteration": 16,
+    "at_time": 2.503162145614624,
+    "seeds": [
+      1841370504,
+      803699248
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.686281982225802,
+      "min_samples_leaf": 2,
+      "min_samples_split": 7
+    },
+    "loss": 0.011799028822055191,
+    "at_iteration": 26,
+    "at_time": 4.284637212753296,
+    "seeds": [
+      803699248
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.7981239104859483,
+      "min_samples_leaf": 9,
+      "min_samples_split": 9
+    },
+    "loss": 0.08415570175438591,
+    "at_iteration": 102,
+    "at_time": 17.442925214767456,
+    "seeds": [
+      1856201261
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.9700199768129499,
+      "min_samples_leaf": 1,
+      "min_samples_split": 10
+    },
+    "loss": 0.03372102130325816,
+    "at_iteration": 236,
+    "at_time": 40.3279390335083,
+    "seeds": [
+      1841370504
+    ]
+  }
+]

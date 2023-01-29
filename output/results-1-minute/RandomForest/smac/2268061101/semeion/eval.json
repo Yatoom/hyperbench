@@ -1,0 +1,100 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.037396833300590515,
+      "min_samples_leaf": 5,
+      "min_samples_split": 3
+    },
+    "loss": 0.025363571582204057,
+    "at_iteration": 0,
+    "at_time": 0.0018630027770996094,
+    "seeds": [
+      379248293,
+      2039330014,
+      1017902039,
+      537913233,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.037396833300590515,
+      "min_samples_leaf": 5,
+      "min_samples_split": 3
+    },
+    "loss": 0.025363571582204057,
+    "at_iteration": 1,
+    "at_time": 0.29711294174194336,
+    "seeds": [
+      379248293,
+      2039330014,
+      1017902039,
+      537913233,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.01746220924643893,
+      "min_samples_leaf": 7,
+      "min_samples_split": 12
+    },
+    "loss": 0.018425420315205443,
+    "at_iteration": 62,
+    "at_time": 23.497140884399414,
+    "seeds": [
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.019310409304566404,
+      "min_samples_leaf": 5,
+      "min_samples_split": 6
+    },
+    "loss": 0.010036317177198661,
+    "at_iteration": 75,
+    "at_time": 30.081621885299683,
+    "seeds": [
+      1017902039
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.019310409304566404,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.0016528925619834212,
+    "at_iteration": 97,
+    "at_time": 40.02972984313965,
+    "seeds": [
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.012367189468651825,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0,
+    "at_iteration": 110,
+    "at_time": 44.96292018890381,
+    "seeds": [
+      537913233
+    ]
+  }
+]

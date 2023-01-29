@@ -1,0 +1,80 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.010899255497025633,
+      "depth": 3,
+      "learning_rate": 0.0014870274473845076,
+      "objective": "MultiClass",
+      "subsample": 0.8382327005757765
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 0.01333928108215332,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.010899255497025633,
+      "depth": 3,
+      "learning_rate": 0.0014870274473845076,
+      "objective": "MultiClass",
+      "subsample": 0.8382327005757765
+    },
+    "loss": 0.4594,
+    "at_iteration": 1,
+    "at_time": 0.20403718948364258,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Plain",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.08305321444104122,
+      "depth": 7,
+      "learning_rate": 0.17161347337726163,
+      "objective": "CrossEntropy",
+      "subsample": 0.1717638378553497
+    },
+    "loss": 0.0159,
+    "at_iteration": 4,
+    "at_time": 0.7734582424163818,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      572751438,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bernoulli",
+      "colsample_bylevel": 0.07863236394831628,
+      "depth": 12,
+      "learning_rate": 0.35146054447505143,
+      "objective": "CrossEntropy",
+      "subsample": 0.711293813287623
+    },
+    "loss": 0.0078,
+    "at_iteration": 36,
+    "at_time": 34.82560920715332,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      1209315175,
+      572751438
+    ]
+  }
+]

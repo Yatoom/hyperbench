@@ -1,0 +1,8 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000178, 1, 0.000178, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.0316227766',depth='6',learning_rate='0.0316227766',objective=''MultiClass'',bagging_temperature='5.0'
+1.360510, 0.111400, 1.363014, 1, 0.002504, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.0316227766',depth='6',learning_rate='0.0316227766',objective=''MultiClass'',bagging_temperature='5.0'
+4.051041, 0.049600, 4.057249, 2, 0.006208, boosting_type=''Plain'',bootstrap_type=''Bayesian'',colsample_bylevel='0.07112263768318897',depth='6',learning_rate='0.0014426882523665072',objective=''CrossEntropy'',bagging_temperature='4.750981869622864'
+11.394361, 0.040000, 11.407534, 3, 0.013173, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.06430564145385859',depth='12',learning_rate='0.05547832221413664',objective=''MultiClass''
+18.877540, 0.013200, 18.931309, 4, 0.053769, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.05260078484200304',depth='7',learning_rate='0.6109807036806799',objective=''MultiClass''
+36.811078, 0.009100, 37.033629, 5, 0.222551, boosting_type=''Plain'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.09861456403281714',depth='9',learning_rate='0.390474745847382',objective=''CrossEntropy'',subsample='0.3610689933389767'
+135.745509, 0.008600, 136.806652, 6, 1.061143, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.07503687638957311',depth='9',learning_rate='0.46921590194670926',objective=''CrossEntropy''

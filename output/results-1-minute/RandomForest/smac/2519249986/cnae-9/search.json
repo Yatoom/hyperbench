@@ -1,0 +1,100 @@
+[
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 0.0017910003662109375,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596,
+      1255698179,
+      862802868
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 0.1308,
+    "at_iteration": 1,
+    "at_time": 0.40364623069763184,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596,
+      1255698179,
+      862802868
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.12081044726073742,
+      "min_samples_leaf": 1,
+      "min_samples_split": 14
+    },
+    "loss": 0.1072,
+    "at_iteration": 31,
+    "at_time": 10.135658979415894,
+    "seeds": [
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.12954356295132852,
+      "min_samples_leaf": 1,
+      "min_samples_split": 14
+    },
+    "loss": 0.1028,
+    "at_iteration": 68,
+    "at_time": 22.817362070083618,
+    "seeds": [
+      1174876817
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.13098662017374393,
+      "min_samples_leaf": 1,
+      "min_samples_split": 5
+    },
+    "loss": 0.1028,
+    "at_iteration": 78,
+    "at_time": 27.282151222229004,
+    "seeds": [
+      1255698179
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.11009043943877911,
+      "min_samples_leaf": 1,
+      "min_samples_split": 5
+    },
+    "loss": 0.1004,
+    "at_iteration": 91,
+    "at_time": 33.16329503059387,
+    "seeds": [
+      330054389
+    ]
+  }
+]

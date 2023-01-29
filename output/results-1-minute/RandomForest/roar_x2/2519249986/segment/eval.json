@@ -1,0 +1,85 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0023069460251123886,
+    "at_iteration": 0,
+    "at_time": 2.86102294921875e-05,
+    "seeds": [
+      1615023708,
+      330054389,
+      556285174,
+      2068916289,
+      1647239623
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0023069460251123886,
+    "at_iteration": 1,
+    "at_time": 0.10052454471588135,
+    "seeds": [
+      1615023708,
+      330054389,
+      556285174,
+      2068916289,
+      1647239623
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.42406606433446614,
+      "min_samples_leaf": 6,
+      "min_samples_split": 14
+    },
+    "loss": 0.019062855650291977,
+    "at_iteration": 26,
+    "at_time": 5.105224967002869,
+    "seeds": [
+      1615023708
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.6437202697454153,
+      "min_samples_leaf": 2,
+      "min_samples_split": 7
+    },
+    "loss": 0.018484486650870435,
+    "at_iteration": 62,
+    "at_time": 12.546102523803711,
+    "seeds": [
+      1615023708
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.4212608060753845,
+      "min_samples_leaf": 1,
+      "min_samples_split": 18
+    },
+    "loss": 0.015009608388216189,
+    "at_iteration": 196,
+    "at_time": 41.00127899646759,
+    "seeds": [
+      330054389
+    ]
+  }
+]

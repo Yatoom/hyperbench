@@ -1,0 +1,102 @@
+[
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0008000000000000007,
+    "at_iteration": 0,
+    "at_time": 2.5987625122070312e-05,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055,
+      700020643
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": true,
+      "criterion": "gini",
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2
+    },
+    "loss": 0.0008000000000000007,
+    "at_iteration": 1,
+    "at_time": 0.07222795486450195,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055,
+      700020643
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.7646648104155932,
+      "min_samples_leaf": 5,
+      "min_samples_split": 8
+    },
+    "loss": 0.05280769230769233,
+    "at_iteration": 8,
+    "at_time": 0.9232128858566284,
+    "seeds": [
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "entropy",
+      "max_features": 0.5217456842527854,
+      "min_samples_leaf": 8,
+      "min_samples_split": 16
+    },
+    "loss": 0.1392179487179488,
+    "at_iteration": 11,
+    "at_time": 1.1951059103012085,
+    "seeds": [
+      276329748
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.3102144239495134,
+      "min_samples_leaf": 7,
+      "min_samples_split": 6
+    },
+    "loss": 0.12160256410256409,
+    "at_iteration": 43,
+    "at_time": 5.073110580444336,
+    "seeds": [
+      705846521
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.9938287441665222,
+      "min_samples_leaf": 2,
+      "min_samples_split": 11
+    },
+    "loss": 0.07415384615384617,
+    "at_iteration": 176,
+    "at_time": 21.51734948158264,
+    "seeds": [
+      700020643,
+      379248293,
+      1694519055
+    ]
+  }
+]

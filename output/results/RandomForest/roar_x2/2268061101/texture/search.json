@@ -1,0 +1,32 @@
+[
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 2.205371856689453e-05,
+    "seeds": [
+      705846521,
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.054,
+    "at_iteration": 1,
+    "at_time": 0.36940956115722656,
+    "seeds": [
+      705846521,
+      379248293
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.0316227766,
+      "depth": 7,
+      "learning_rate": 0.1,
+      "random_strength": 0,
+      "bagging_temperature": 5.0
+    },
+    "loss": 0.004166956038613834,
+    "at_iteration": 0,
+    "at_time": 3.0040740966796875e-05,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055
+    ]
+  },
+  {
+    "conf": {
+      "boosting_type": "Ordered",
+      "bootstrap_type": "Bayesian",
+      "colsample_bylevel": 0.0316227766,
+      "depth": 7,
+      "learning_rate": 0.1,
+      "random_strength": 0,
+      "bagging_temperature": 5.0
+    },
+    "loss": 0.004166956038613834,
+    "at_iteration": 1,
+    "at_time": 9.13550055027008,
+    "seeds": [
+      705846521,
+      379248293,
+      276329748,
+      1694519055
+    ]
+  }
+]

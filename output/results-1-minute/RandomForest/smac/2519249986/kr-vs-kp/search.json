@@ -1,0 +1,100 @@
+[
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 2147483648.0,
+    "at_iteration": 0,
+    "at_time": 0.0018041133880615234,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596,
+      1255698179,
+      862802868
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.5424966430291533,
+      "min_samples_leaf": 2,
+      "min_samples_split": 5
+    },
+    "loss": 0.0086,
+    "at_iteration": 1,
+    "at_time": 0.1331620216369629,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596,
+      1255698179,
+      862802868
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.3733284529298544,
+      "min_samples_leaf": 2,
+      "min_samples_split": 13
+    },
+    "loss": 0.0068,
+    "at_iteration": 59,
+    "at_time": 8.32175898551941,
+    "seeds": [
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.4575668533268535,
+      "min_samples_leaf": 2,
+      "min_samples_split": 13
+    },
+    "loss": 0.0067,
+    "at_iteration": 96,
+    "at_time": 19.846469163894653,
+    "seeds": [
+      1174876817
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.3920698253152872,
+      "min_samples_leaf": 2,
+      "min_samples_split": 13
+    },
+    "loss": 0.0067,
+    "at_iteration": 175,
+    "at_time": 50.90783429145813,
+    "seeds": [
+      1255698179
+    ]
+  },
+  {
+    "conf": {
+      "bootstrap": false,
+      "criterion": "gini",
+      "max_features": 0.3920760342092213,
+      "min_samples_leaf": 1,
+      "min_samples_split": 13
+    },
+    "loss": 0.0064,
+    "at_iteration": 192,
+    "at_time": 56.80957221984863,
+    "seeds": [
+      330054389
+    ]
+  }
+]

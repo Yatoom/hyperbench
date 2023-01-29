@@ -1,0 +1,11 @@
+boosting_type categorical {Ordered, Plain} [Ordered]
+bootstrap_type categorical {Bayesian, Bernoulli, MVS} [Bayesian]
+colsample_bylevel real [0.01, 0.1] [0.0316227766]log
+depth integer [1, 12] [6]
+learning_rate real [0.001, 1.0] [0.0316227766]log
+objective categorical {MultiClass, CrossEntropy} [MultiClass]
+bagging_temperature real [0.0, 10.0] [5.0]
+subsample real [0.1, 1.0] [0.316227766]log
+
+bagging_temperature | bootstrap_type == Bayesian
+subsample | bootstrap_type == Bernoulli

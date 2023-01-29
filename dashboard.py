@@ -9,27 +9,6 @@ from run_benchmark import benchmark
 directory = "results"
 
 with st.sidebar:
-    st.subheader("Settings")
-    with st.expander("Budget", expanded=True):
-        budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if benchmark.time_based else 0)
-        iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
-        all_trajectories = aggregate.get_all_trajectories(directory, iterations=iterations, time_based=budget == 'Time')
-
-    with st.expander("Options", expanded=True):
-        target = st.selectbox(
-            "Choose the target algorithm",
-            aggregate.get_target_algorithms(all_trajectories))
-        view = st.radio(
-            "Choose your view",
-            ('Live view', 'Static view', 'Global view'))
-
-        filtered = aggregate.filter_on(all_trajectories, target=target)
-
-        if view == "Live view":
-            filtered = aggregate.live_view(filtered)
-        elif view == "Static view":
-            filtered = aggregate.static_view(filtered)
-
     st.subheader("Info")
     with st.expander("About budget"):
         st.write(
@@ -52,6 +31,25 @@ with st.sidebar:
 
 main_tab, explorer_tab, leader_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets", "🥇 Leaderboard"])
 with main_tab:
+    with st.expander("Budget", expanded=False):
+        budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if benchmark.time_based else 0)
+        iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
+        all_trajectories = aggregate.get_all_trajectories(directory, iterations=iterations, time_based=budget == 'Time')
+
+    with st.expander("Options", expanded=True):
+        target = st.selectbox(
+            "Choose the target algorithm",
+            aggregate.get_target_algorithms(all_trajectories))
+        view = st.radio(
+            "Choose your view",
+            ('Live view', 'Static view', 'Global view'))
+
+        filtered = aggregate.filter_on(all_trajectories, target=target)
+
+        if view == "Live view":
+            filtered = aggregate.live_view(filtered)
+        elif view == "Static view":
+            filtered = aggregate.static_view(filtered)
     with st.expander("Datasets included in results", expanded=False):
         list_datasets = aggregate.get_datasets(filtered)
         datasets = st.multiselect("Select datasets to include", list_datasets, default=list_datasets, label_visibility="collapsed")

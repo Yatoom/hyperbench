@@ -1,0 +1,92 @@
+{
+  "hyperparameters": [
+    {
+      "name": "boosting_type",
+      "type": "categorical",
+      "choices": [
+        "Ordered",
+        "Plain"
+      ],
+      "default": "Ordered",
+      "weights": null
+    },
+    {
+      "name": "bootstrap_type",
+      "type": "categorical",
+      "choices": [
+        "Bayesian",
+        "Bernoulli",
+        "MVS"
+      ],
+      "default": "Bayesian",
+      "weights": null
+    },
+    {
+      "name": "colsample_bylevel",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 0.01,
+      "upper": 0.1,
+      "default": 0.0316227766
+    },
+    {
+      "name": "depth",
+      "type": "uniform_int",
+      "log": false,
+      "lower": 1,
+      "upper": 12,
+      "default": 6
+    },
+    {
+      "name": "learning_rate",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 0.001,
+      "upper": 1.0,
+      "default": 0.0316227766
+    },
+    {
+      "name": "objective",
+      "type": "categorical",
+      "choices": [
+        "MultiClass",
+        "CrossEntropy"
+      ],
+      "default": "MultiClass",
+      "weights": null
+    },
+    {
+      "name": "bagging_temperature",
+      "type": "uniform_float",
+      "log": false,
+      "lower": 0.0,
+      "upper": 10.0,
+      "default": 5.0
+    },
+    {
+      "name": "subsample",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 0.1,
+      "upper": 1.0,
+      "default": 0.316227766
+    }
+  ],
+  "conditions": [
+    {
+      "child": "bagging_temperature",
+      "parent": "bootstrap_type",
+      "type": "EQ",
+      "value": "Bayesian"
+    },
+    {
+      "child": "subsample",
+      "parent": "bootstrap_type",
+      "type": "EQ",
+      "value": "Bernoulli"
+    }
+  ],
+  "forbiddens": [],
+  "python_module_version": "0.6.1",
+  "json_format_version": 0.4
+}

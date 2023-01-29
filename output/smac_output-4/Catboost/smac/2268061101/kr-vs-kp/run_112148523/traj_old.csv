@@ -1,0 +1,5 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.013339, 1, 0.013339, boosting_type=''Ordered'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.010899255497025633',depth='3',learning_rate='0.0014870274473845076',objective=''MultiClass'',subsample='0.8382327005757765'
+0.189104, 0.459400, 0.204037, 1, 0.014933, boosting_type=''Ordered'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.010899255497025633',depth='3',learning_rate='0.0014870274473845076',objective=''MultiClass'',subsample='0.8382327005757765'
+0.755897, 0.015900, 0.773458, 2, 0.017562, boosting_type=''Plain'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.08305321444104122',depth='7',learning_rate='0.17161347337726163',objective=''CrossEntropy'',subsample='0.1717638378553497'
+34.765923, 0.007800, 34.825609, 3, 0.059686, boosting_type=''Ordered'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.07863236394831628',depth='12',learning_rate='0.35146054447505143',objective=''CrossEntropy'',subsample='0.711293813287623'
