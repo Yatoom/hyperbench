@@ -31,31 +31,33 @@ with st.sidebar:
 
 main_tab, explorer_tab, leader_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets", "🥇 Leaderboard"])
 with main_tab:
-    with st.expander("Budget", expanded=False):
-        budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if benchmark.time_based else 0)
-        iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
-        all_trajectories = aggregate.get_all_trajectories(directory, iterations=iterations, time_based=budget == 'Time')
+    col1, col2 = st.columns(2)
+    with col1:
+        with st.expander("Budget", expanded=False):
+            budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if benchmark.time_based else 0)
+            iterations = st.number_input('Budget size', value=benchmark.budget, step=1 if budget == "Iterations" else None)
+            all_trajectories = aggregate.get_all_trajectories(directory, iterations=iterations, time_based=budget == 'Time')
 
-    with st.expander("Options", expanded=True):
-        target = st.selectbox(
-            "Choose the target algorithm",
-            aggregate.get_target_algorithms(all_trajectories))
-        view = st.radio(
-            "Choose your view",
-            ('Live view', 'Static view', 'Global view'))
+        with st.expander("Options", expanded=True):
+            target = st.selectbox(
+                "Choose the target algorithm",
+                aggregate.get_target_algorithms(all_trajectories))
+            view = st.radio(
+                "Choose your view",
+                ('Live view', 'Static view', 'Global view'))
 
-        filtered = aggregate.filter_on(all_trajectories, target=target)
-
+            filtered = aggregate.filter_on(all_trajectories, target=target)
+    with col2:
         if view == "Live view":
             filtered = aggregate.live_view(filtered)
         elif view == "Static view":
             filtered = aggregate.static_view(filtered)
-    with st.expander("Datasets included in results", expanded=False):
-        list_datasets = aggregate.get_datasets(filtered)
-        datasets = st.multiselect("Select datasets to include", list_datasets, default=list_datasets, label_visibility="collapsed")
-        filtered = filtered[filtered.dataset.isin(datasets)]
-    with st.expander("Experiments included in results", expanded=True):
-        st.dataframe(aggregate.overview(filtered), use_container_width=True)
+        with st.expander("Datasets included in results", expanded=False):
+            list_datasets = aggregate.get_datasets(filtered)
+            datasets = st.multiselect("Select datasets to include", list_datasets, default=list_datasets, label_visibility="collapsed")
+            filtered = filtered[filtered.dataset.isin(datasets)]
+        with st.expander("Experiments included in results", expanded=True):
+            st.dataframe(aggregate.overview(filtered), use_container_width=True)
 
     # Split by search and eval
     search_trajectories = aggregate.filter_on(filtered, stage="search")
@@ -64,25 +66,24 @@ with main_tab:
     tab1, tab2, tab3 = st.tabs(["🧪 Search results", "️🤔 Evaluation results", "📊 Statistics"])
     for i, j, k in [("Search set", search_trajectories, tab1), ("Evaluation set", eval_trajectories, tab2)]:
         with k:
-            st.subheader("Average loss")
-            df = aggregate.aggregate_over_seeds(j)
-            df = aggregate.aggregate_over_datasets(df)
-            f = aggregate.visualize(df)
-            st.plotly_chart(f)
-
-            st.subheader("Ranked")
-            df = aggregate.rank(j)
-            df = aggregate.aggregate_over_seeds(df)
-            df = aggregate.aggregate_over_datasets(df)
-            f = aggregate.visualize(df)
-            st.plotly_chart(f)
-
-            st.subheader("Normalized average loss")
-            df = aggregate.normalize(j)
-            df = aggregate.aggregate_over_seeds(df)
-            df = aggregate.aggregate_over_datasets(df)
-            f = aggregate.visualize(df)
-            st.plotly_chart(f)
+            metric1, metric2, metric3 = st.tabs(["Average loss", "Ranked", "Normalized average loss"])
+            with metric1:
+                df = aggregate.aggregate_over_seeds(j)
+                df = aggregate.aggregate_over_datasets(df)
+                f = aggregate.visualize(df)
+                st.plotly_chart(f)
+            with metric2:
+                df = aggregate.rank(j)
+                df = aggregate.aggregate_over_seeds(df)
+                df = aggregate.aggregate_over_datasets(df)
+                f = aggregate.visualize(df)
+                st.plotly_chart(f)
+            with metric3:
+                df = aggregate.normalize(j)
+                df = aggregate.aggregate_over_seeds(df)
+                df = aggregate.aggregate_over_datasets(df)
+                f = aggregate.visualize(df)
+                st.plotly_chart(f)
 
     with tab3:
         stats = aggregate.load_stats(directory, filtered, target=target)
