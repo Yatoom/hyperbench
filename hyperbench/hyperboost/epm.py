@@ -52,9 +52,9 @@ class HyperboostEPM(BaseEPM):
         )
         self.rng = np.random.RandomState(self.seed)
 
-        self.catboost = CatBoostRegressor(iterations=100, loss_function="RMSEWithUncertainty", posterior_sampling=False,
-                                          verbose=False, random_seed=0, learning_rate=1.0, random_strength=0,
-                                          l2_leaf_reg=1)
+        # self.catboost = CatBoostRegressor(iterations=100, loss_function="RMSEWithUncertainty", posterior_sampling=False,
+        #                                   verbose=False, random_seed=0, learning_rate=1.0, random_strength=0,
+        #                                   l2_leaf_reg=1)
 
         return None
 
@@ -75,8 +75,24 @@ class HyperboostEPM(BaseEPM):
         if not isinstance(Y, np.ndarray):
             raise NotImplementedError("Y has to be of type np.ndarray")
 
-        self.catboost.fit(X, Y)
-        # print(self.catboost.get_all_params())
+        try:
+            self.catboost = CatBoostRegressor(iterations=100, loss_function="RMSEWithUncertainty",
+                                              posterior_sampling=False,
+                                              verbose=False, random_seed=0, learning_rate=1.0, random_strength=0,
+                                              l2_leaf_reg=1)
+            self.catboost.fit(X, Y)
+        except:
+            if np.all(Y == 0):
+                print(f"WARNING: All Y's are 0")
+                self.catboost.fit(X, np.random.rand(*Y.shape))
+            else:
+                print(f"WARNING: Increasing subsample")
+                # Temporarily fixes one specific error
+                self.catboost = CatBoostRegressor(iterations=100, loss_function="RMSEWithUncertainty",
+                                                  posterior_sampling=False,
+                                                  verbose=False, random_seed=0, learning_rate=1.0, random_strength=0,
+                                                  l2_leaf_reg=1, subsample=1.0)
+                self.catboost.fit(X, Y)
 
         self.logger.debug("Fit model to data")
         return self
@@ -105,11 +121,20 @@ class HyperboostEPM(BaseEPM):
             raise NotImplementedError("X has to be of type np.ndarray")
 
         pred = self.catboost.predict(X)
-        preds = self.catboost.virtual_ensembles_predict(X, prediction_type='TotalUncertainty',
-                                                        virtual_ensembles_count=20)
+        preds = self.virtual_ensemble_predict(X, min(20, self.catboost.tree_count_))
 
         mean_preds = preds[:, 0]  # mean values predicted by a virtual ensemble
         knowledge = preds[:, 1]  # knowledge uncertainty predicted by a virtual ensemble
         data = preds[:, 2]  # average estimated data uncertainty
 
         return pred[:, 0], knowledge ** 0.3
+
+    def virtual_ensemble_predict(self, X, n):
+        if n != 20:
+            print(f"USING: {n} virtual ensembles")
+        try:
+            return self.catboost.virtual_ensembles_predict(X, prediction_type="TotalUncertainty",
+                                                           virtual_ensembles_count=n)
+        except:
+            print(f"WARNING: Reducing number of virtual ensembles to {n - 1}")
+            return self.virtual_ensemble_predict(X, n - 1)

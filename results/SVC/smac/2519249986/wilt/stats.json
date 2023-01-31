@@ -1,0 +1,11 @@
+{
+  "mean_cost": 0.13402493719109493,
+  "finished_ta_runs": 300,
+  "inc_changed": 8,
+  "n_configs": 106,
+  "submitted_ta_runs": 300,
+  "ta_time_used": 17.626131057739258,
+  "wallclock_time_used": 44.855878829956055,
+  "dataset_id": 146820,
+  "perf_time": 44.866452749993186
+}

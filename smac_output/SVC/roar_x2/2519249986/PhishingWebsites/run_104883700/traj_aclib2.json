@@ -1,0 +1,11 @@
+{"cpu_time": 0.0, "wallclock_time": 3.981590270996094e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='1.0'", "gamma='0.1'"], "origin": "Default"}
+{"cpu_time": 0.3587360382080078, "wallclock_time": 0.3593599796295166, "evaluations": 1, "cost": 0.0532, "incumbent": ["C='1.0'", "gamma='0.1'"], "origin": "Default"}
+{"cpu_time": 4.167987108230591, "wallclock_time": 4.176133871078491, "evaluations": 10, "cost": 0.0449, "incumbent": ["C='7.615166584313989'", "gamma='0.10560628945782698'"], "origin": "Random Search"}
+{"cpu_time": 11.605650186538696, "wallclock_time": 11.627080917358398, "evaluations": 21, "cost": 0.0408, "incumbent": ["C='66.34037087131655'", "gamma='0.15373657531118262'"], "origin": "Random Search"}
+{"cpu_time": 20.300520420074463, "wallclock_time": 20.343790769577026, "evaluations": 33, "cost": 0.0393, "incumbent": ["C='284.8830541292723'", "gamma='0.2225750471432824'"], "origin": "Random Search"}
+{"cpu_time": 27.04045033454895, "wallclock_time": 27.100794792175293, "evaluations": 43, "cost": 0.039, "incumbent": ["C='11.681730948865015'", "gamma='0.23445175413074382'"], "origin": "Random Search"}
+{"cpu_time": 48.08681607246399, "wallclock_time": 48.192983865737915, "evaluations": 64, "cost": 0.0369, "incumbent": ["C='1.5566809973345497'", "gamma='0.6413673500066547'"], "origin": "Random Search"}
+{"cpu_time": 90.39191102981567, "wallclock_time": 90.63688707351685, "evaluations": 107, "cost": 0.0361, "incumbent": ["C='55.81629727459116'", "gamma='0.32280787361957786'"], "origin": "Random Search"}
+{"cpu_time": 136.39045906066895, "wallclock_time": 136.8309588432312, "evaluations": 154, "cost": 0.036, "incumbent": ["C='17.826383717003978'", "gamma='0.33854455483165175'"], "origin": "Random Search"}
+{"cpu_time": 428.8571481704712, "wallclock_time": 431.69061303138733, "evaluations": 435, "cost": 0.036, "incumbent": ["C='14.320944657460142'", "gamma='0.40036360937507076'"], "origin": "Random Search"}
+{"cpu_time": 536.9984247684479, "wallclock_time": 541.2483830451965, "evaluations": 541, "cost": 0.0357, "incumbent": ["C='198.23748726056152'", "gamma='0.3303753866153899'"], "origin": "Random Search"}

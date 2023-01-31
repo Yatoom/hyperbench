@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from datetime import datetime, timedelta
 from functools import reduce
 
@@ -7,6 +8,29 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 from hyperbench.trajectory.trajectory import Trajectory
+from hyperbench.visualization.virtual_budget import get_multiplier
+
+
+def get_trajectories(path, iterations, time_based, details):
+    entries = []
+
+    optimizer = details[1]
+    multiplier = get_multiplier(optimizer)
+
+    # Get trajectory for all multipliers
+    for i in range(multiplier):
+        speedup = i + 1
+        if 1 < multiplier == speedup:
+            # details[1] = optimizer.split("_")[0] + f"_x{speedup} (virtual)"
+            details[1] = optimizer + f" - delayed {speedup}x"
+        else:
+            details[1] = optimizer
+        _, y = Trajectory.load(path).get_loss(iterations, time_based, speedup=1/speedup)
+
+        virtual = speedup == multiplier
+        entries.append([*details, virtual, y])
+
+    return entries
 
 
 def get_all_trajectories(directory, iterations=100, time_based=False):
@@ -16,18 +40,17 @@ def get_all_trajectories(directory, iterations=100, time_based=False):
             if file.endswith("search.json") or file.endswith("eval.json"):
                 path = os.path.join(currentpath, file)
                 details = path.replace(".json", "").split("/")[-5:]
-                if time_based:
-                    _, y = Trajectory.load(path).get_loss_over_time(iterations)
-                else:
-                    _, y = Trajectory.load(path).get_loss_per_iteration(iterations)
-                entries.append([*details, y])
-    df = pd.DataFrame(entries, columns=["target", "optimizer", "seed", "dataset", "stage", "trajectory"])
+                for trajectory in get_trajectories(path, iterations, time_based, details):
+                    entries.append(trajectory)
+
+    df = pd.DataFrame(entries, columns=["target", "optimizer", "seed", "dataset", "stage", "virtual", "trajectory"])
     expanded = pd.concat([df.drop('trajectory', axis=1), df['trajectory'].apply(pd.Series)], axis=1)
     return expanded
 
 
 def load_stats(directory, dataframe, target):
-    indices = dataframe[["optimizer", "seed", "dataset"]].copy()
+    indices = dataframe[["optimizer", "seed", "dataset", "virtual"]].copy()
+    indices = indices[~indices.virtual]
     indices.loc[:, "target"] = target
     rows = []
     for index in indices.iloc:
