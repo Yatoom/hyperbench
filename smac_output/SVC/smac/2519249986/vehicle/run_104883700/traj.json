@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005571842193603516, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"C": 1.3600811985592882, "gamma": 0.09352602871548096}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.03488922119140625, "wallclock_time": 0.03615999221801758, "evaluations": 1, "cost": 0.7353, "incumbent": {"C": 1.3600811985592882, "gamma": 0.09352602871548096}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.2981913089752197, "wallclock_time": 0.3101382255554199, "evaluations": 15, "cost": 0.4084, "incumbent": {"C": 102.59827344587585, "gamma": 0.0039228031036218506}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.6014316082000732, "wallclock_time": 0.6324172019958496, "evaluations": 33, "cost": 0.3721, "incumbent": {"C": 0.6293526165094239, "gamma": 0.0012324628012758837}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.7174651622772217, "wallclock_time": 0.7574121952056885, "evaluations": 40, "cost": 0.3386, "incumbent": {"C": 4.729862452035014, "gamma": 0.0020153549174183696}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.8632712364196777, "wallclock_time": 1.1524243354797363, "evaluations": 48, "cost": 0.3337, "incumbent": {"C": 5.527341041275131, "gamma": 0.0019052430049648638}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 1.2537941932678223, "wallclock_time": 4.0198893547058105, "evaluations": 68, "cost": 0.3295, "incumbent": {"C": 3.6693595274260042, "gamma": 0.0019026414779665475}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 1.4303486347198486, "wallclock_time": 4.495412349700928, "evaluations": 78, "cost": 0.326, "incumbent": {"C": 2.0470925174345926, "gamma": 0.0018943402621994711}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 1.9733481407165527, "wallclock_time": 8.583569288253784, "evaluations": 105, "cost": 0.3177, "incumbent": {"C": 2.6409545330296385, "gamma": 0.0018932583270067065}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 3.0232551097869873, "wallclock_time": 15.249187231063843, "evaluations": 159, "cost": 0.3075, "incumbent": {"C": 2.6288035281631883, "gamma": 0.001022779476898215}, "budget": 0, "origin": "Random Search (sorted)"}

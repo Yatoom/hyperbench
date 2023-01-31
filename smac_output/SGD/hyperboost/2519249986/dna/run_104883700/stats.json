@@ -1,1 +1,1 @@
-{"submitted_ta_runs": 7, "finished_ta_runs": 7, "n_configs": 4, "wallclock_time_used": 17.13526725769043, "ta_time_used": 17.120575428009033, "inc_changed": 1, "_n_configs_per_intensify": 0, "_n_calls_of_intensify": 4, "_ema_n_configs_per_intensifiy": 0.0, "_EMA_ALPHA": 0.2}
+{"submitted_ta_runs": 300, "finished_ta_runs": 300, "n_configs": 97, "wallclock_time_used": 741.7752282619476, "ta_time_used": 713.9377737045288, "inc_changed": 1, "_n_configs_per_intensify": 0, "_n_calls_of_intensify": 96, "_ema_n_configs_per_intensifiy": 0.0, "_EMA_ALPHA": 0.2}

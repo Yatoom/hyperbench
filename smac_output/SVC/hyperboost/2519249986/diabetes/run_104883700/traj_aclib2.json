@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005507469177246094, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='1.3600811985592882'", "gamma='0.09352602871548096'"], "origin": "Sobol"}
+{"cpu_time": 0.017499923706054688, "wallclock_time": 0.018774032592773438, "evaluations": 1, "cost": 0.5, "incumbent": ["C='1.3600811985592882'", "gamma='0.09352602871548096'"], "origin": "Sobol"}
+{"cpu_time": 0.2178359031677246, "wallclock_time": 0.23303985595703125, "evaluations": 19, "cost": 0.4147, "incumbent": ["C='102.59827344587585'", "gamma='0.0039228031036218506'"], "origin": "Sobol"}
+{"cpu_time": 0.3856010437011719, "wallclock_time": 0.42534875869750977, "evaluations": 37, "cost": 0.3387, "incumbent": ["C='0.6293526165094239'", "gamma='0.0012324628012758837'"], "origin": "Sobol"}
+{"cpu_time": 0.45328497886657715, "wallclock_time": 0.5025777816772461, "evaluations": 44, "cost": 0.3224, "incumbent": ["C='4.729862452035014'", "gamma='0.0020153549174183696'"], "origin": "Sobol"}
+{"cpu_time": 0.539945125579834, "wallclock_time": 0.8734416961669922, "evaluations": 52, "cost": 0.3079, "incumbent": ["C='5.527341041275131'", "gamma='0.0019052430049648638'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 0.5903348922729492, "wallclock_time": 0.9314188957214355, "evaluations": 57, "cost": 0.2889, "incumbent": ["C='5.654224793658902'", "gamma='0.0016674844781279258'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 0.6569716930389404, "wallclock_time": 1.2910637855529785, "evaluations": 63, "cost": 0.2824, "incumbent": ["C='7.634624133065819'", "gamma='0.0013489098654652784'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 0.7030258178710938, "wallclock_time": 1.3456988334655762, "evaluations": 68, "cost": 0.2727, "incumbent": ["C='1.4900556730465153'", "gamma='0.0018618160241992382'"], "origin": "Random Search"}
+{"cpu_time": 0.8220000267028809, "wallclock_time": 2.5774006843566895, "evaluations": 80, "cost": 0.2725, "incumbent": ["C='1.4370157750250028'", "gamma='0.0017827193462777887'"], "origin": "Random Search (sorted)"}

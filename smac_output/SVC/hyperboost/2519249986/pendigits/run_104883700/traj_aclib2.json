@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005309581756591797, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='1.3600811985592882'", "gamma='0.09352602871548096'"], "origin": "Sobol"}
+{"cpu_time": 2.777714252471924, "wallclock_time": 2.7789459228515625, "evaluations": 1, "cost": 0.8926, "incumbent": ["C='1.3600811985592882'", "gamma='0.09352602871548096'"], "origin": "Sobol"}
+{"cpu_time": 16.279285192489624, "wallclock_time": 16.28754711151123, "evaluations": 7, "cost": 0.8911, "incumbent": ["C='0.002411602763410638'", "gamma='0.012954649694653979'"], "origin": "Sobol"}
+{"cpu_time": 39.21093130111694, "wallclock_time": 39.230612993240356, "evaluations": 17, "cost": 0.1654, "incumbent": ["C='102.59827344587585'", "gamma='0.0039228031036218506'"], "origin": "Sobol"}
+{"cpu_time": 71.52398133277893, "wallclock_time": 71.56489396095276, "evaluations": 34, "cost": 0.0329, "incumbent": ["C='0.6293526165094239'", "gamma='0.0012324628012758837'"], "origin": "Sobol"}
+{"cpu_time": 88.74917697906494, "wallclock_time": 89.29498219490051, "evaluations": 45, "cost": 0.0281, "incumbent": ["C='0.9244652406418409'", "gamma='0.0012827563227223123'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 96.39747619628906, "wallclock_time": 97.20167088508606, "evaluations": 51, "cost": 0.0266, "incumbent": ["C='0.8143284746427061'", "gamma='0.0011994309305810788'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 103.2931580543518, "wallclock_time": 104.36642718315125, "evaluations": 57, "cost": 0.0218, "incumbent": ["C='0.8141440715066759'", "gamma='0.0010993264017848136'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 108.38340091705322, "wallclock_time": 109.46544694900513, "evaluations": 62, "cost": 0.0162, "incumbent": ["C='16.08196142180827'", "gamma='0.001012751162100806'"], "origin": "Random Search"}
+{"cpu_time": 115.31220507621765, "wallclock_time": 116.68445897102356, "evaluations": 68, "cost": 0.0158, "incumbent": ["C='1.3223471465085024'", "gamma='0.0009826787622737262'"], "origin": "Local Search"}
