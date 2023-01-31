@@ -1,0 +1,104 @@
+[
+  {
+    "conf": {
+      "max_depth": 2,
+      "max_features": 0.4491682695224881,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.25990252087635807,
+    "at_iteration": 1,
+    "at_time": 0.08251500129699707,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 17,
+      "max_features": 0.6137791713699698,
+      "min_samples_leaf": 16,
+      "min_samples_split": 18
+    },
+    "loss": 0.07240252087635812,
+    "at_iteration": 4,
+    "at_time": 0.38524794578552246,
+    "seeds": [
+      2039330014,
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.03939503456945319,
+    "at_iteration": 6,
+    "at_time": 0.5924539566040039,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      572751438,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 6,
+      "max_features": 0.4796176574643878,
+      "min_samples_leaf": 1,
+      "min_samples_split": 35
+    },
+    "loss": 0.047112216036634624,
+    "at_iteration": 96,
+    "at_time": 18.14190912246704,
+    "seeds": [
+      572751438,
+      276329748,
+      2039330014,
+      379248293,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 5,
+      "max_features": 0.5042901313086346,
+      "min_samples_leaf": 1,
+      "min_samples_split": 34
+    },
+    "loss": 0.04870729325671182,
+    "at_iteration": 151,
+    "at_time": 32.07908797264099,
+    "seeds": [
+      276329748,
+      2039330014,
+      1209315175,
+      572751438,
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 6,
+      "max_features": 0.5189351024505301,
+      "min_samples_leaf": 1,
+      "min_samples_split": 34
+    },
+    "loss": 0.042763760438179046,
+    "at_iteration": 248,
+    "at_time": 56.347991943359375,
+    "seeds": [
+      276329748,
+      572751438,
+      2039330014,
+      1209315175,
+      379248293
+    ]
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "conf": {
+      "max_depth": 2,
+      "max_features": 0.4491682695224881,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.4939,
+    "at_iteration": 1,
+    "at_time": 0.07844090461730957,
+    "seeds": [
+      379248293,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 17,
+      "max_features": 0.6137791713699698,
+      "min_samples_leaf": 16,
+      "min_samples_split": 18
+    },
+    "loss": 0.3032,
+    "at_iteration": 4,
+    "at_time": 0.2890281677246094,
+    "seeds": [
+      2039330014,
+      379248293,
+      276329748,
+      572751438,
+      1209315175
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 44,
+      "max_features": 0.3626425629481673,
+      "min_samples_leaf": 15,
+      "min_samples_split": 31
+    },
+    "loss": 0.2961,
+    "at_iteration": 18,
+    "at_time": 1.2734110355377197,
+    "seeds": [
+      1209315175,
+      572751438,
+      276329748,
+      2039330014,
+      379248293
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 25,
+      "max_features": 0.7636917820200324,
+      "min_samples_leaf": 14,
+      "min_samples_split": 2
+    },
+    "loss": 0.2894,
+    "at_iteration": 36,
+    "at_time": 2.5495691299438477,
+    "seeds": [
+      379248293,
+      276329748,
+      572751438,
+      1209315175,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 26,
+      "max_features": 0.9406034877466836,
+      "min_samples_leaf": 13,
+      "min_samples_split": 3
+    },
+    "loss": 0.2862,
+    "at_iteration": 92,
+    "at_time": 15.459348917007446,
+    "seeds": [
+      572751438,
+      1209315175,
+      379248293,
+      276329748,
+      2039330014
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 27,
+      "max_features": 0.9988314614842231,
+      "min_samples_leaf": 12,
+      "min_samples_split": 3
+    },
+    "loss": 0.2858,
+    "at_iteration": 300,
+    "at_time": 59.50813317298889,
+    "seeds": [
+      1209315175,
+      2039330014,
+      276329748,
+      379248293,
+      572751438
+    ]
+  }
+]

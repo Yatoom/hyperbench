@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005619525909423828, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='0.08611366210550205'", "gamma='0.4942679928374453'"], "origin": "Sobol"}
+{"cpu_time": 0.010139226913452148, "wallclock_time": 0.011414051055908203, "evaluations": 1, "cost": 0.5, "incumbent": ["C='0.08611366210550205'", "gamma='0.4942679928374453'"], "origin": "Sobol"}
+{"cpu_time": 0.09374022483825684, "wallclock_time": 0.09920477867126465, "evaluations": 7, "cost": 0.396, "incumbent": ["C='69.38389384208695'", "gamma='0.0015531477828170245'"], "origin": "Sobol"}
+{"cpu_time": 0.5006000995635986, "wallclock_time": 1.1378908157348633, "evaluations": 39, "cost": 0.3937, "incumbent": ["C='135.51694553963787'", "gamma='0.0015664972603746641'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 1.0621230602264404, "wallclock_time": 4.184315919876099, "evaluations": 71, "cost": 0.3904, "incumbent": ["C='10.482952389628903'", "gamma='0.0023476788435016715'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 1.219585657119751, "wallclock_time": 4.933893918991089, "evaluations": 83, "cost": 0.3806, "incumbent": ["C='8.870036246567754'", "gamma='0.0022173033929165672'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 1.290654182434082, "wallclock_time": 5.387419939041138, "evaluations": 89, "cost": 0.3769, "incumbent": ["C='6.482347021738505'", "gamma='0.0021855955303216952'"], "origin": "Local Search"}
+{"cpu_time": 2.581467866897583, "wallclock_time": 13.90912389755249, "evaluations": 195, "cost": 0.375, "incumbent": ["C='3.7818416184605805'", "gamma='0.0021853531346358243'"], "origin": "Local Search"}
+{"cpu_time": 2.6386256217956543, "wallclock_time": 13.985708713531494, "evaluations": 200, "cost": 0.3732, "incumbent": ["C='4.6358223233274565'", "gamma='0.0021855955303216952'"], "origin": "Local Search"}
+{"cpu_time": 3.2101328372955322, "wallclock_time": 17.81230068206787, "evaluations": 248, "cost": 0.3652, "incumbent": ["C='4.547201892201315'", "gamma='0.0016773894453297386'"], "origin": "Local Search"}

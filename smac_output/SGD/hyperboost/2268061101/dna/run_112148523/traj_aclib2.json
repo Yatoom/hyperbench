@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005958080291748047, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["alpha='0.0004126639093412234'", "eta0='0.0017613324954003418'"], "origin": "Sobol"}
+{"cpu_time": 2.519740104675293, "wallclock_time": 2.5213799476623535, "evaluations": 1, "cost": 0.0427, "incumbent": ["alpha='0.0004126639093412234'", "eta0='0.0017613324954003418'"], "origin": "Sobol"}
+{"cpu_time": 32.20703649520874, "wallclock_time": 32.22595191001892, "evaluations": 13, "cost": 0.0404, "incumbent": ["alpha='1.3751027885583958e-05'", "eta0='0.0001426968473177047'"], "origin": "Sobol"}
+{"cpu_time": 103.96665453910828, "wallclock_time": 105.73980903625488, "evaluations": 42, "cost": 0.0402, "incumbent": ["alpha='0.0009854805095791679'", "eta0='0.011870304865455'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 106.42535042762756, "wallclock_time": 108.20149803161621, "evaluations": 43, "cost": 0.04, "incumbent": ["alpha='0.001'", "eta0='0.01'"], "origin": null}
+{"cpu_time": 143.55140209197998, "wallclock_time": 146.82637691497803, "evaluations": 58, "cost": 0.0392, "incumbent": ["alpha='0.0009858142322424852'", "eta0='0.007499448321513081'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 168.13850283622742, "wallclock_time": 171.778795003891, "evaluations": 68, "cost": 0.0385, "incumbent": ["alpha='0.0009508626286702488'", "eta0='0.0046579904428604435'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 207.491801738739, "wallclock_time": 211.99660897254944, "evaluations": 84, "cost": 0.0381, "incumbent": ["alpha='0.0010000000000000002'", "eta0='0.004645831671241565'"], "origin": "Local Search"}
+{"cpu_time": 219.76325178146362, "wallclock_time": 224.2873249053955, "evaluations": 89, "cost": 0.0378, "incumbent": ["alpha='0.0010237270810443662'", "eta0='0.004637026520786414'"], "origin": "Local Search"}
+{"cpu_time": 249.27567148208618, "wallclock_time": 255.658597946167, "evaluations": 101, "cost": 0.0374, "incumbent": ["alpha='0.0011699516503902634'", "eta0='0.004636395356263649'"], "origin": "Local Search"}

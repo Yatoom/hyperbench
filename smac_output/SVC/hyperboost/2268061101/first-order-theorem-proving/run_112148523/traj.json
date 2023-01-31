@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005660057067871094, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"C": 0.08611366210550205, "gamma": 0.4942679928374453}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.9581172466278076, "wallclock_time": 0.9593889713287354, "evaluations": 1, "cost": 0.723, "incumbent": {"C": 0.08611366210550205, "gamma": 0.4942679928374453}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 5.251177072525024, "wallclock_time": 5.25496506690979, "evaluations": 4, "cost": 0.6338, "incumbent": {"C": 19.433598606658386, "gamma": 9.232350409327609}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 6.886051893234253, "wallclock_time": 6.891606092453003, "evaluations": 6, "cost": 0.5832, "incumbent": {"C": 1.0, "gamma": 0.1}, "budget": 0, "origin": null}
+{"cpu_time": 17.602315187454224, "wallclock_time": 17.620537281036377, "evaluations": 18, "cost": 0.5731, "incumbent": {"C": 4.532544074901469, "gamma": 0.03382327396632573}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 26.825411558151245, "wallclock_time": 26.853464126586914, "evaluations": 26, "cost": 0.5698, "incumbent": {"C": 490.89071375229827, "gamma": 0.4114559193983836}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 39.0066032409668, "wallclock_time": 39.05237007141113, "evaluations": 38, "cost": 0.5486, "incumbent": {"C": 76.5060885254147, "gamma": 0.08851540004701101}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 54.66159129142761, "wallclock_time": 56.693631172180176, "evaluations": 56, "cost": 0.5456, "incumbent": {"C": 72.40159621627821, "gamma": 0.08733149096021729}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 122.34864139556885, "wallclock_time": 130.46364331245422, "evaluations": 133, "cost": 0.545, "incumbent": {"C": 70.41523370845941, "gamma": 0.08751245459075863}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 167.24729299545288, "wallclock_time": 179.26972913742065, "evaluations": 184, "cost": 0.5444, "incumbent": {"C": 69.74156262356921, "gamma": 0.0873638686506839}, "budget": 0, "origin": "Local Search"}

@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005280971527099609, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"C": 0.08611366210550205, "gamma": 0.4942679928374453}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 1.4539458751678467, "wallclock_time": 1.455160140991211, "evaluations": 1, "cost": 0.8, "incumbent": {"C": 0.08611366210550205, "gamma": 0.4942679928374453}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 5.405242443084717, "wallclock_time": 5.409034013748169, "evaluations": 4, "cost": 0.663, "incumbent": {"C": 19.433598606658386, "gamma": 9.232350409327609}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 26.65368127822876, "wallclock_time": 26.67050814628601, "evaluations": 17, "cost": 0.5226, "incumbent": {"C": 217.71503863741677, "gamma": 190.2917106769055}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 69.09429335594177, "wallclock_time": 69.37002491950989, "evaluations": 39, "cost": 0.4939, "incumbent": {"C": 670.9926026656552, "gamma": 711.9913569126471}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 91.81092929840088, "wallclock_time": 92.38174319267273, "evaluations": 45, "cost": 0.4847, "incumbent": {"C": 741.0084371062869, "gamma": 962.0821226329967}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 128.37050890922546, "wallclock_time": 130.03203201293945, "evaluations": 55, "cost": 0.4843, "incumbent": {"C": 721.4307051818207, "gamma": 966.007573427565}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 147.8642818927765, "wallclock_time": 149.53640222549438, "evaluations": 60, "cost": 0.4841, "incumbent": {"C": 730.5441595918293, "gamma": 962.0821226329967}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 219.39326190948486, "wallclock_time": 224.85143399238586, "evaluations": 84, "cost": 0.4834, "incumbent": {"C": 730.8508695950813, "gamma": 978.4668663600169}, "budget": 0, "origin": "Local Search"}
+{"cpu_time": 485.7971668243408, "wallclock_time": 502.5121750831604, "evaluations": 167, "cost": 0.4827, "incumbent": {"C": 728.6135790319795, "gamma": 978.9622764236439}, "budget": 0, "origin": "Local Search"}

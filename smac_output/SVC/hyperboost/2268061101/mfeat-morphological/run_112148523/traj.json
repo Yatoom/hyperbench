@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0006887912750244141, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"C": 0.08611366210550205, "gamma": 0.4942679928374453}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.06652379035949707, "wallclock_time": 0.0680849552154541, "evaluations": 1, "cost": 0.9, "incumbent": {"C": 0.08611366210550205, "gamma": 0.4942679928374453}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.2785196304321289, "wallclock_time": 0.2825658321380615, "evaluations": 4, "cost": 0.8867, "incumbent": {"C": 19.433598606658386, "gamma": 9.232350409327609}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 0.42810487747192383, "wallclock_time": 0.4339268207550049, "evaluations": 6, "cost": 0.7585, "incumbent": {"C": 1.0, "gamma": 0.1}, "budget": 0, "origin": null}
+{"cpu_time": 0.7995965480804443, "wallclock_time": 0.8090119361877441, "evaluations": 10, "cost": 0.5297, "incumbent": {"C": 69.38389384208695, "gamma": 0.0015531477828170245}, "budget": 0, "origin": "Sobol"}
+{"cpu_time": 2.8723344802856445, "wallclock_time": 4.018979072570801, "evaluations": 36, "cost": 0.5296, "incumbent": {"C": 267.50625489214497, "gamma": 0.001176971407182432}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 3.6189279556274414, "wallclock_time": 5.223546028137207, "evaluations": 44, "cost": 0.5243, "incumbent": {"C": 667.3241825123779, "gamma": 0.0011638938853651712}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 4.168557167053223, "wallclock_time": 5.7811057567596436, "evaluations": 49, "cost": 0.5217, "incumbent": {"C": 703.0683976300016, "gamma": 0.0011347260659962867}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 4.81507682800293, "wallclock_time": 6.735237121582031, "evaluations": 55, "cost": 0.5158, "incumbent": {"C": 821.5250510637136, "gamma": 0.0010364041331532153}, "budget": 0, "origin": "Random Search (sorted)"}
+{"cpu_time": 5.365541696548462, "wallclock_time": 7.295163869857788, "evaluations": 60, "cost": 0.5144, "incumbent": {"C": 826.1110773317781, "gamma": 0.0009969669691309018}, "budget": 0, "origin": "Random Search (sorted)"}

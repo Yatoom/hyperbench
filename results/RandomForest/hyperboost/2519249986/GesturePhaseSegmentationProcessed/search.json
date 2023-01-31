@@ -1,0 +1,109 @@
+[
+  {
+    "conf": {
+      "max_depth": 6,
+      "max_features": 0.3290755869820714,
+      "min_samples_leaf": 11,
+      "min_samples_split": 2
+    },
+    "loss": 0.6262,
+    "at_iteration": 1,
+    "at_time": 0.7006158828735352,
+    "seeds": [
+      330054389,
+      1174876817,
+      1987688596,
+      1255698179
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 18,
+      "max_features": 0.9707894120365381,
+      "min_samples_leaf": 5,
+      "min_samples_split": 26
+    },
+    "loss": 0.481,
+    "at_iteration": 10,
+    "at_time": 39.37308979034424,
+    "seeds": [
+      1255698179,
+      1174876817,
+      1987688596,
+      330054389,
+      388333143
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 39,
+      "max_features": 0.3087822897359729,
+      "min_samples_leaf": 3,
+      "min_samples_split": 7
+    },
+    "loss": 0.4665,
+    "at_iteration": 36,
+    "at_time": 83.2570698261261,
+    "seeds": [
+      1255698179,
+      330054389,
+      1987688596,
+      1174876817,
+      388333143
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 45,
+      "max_features": 0.7147195728757302,
+      "min_samples_leaf": 3,
+      "min_samples_split": 11
+    },
+    "loss": 0.4498,
+    "at_iteration": 62,
+    "at_time": 138.9863691329956,
+    "seeds": [
+      1174876817,
+      330054389,
+      1255698179,
+      388333143,
+      1987688596
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 46,
+      "max_features": 0.7035753637881912,
+      "min_samples_leaf": 3,
+      "min_samples_split": 4
+    },
+    "loss": 0.4373,
+    "at_iteration": 75,
+    "at_time": 189.32334995269775,
+    "seeds": [
+      1987688596,
+      1255698179,
+      388333143,
+      1174876817,
+      330054389
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 47,
+      "max_features": 0.6903549018592245,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.4191,
+    "at_iteration": 95,
+    "at_time": 264.2688479423523,
+    "seeds": [
+      1174876817,
+      330054389,
+      1987688596,
+      388333143,
+      1255698179
+    ]
+  }
+]
