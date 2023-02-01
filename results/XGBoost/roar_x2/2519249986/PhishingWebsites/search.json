@@ -7,8 +7,8 @@
       "reg_lambda": 1.0
     },
     "loss": 0.0297,
-    "at_iteration": 0.5,
-    "at_time": 0.6894700527191162,
+    "at_iteration": 1,
+    "at_time": 1.3789401054382324,
     "seeds": [
       1615023708,
       330054389,

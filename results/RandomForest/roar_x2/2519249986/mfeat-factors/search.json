@@ -7,8 +7,8 @@
       "min_samples_split": 32
     },
     "loss": 0.0337,
-    "at_iteration": 0.5,
-    "at_time": 0.28212404251098633,
+    "at_iteration": 1,
+    "at_time": 0.5642480850219727,
     "seeds": [
       1615023708,
       330054389,
@@ -25,8 +25,8 @@
       "min_samples_split": 2
     },
     "loss": 0.0273,
-    "at_iteration": 11.5,
-    "at_time": 11.558586597442627,
+    "at_iteration": 23,
+    "at_time": 23.117173194885254,
     "seeds": [
       1615023708,
       330054389,

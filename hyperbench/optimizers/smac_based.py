@@ -47,8 +47,8 @@ class SMACBasedOptimizer(Optimizer):
             Entry(
                 conf=dict(entry.incumbent),
                 loss=entry.train_perf,
-                at_iteration=int(entry.ta_runs) if self.budget_multiplier == 1 else float(entry.ta_runs) / self.budget_multiplier,
-                at_time=entry.wallclock_time / self.budget_multiplier,
+                at_iteration=int(entry.ta_runs),
+                at_time=entry.wallclock_time,
                 seeds=self.get_seeds(entry, config_id_to_seeds)
             )
             for entry in self.initialized_optimizer.get_trajectory()[1:]  # Skip the first one

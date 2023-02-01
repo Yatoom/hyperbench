@@ -51,7 +51,9 @@ class BaseTarget(ABC):
 
         return evaluate
 
-    def replay_trajectory(self, trajectory: Trajectory, scoring, search_data, eval_data):
+    def replay_trajectory(self, trajectory: Trajectory, scoring, search_data, eval_data, progress, loop_iterations):
+        total_inc = len([seed for item in trajectory.as_list for seed in item.seeds])
+        progress.update(loop_iterations, total=total_inc)
 
         scorer = get_scorer(scoring)
         results = []
@@ -59,6 +61,7 @@ class BaseTarget(ABC):
         for item in trajectory.as_list:
             losses = []
             for seed in item.seeds:
+                progress.update(loop_iterations, advance=1)
                 algorithm = self.init_model(seed, search_data.metadata, **item.conf)
                 algorithm.fit(search_data.X, search_data.y)
                 loss = 1 - scorer(algorithm, eval_data.X, eval_data.y)

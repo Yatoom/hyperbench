@@ -7,8 +7,8 @@
       "min_samples_split": 32
     },
     "loss": 0.7962031551097015,
-    "at_iteration": 0.5,
-    "at_time": 0.037262558937072754,
+    "at_iteration": 1,
+    "at_time": 0.07452511787414551,
     "seeds": [
       705846521,
       379248293,
@@ -25,8 +25,8 @@
       "min_samples_split": 12
     },
     "loss": 0.8033080126177848,
-    "at_iteration": 2.0,
-    "at_time": 0.1370929479598999,
+    "at_iteration": 4,
+    "at_time": 0.2741858959197998,
     "seeds": [
       379248293,
       705846521,
@@ -43,8 +43,8 @@
       "min_samples_split": 4
     },
     "loss": 0.8121997138956342,
-    "at_iteration": 9.0,
-    "at_time": 0.5839954614639282,
+    "at_iteration": 18,
+    "at_time": 1.1679909229278564,
     "seeds": [
       276329748,
       1694519055,
@@ -61,8 +61,8 @@
       "min_samples_split": 2
     },
     "loss": 0.7985800108072405,
-    "at_iteration": 33.5,
-    "at_time": 2.2252479791641235,
+    "at_iteration": 67,
+    "at_time": 4.450495958328247,
     "seeds": [
       379248293,
       1694519055,
@@ -79,8 +79,8 @@
       "min_samples_split": 3
     },
     "loss": 0.8083924100883305,
-    "at_iteration": 69.5,
-    "at_time": 4.702591061592102,
+    "at_iteration": 139,
+    "at_time": 9.405182123184204,
     "seeds": [
       1273456267,
       705846521,
