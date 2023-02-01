@@ -4,8 +4,8 @@
   "inc_changed": 9,
   "n_configs": 141,
   "submitted_ta_runs": 300,
-  "ta_time_used": 90.79722499847412,
-  "wallclock_time_used": 163.74290418624878,
+  "ta_time_used": 91.49185419082642,
+  "wallclock_time_used": 158.35167002677917,
   "dataset_id": 146820,
-  "perf_time": 163.851609208
+  "perf_time": 158.361998125
 }
