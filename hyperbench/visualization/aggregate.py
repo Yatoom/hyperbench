@@ -20,14 +20,13 @@ def get_trajectories(path, iterations, time_based, details):
     # Get trajectory for all multipliers
     for i in range(multiplier):
         speedup = i + 1
-        if 1 < multiplier == speedup:
-            # details[1] = optimizer.split("_")[0] + f"_x{speedup} (virtual)"
-            details[1] = optimizer + f" - delayed {speedup}x"
+        if 1 < multiplier != speedup:
+            details[1] = optimizer.split("_")[0] + f"_x{speedup}"
         else:
             details[1] = optimizer
-        _, y = Trajectory.load(path).get_loss(iterations, time_based, speedup=1/speedup)
+        _, y = Trajectory.load(path).get_loss(iterations, time_based, speedup=speedup)
 
-        virtual = speedup == multiplier
+        virtual = speedup != multiplier
         entries.append([*details, virtual, y])
 
     return entries
