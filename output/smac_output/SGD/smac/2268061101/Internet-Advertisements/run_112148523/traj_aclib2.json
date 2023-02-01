@@ -1,2 +1,0 @@
-{"cpu_time": 0.0, "wallclock_time": 0.00023126602172851562, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["alpha='0.0004126639093412234'", "eta0='0.0017613324954003418'"], "origin": "Sobol"}
-{"cpu_time": 7.09142804145813, "wallclock_time": 7.092329263687134, "evaluations": 1, "cost": 0.1918, "incumbent": ["alpha='0.0004126639093412234'", "eta0='0.0017613324954003418'"], "origin": "Sobol"}

@@ -1,2 +1,0 @@
-{"cpu_time": 0.0, "wallclock_time": 3.7670135498046875e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["max_depth='10'", "max_features='0.5'", "min_samples_leaf='1'", "min_samples_split='32'"], "origin": "Default"}
-{"cpu_time": 0.32602882385253906, "wallclock_time": 0.3267240524291992, "evaluations": 1, "cost": 0.4798, "incumbent": ["max_depth='10'", "max_features='0.5'", "min_samples_leaf='1'", "min_samples_split='32'"], "origin": "Default"}

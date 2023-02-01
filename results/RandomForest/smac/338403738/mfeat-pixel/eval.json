@@ -1,0 +1,104 @@
+[
+  {
+    "conf": {
+      "max_depth": 1,
+      "max_features": 0.49276944529265165,
+      "min_samples_leaf": 4,
+      "min_samples_split": 9
+    },
+    "loss": 0.381,
+    "at_iteration": 1,
+    "at_time": 0.22133517265319824,
+    "seeds": [
+      1799960134,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 22,
+      "max_features": 0.502463330514729,
+      "min_samples_leaf": 18,
+      "min_samples_split": 83
+    },
+    "loss": 0.05800000000000016,
+    "at_iteration": 4,
+    "at_time": 0.9619278907775879,
+    "seeds": [
+      588640566,
+      1799960134
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.0316,
+    "at_iteration": 6,
+    "at_time": 1.5617971420288086,
+    "seeds": [
+      1799960134,
+      588640566,
+      941008343,
+      1856201261,
+      494963217
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 35,
+      "max_features": 0.653578007593751,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.0248,
+    "at_iteration": 39,
+    "at_time": 13.66489028930664,
+    "seeds": [
+      1799960134,
+      941008343,
+      1856201261,
+      494963217,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 45,
+      "max_features": 0.6269258242943828,
+      "min_samples_leaf": 2,
+      "min_samples_split": 3
+    },
+    "loss": 0.024000000000000042,
+    "at_iteration": 73,
+    "at_time": 36.26311802864075,
+    "seeds": [
+      1856201261,
+      588640566,
+      1799960134,
+      494963217,
+      941008343
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 43,
+      "max_features": 0.625139351569215,
+      "min_samples_leaf": 1,
+      "min_samples_split": 3
+    },
+    "loss": 0.021599999999999973,
+    "at_iteration": 100,
+    "at_time": 55.783658027648926,
+    "seeds": [
+      494963217,
+      1799960134,
+      588640566,
+      941008343,
+      1856201261
+    ]
+  }
+]

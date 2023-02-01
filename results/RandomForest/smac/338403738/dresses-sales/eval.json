@@ -1,0 +1,104 @@
+[
+  {
+    "conf": {
+      "max_depth": 1,
+      "max_features": 0.49276944529265165,
+      "min_samples_leaf": 4,
+      "min_samples_split": 9
+    },
+    "loss": 0.48761854583772396,
+    "at_iteration": 1,
+    "at_time": 0.061731815338134766,
+    "seeds": [
+      1799960134,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 22,
+      "max_features": 0.502463330514729,
+      "min_samples_leaf": 18,
+      "min_samples_split": 83
+    },
+    "loss": 0.4367096944151739,
+    "at_iteration": 4,
+    "at_time": 0.2435750961303711,
+    "seeds": [
+      588640566,
+      1799960134
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.43898840885142254,
+    "at_iteration": 6,
+    "at_time": 0.37345194816589355,
+    "seeds": [
+      1799960134,
+      588640566,
+      941008343,
+      783888986,
+      328805077
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 9,
+      "max_features": 0.24789578560739756,
+      "min_samples_leaf": 6,
+      "min_samples_split": 2
+    },
+    "loss": 0.4368282402528978,
+    "at_iteration": 10,
+    "at_time": 0.6293189525604248,
+    "seeds": [
+      941008343,
+      1799960134,
+      588640566,
+      328805077,
+      783888986
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 17,
+      "max_features": 0.9866730123758316,
+      "min_samples_leaf": 13,
+      "min_samples_split": 6
+    },
+    "loss": 0.45811380400421503,
+    "at_iteration": 31,
+    "at_time": 2.053633689880371,
+    "seeds": [
+      783888986,
+      1799960134,
+      588640566,
+      328805077,
+      941008343
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 14,
+      "max_features": 0.9867929826700261,
+      "min_samples_leaf": 12,
+      "min_samples_split": 7
+    },
+    "loss": 0.45729715489989464,
+    "at_iteration": 84,
+    "at_time": 11.901129961013794,
+    "seeds": [
+      941008343,
+      1799960134,
+      783888986,
+      588640566,
+      328805077
+    ]
+  }
+]

@@ -1,9 +1,0 @@
-"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
-0.000000, 2147483648.000000, 0.000083, 1, 0.000083, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.0316227766',depth='6',learning_rate='0.0316227766',objective=''MultiClass'',bagging_temperature='5.0'
-1.322484, 0.066500, 1.323715, 1, 0.001231, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.0316227766',depth='6',learning_rate='0.0316227766',objective=''MultiClass'',bagging_temperature='5.0'
-5.107332, 0.030900, 5.119054, 2, 0.011723, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.06430564145385859',depth='12',learning_rate='0.05547832221413664',objective=''MultiClass''
-6.145005, 0.026800, 6.205405, 3, 0.060400, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.08768580457406842',depth='6',learning_rate='0.06888680560725487',objective=''CrossEntropy''
-7.184575, 0.025000, 7.302151, 4, 0.117576, boosting_type=''Plain'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.07068403824948333',depth='4',learning_rate='0.0363473584021139',objective=''MultiClass'',subsample='0.8513701298526338'
-9.686328, 0.023100, 10.083390, 5, 0.397062, boosting_type=''Ordered'',bootstrap_type=''Bernoulli'',colsample_bylevel='0.06448828750673721',depth='8',learning_rate='0.20964893609447377',objective=''MultiClass'',subsample='0.3867315274685862'
-9.769347, 0.021700, 10.187075, 6, 0.417728, boosting_type=''Plain'',bootstrap_type=''Bayesian'',colsample_bylevel='0.06021544856041583',depth='12',learning_rate='0.15502695302690672',objective=''CrossEntropy'',bagging_temperature='6.787473517683502'
-18.225012, 0.021600, 20.521287, 7, 2.296275, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.09330013821195492',depth='2',learning_rate='0.05878755613034087',objective=''MultiClass'',bagging_temperature='6.638034223858247'

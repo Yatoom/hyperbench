@@ -1,2 +1,0 @@
-{"cpu_time": 0.0, "wallclock_time": 4.076957702636719e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["C='1.0'", "gamma='0.1'"], "origin": "Default"}
-{"cpu_time": 0.3007988929748535, "wallclock_time": 0.3015437126159668, "evaluations": 1, "cost": 0.5105, "incumbent": ["C='1.0'", "gamma='0.1'"], "origin": "Default"}

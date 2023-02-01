@@ -1,4 +1,0 @@
-colsample_bytree real [0.1, 1.0] [1.0]
-eta real [0.0009765625, 1.0] [0.3]log
-max_depth integer [1, 10] [10]log
-reg_lambda real [0.0009765625, 1024.0] [1.0]log

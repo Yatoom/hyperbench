@@ -1,0 +1,104 @@
+[
+  {
+    "conf": {
+      "max_depth": 1,
+      "max_features": 0.49276944529265165,
+      "min_samples_leaf": 4,
+      "min_samples_split": 9
+    },
+    "loss": 0.24299999999999994,
+    "at_iteration": 1,
+    "at_time": 0.12953591346740723,
+    "seeds": [
+      1799960134,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 22,
+      "max_features": 0.502463330514729,
+      "min_samples_leaf": 18,
+      "min_samples_split": 83
+    },
+    "loss": 0.07900000000000007,
+    "at_iteration": 4,
+    "at_time": 0.8268640041351318,
+    "seeds": [
+      588640566,
+      1799960134
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 10,
+      "max_features": 0.5,
+      "min_samples_leaf": 1,
+      "min_samples_split": 32
+    },
+    "loss": 0.04320000000000006,
+    "at_iteration": 6,
+    "at_time": 1.6059901714324951,
+    "seeds": [
+      1799960134,
+      588640566,
+      941008343,
+      1856201261,
+      494963217
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 35,
+      "max_features": 0.653578007593751,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2
+    },
+    "loss": 0.043200000000000016,
+    "at_iteration": 37,
+    "at_time": 16.469974994659424,
+    "seeds": [
+      1799960134,
+      941008343,
+      1856201261,
+      494963217,
+      588640566
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 17,
+      "max_features": 0.6503514821780799,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.038800000000000015,
+    "at_iteration": 67,
+    "at_time": 36.45581603050232,
+    "seeds": [
+      1799960134,
+      588640566,
+      494963217,
+      1856201261,
+      941008343
+    ]
+  },
+  {
+    "conf": {
+      "max_depth": 15,
+      "max_features": 0.6498446160238843,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "loss": 0.03719999999999994,
+    "at_iteration": 136,
+    "at_time": 103.3748300075531,
+    "seeds": [
+      1799960134,
+      494963217,
+      1856201261,
+      588640566,
+      941008343
+    ]
+  }
+]

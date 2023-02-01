@@ -1,6 +1,0 @@
-"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
-0.000000, 2147483648.000000, 0.000067, 1, 0.000067, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.0316227766',depth='6',learning_rate='0.0316227766',objective=''MultiClass'',bagging_temperature='5.0'
-7.378162, 0.419600, 7.378947, 1, 0.000785, boosting_type=''Ordered'',bootstrap_type=''Bayesian'',colsample_bylevel='0.0316227766',depth='6',learning_rate='0.0316227766',objective=''MultiClass'',bagging_temperature='5.0'
-38.221781, 0.258400, 38.231984, 2, 0.010203, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.06430564145385859',depth='12',learning_rate='0.05547832221413664',objective=''MultiClass''
-84.683649, 0.150600, 84.729686, 3, 0.046037, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.05260078484200304',depth='7',learning_rate='0.6109807036806799',objective=''MultiClass''
-466.999921, 0.082900, 467.767517, 4, 0.767596, boosting_type=''Plain'',bootstrap_type=''MVS'',colsample_bylevel='0.09495762727959882',depth='11',learning_rate='0.3498051015148037',objective=''MultiClass''

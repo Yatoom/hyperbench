@@ -1,3 +1,0 @@
-"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
-0.000000, 2147483648.000000, 0.000031, 1, 0.000031, C='1.0',gamma='0.1'
-0.045383, 0.488900, 0.047971, 1, 0.002588, C='1.0',gamma='0.1'
