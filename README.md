@@ -48,7 +48,7 @@ Here is a schematic overview of how the benchmarks are performed:
 During the execution of the benchmark, Hyperbench will display a set of progress bars with timestamped log messages 
 above it.
 
-![img.png](img.png)
+!![img_2.png](img_2.png)
 
 The progres bars correspond to the orange boxes in the schematic view above.
 The log messages show a timestamp and the current combination of 
