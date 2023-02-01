@@ -52,10 +52,6 @@ class HyperboostEPM(BaseEPM):
         )
         self.rng = np.random.RandomState(self.seed)
 
-        # self.catboost = CatBoostRegressor(iterations=100, loss_function="RMSEWithUncertainty", posterior_sampling=False,
-        #                                   verbose=False, random_seed=0, learning_rate=1.0, random_strength=0,
-        #                                   l2_leaf_reg=1)
-
         return None
 
     def _train(self, X: np.ndarray, Y: np.ndarray) -> 'HyperboostEPM':
@@ -121,7 +117,12 @@ class HyperboostEPM(BaseEPM):
             raise NotImplementedError("X has to be of type np.ndarray")
 
         pred = self.catboost.predict(X)
-        preds = self.virtual_ensemble_predict(X, min(20, self.catboost.tree_count_))
+
+        # Tree count should usually be 100, but in rare cases it gets lower due to pruning. In that case we need to
+        # adjust the number of virtual ensembles we use.
+        max_virtual_ensembles = int(self.catboost.tree_count_ / 2)
+
+        preds = self.virtual_ensemble_predict(X, min(20, max_virtual_ensembles))
 
         mean_preds = preds[:, 0]  # mean values predicted by a virtual ensemble
         knowledge = preds[:, 1]  # knowledge uncertainty predicted by a virtual ensemble
@@ -130,8 +131,8 @@ class HyperboostEPM(BaseEPM):
         return pred[:, 0], knowledge ** 0.3
 
     def virtual_ensemble_predict(self, X, n):
-        if n != 20:
-            print(f"USING: {n} virtual ensembles")
+
+        # Probably no longer necessary to wrap these into try/except.
         try:
             return self.catboost.virtual_ensembles_predict(X, prediction_type="TotalUncertainty",
                                                            virtual_ensembles_count=n)

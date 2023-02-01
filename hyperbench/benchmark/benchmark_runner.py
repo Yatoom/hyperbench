@@ -69,13 +69,17 @@ class BenchmarkRunner:
             eval_trajectory = self.evaluation_stage(target, new_search_set, new_eval_set, search_trajectory)
             self.progress.update(self.track_stage, advance=1)
 
-            self.save(search_trajectory, seed, target.name, dataset.metadata.name, optimizer.name, "search")
-            self.save(eval_trajectory, seed, target.name, dataset.metadata.name, optimizer.name, "eval")
+            self.save(search_trajectory, seed, target.name, dataset.metadata.name, optimizer.name,
+                      "search", optimizer.budget_multiplier)
+            self.save(eval_trajectory, seed, target.name, dataset.metadata.name, optimizer.name,
+                      "eval", optimizer.budget_multiplier)
             self.save_stats(stats, seed, target.name, dataset.metadata, optimizer.name, toc - tic)
             self.progress.update(self.track_splits, advance=1)
 
-    def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
+    def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str, multiplier: int):
         seed = str(seed)
+        if multiplier != 1:
+            optimizer = optimizer + f"_x{multiplier}"
         path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset)
         file = os.path.join(path, f"{stage}.json")
         os.makedirs(path, exist_ok=True)
@@ -96,13 +100,15 @@ class BenchmarkRunner:
 
     def search_stage(self, seed, target, dataset, optimizer):
         self.progress.update(self.track_iterations, total=self.benchmark.budget * optimizer.budget_multiplier)
-        tae_runner = target.get_config_evaluator(dataset, self.benchmark.train_test_splits, self.benchmark.scoring, self.progress, self.track_iterations)
+        tae_runner = target.get_config_evaluator(dataset, self.benchmark.train_test_splits, self.benchmark.scoring,
+                                                 self.progress, self.track_iterations)
         optimizer.initialize(tae_runner, seed, dataset, self.benchmark.budget, self.benchmark.time_based, target)
         optimizer.search()
         self.progress.reset(self.track_iterations)
         return optimizer.get_trajectory(), optimizer.get_stats()
 
     def evaluation_stage(self, target, search_set, eval_set, search_trajectory):
-        eval_trajectory = target.replay_trajectory(search_trajectory, self.benchmark.scoring, search_set, eval_set)
+        eval_trajectory = target.replay_trajectory(search_trajectory, self.benchmark.scoring, search_set, eval_set,
+                                                   self.progress, self.track_iterations)
         return eval_trajectory
 

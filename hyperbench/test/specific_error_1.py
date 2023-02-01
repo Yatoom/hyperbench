@@ -9,7 +9,7 @@ from hyperbench.target_algorithms import RandomForest
 from hyperbench.transformer import SimpleTransformer
 
 
-# This error was related to not having enough trees for 20 virtual ensembles
+# This will produce the error of not having a large enough subsample.
 
 benchmark = BenchmarkConfig(
     budget=300,

@@ -9,8 +9,7 @@ from hyperbench.provider import OpenMLProvider
 from hyperbench.target_algorithms import SVM
 from hyperbench.transformer import SimpleTransformer
 
-# This error was related to subsample rate nog being high enough.
-
+# This error was related to not having enough trees for the virtual ensembles.
 
 benchmark = BenchmarkConfig(
     budget=300,
