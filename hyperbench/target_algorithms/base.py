@@ -52,8 +52,6 @@ class BaseTarget(ABC):
         return evaluate
 
     def replay_trajectory(self, trajectory: Trajectory, scoring, search_data, eval_data, progress, loop_iterations):
-        total_inc = len([seed for item in trajectory.as_list for seed in item.seeds])
-        progress.update(loop_iterations, total=total_inc)
 
         scorer = get_scorer(scoring)
         results = []

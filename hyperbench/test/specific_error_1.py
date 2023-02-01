@@ -20,7 +20,7 @@ benchmark = BenchmarkConfig(
 
     seeds=[2268061101],
     target_algorithms=[RandomForest()],
-    datasets=[OpenMLProvider(146820)],
+    datasets=[OpenMLProvider(146820)],  # wilt
     optimizers=[
         SMACBasedOptimizer(SMAC4HPO, "hyperboost", budget_multiplier=1, model=HyperboostEPM)
     ],

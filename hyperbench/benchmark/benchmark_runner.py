@@ -70,16 +70,14 @@ class BenchmarkRunner:
             self.progress.update(self.track_stage, advance=1)
 
             self.save(search_trajectory, seed, target.name, dataset.metadata.name, optimizer.name,
-                      "search", optimizer.budget_multiplier)
+                      "search")
             self.save(eval_trajectory, seed, target.name, dataset.metadata.name, optimizer.name,
-                      "eval", optimizer.budget_multiplier)
+                      "eval")
             self.save_stats(stats, seed, target.name, dataset.metadata, optimizer.name, toc - tic)
             self.progress.update(self.track_splits, advance=1)
 
-    def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str, multiplier: int):
+    def save(self, trajectory, seed: int, target: str, dataset: str, optimizer: str, stage: str):
         seed = str(seed)
-        if multiplier != 1:
-            optimizer = optimizer + f"_x{multiplier}"
         path = os.path.join(self.benchmark.output_folder, target, optimizer, seed, dataset)
         file = os.path.join(path, f"{stage}.json")
         os.makedirs(path, exist_ok=True)
@@ -108,6 +106,9 @@ class BenchmarkRunner:
         return optimizer.get_trajectory(), optimizer.get_stats()
 
     def evaluation_stage(self, target, search_set, eval_set, search_trajectory):
+        self.progress.reset(self.track_iterations)
+        total_inc = len([seed for item in search_trajectory.as_list for seed in item.seeds])
+        self.progress.update(self.track_iterations, total=total_inc)
         eval_trajectory = target.replay_trajectory(search_trajectory, self.benchmark.scoring, search_set, eval_set,
                                                    self.progress, self.track_iterations)
         return eval_trajectory

@@ -13,7 +13,7 @@ class SMACBasedOptimizer(Optimizer):
 
     def __init__(self, optimizer, name, budget_multiplier=1, **kwargs):
         self.optimizer = optimizer
-        self._name = name
+        self._name = name + f"_x{budget_multiplier}" if budget_multiplier > 1 else name
         self.kwargs = kwargs
         self.initialized_optimizer = None
         self.budget_multiplier = budget_multiplier
