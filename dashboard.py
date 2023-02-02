@@ -2,7 +2,9 @@ import os
 
 import pandas as pd
 import streamlit as st
-from hyperbench.visualization import aggregate
+from hyperbench.visualization import aggregate, dashboard
+from hyperbench.visualization import dashboard
+from hyperbench.visualization.dashboard import BenchmarkResults
 from hyperbench.visualization.smac_history import load_leaderboard
 from run_benchmark import benchmark
 
@@ -60,30 +62,13 @@ with main_tab:
             st.dataframe(aggregate.overview(filtered), use_container_width=True)
 
     # Split by search and eval
-    search_trajectories = aggregate.filter_on(filtered, stage="search")
-    eval_trajectories = aggregate.filter_on(filtered, stage="eval")
+    search_trajectories = aggregate.filter_on(filtered, stage="search").drop("virtual", axis=1)
+    eval_trajectories = aggregate.filter_on(filtered, stage="eval").drop("virtual", axis=1)
 
     tab1, tab2, tab3 = st.tabs(["🧪 Search results", "️🤔 Evaluation results", "📊 Statistics"])
     for i, j, k in [("Search set", search_trajectories, tab1), ("Evaluation set", eval_trajectories, tab2)]:
         with k:
-            metric1, metric2, metric3 = st.tabs(["Average loss", "Ranked", "Normalized average loss"])
-            with metric1:
-                df = aggregate.aggregate_over_seeds(j)
-                df = aggregate.aggregate_over_datasets(df)
-                f = aggregate.visualize(df)
-                st.plotly_chart(f)
-            with metric2:
-                df = aggregate.rank(j)
-                df = aggregate.aggregate_over_seeds(df)
-                df = aggregate.aggregate_over_datasets(df)
-                f = aggregate.visualize(df)
-                st.plotly_chart(f)
-            with metric3:
-                df = aggregate.normalize(j)
-                df = aggregate.aggregate_over_seeds(df)
-                df = aggregate.aggregate_over_datasets(df)
-                f = aggregate.visualize(df)
-                st.plotly_chart(f)
+            BenchmarkResults(j).display_graphs()
 
     with tab3:
         stats = aggregate.load_stats(directory, filtered, target=target)

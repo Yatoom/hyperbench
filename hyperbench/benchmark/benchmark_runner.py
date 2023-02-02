@@ -20,7 +20,7 @@ class BenchmarkRunner:
         self.track_opt = progress.add_task("Optimizers", total=len(self.benchmark.optimizers))
         self.track_splits = progress.add_task("Splits", total=self.benchmark.search_eval_splits.n_splits)
         self.track_stage = progress.add_task("Stage", total=2)
-        self.track_iterations = progress.add_task("Evaluations", total=self.benchmark.budget)
+        self.track_iterations = progress.add_task("Search", total=self.benchmark.budget)
         self.progress = progress
 
     def start(self):
@@ -97,6 +97,7 @@ class BenchmarkRunner:
         return os.path.exists(path)
 
     def search_stage(self, seed, target, dataset, optimizer):
+        self.progress.reset(self.track_iterations)
         self.progress.update(self.track_iterations, total=self.benchmark.budget * optimizer.budget_multiplier)
         tae_runner = target.get_config_evaluator(dataset, self.benchmark.train_test_splits, self.benchmark.scoring,
                                                  self.progress, self.track_iterations)

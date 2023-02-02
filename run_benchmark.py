@@ -52,7 +52,7 @@ benchmark = BenchmarkConfig(
     datasets=[OpenMLProvider(task) for task in tasks],
     optimizers=[
         # SMACBasedOptimizer(ROAR, "roar_x1", budget_multiplier=1)
-        SMACBasedOptimizer(ROAR, "roar_x2", budget_multiplier=2),
+        SMACBasedOptimizer(ROAR, "roar", budget_multiplier=2),
         SMACBasedOptimizer(SMAC4HPO, "smac", budget_multiplier=1),
         SMACBasedOptimizer(SMAC4HPO, "hyperboost", budget_multiplier=1, model=HyperboostEPM)
     ],
