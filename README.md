@@ -6,6 +6,7 @@ The main features of Hyperbench are:
 3. Integration with [OpenML](https://www.openml.org/) to automatically download datasets for the benchmark.
 4. Integration with [SMAC](https://github.com/automl/SMAC3), a high-performing and versatile HPO tool.
 5. Can run easily on a personal computer or laptop, or it can be split up into multiple parts that run in parallel.
+6. Easily extendible with your own datasets, target algorithms, optimizers, etc.
 
 ## Setup guide
 
@@ -91,9 +92,7 @@ which target algorithm you would like to see the graphs for, you can filter on d
 | Global | Includes everything, but might not accurately reflect the relative performance of the uncompleted experiments. Especially the average loss graph might be off.                                                                                                                                                              |
 
 ## Concepts
-The benchmark consists of a lot of loops 
-
-Here is a schematic overview of how the benchmarks are performed:
+The benchmark consists of a lot of loops. Here is a schematic overview of how the benchmarks are performed:
 
 ```mermaid
   graph TD;
