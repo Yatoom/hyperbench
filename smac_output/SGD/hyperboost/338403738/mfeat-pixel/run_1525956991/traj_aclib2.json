@@ -1,0 +1,9 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0006153583526611328, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["alpha='0.00011227070295712931'", "eta0='0.0029096933833365197'"], "origin": "Sobol"}
+{"cpu_time": 6.687877893447876, "wallclock_time": 6.689561128616333, "evaluations": 1, "cost": 0.0452, "incumbent": ["alpha='0.00011227070295712931'", "eta0='0.0029096933833365197'"], "origin": "Sobol"}
+{"cpu_time": 46.272403717041016, "wallclock_time": 46.284470081329346, "evaluations": 7, "cost": 0.0279, "incumbent": ["alpha='0.026542866188361353'", "eta0='8.075114966892127e-05'"], "origin": "Sobol"}
+{"cpu_time": 110.22433924674988, "wallclock_time": 110.25036025047302, "evaluations": 17, "cost": 0.0273, "incumbent": ["alpha='0.0025540066964094537'", "eta0='1.2228344859878906e-05'"], "origin": "Sobol"}
+{"cpu_time": 218.65503525733948, "wallclock_time": 218.71679306030273, "evaluations": 34, "cost": 0.0236, "incumbent": ["alpha='0.2324892929213259'", "eta0='2.3356151186184673e-05'"], "origin": "Sobol"}
+{"cpu_time": 606.9184873104095, "wallclock_time": 613.8281691074371, "evaluations": 94, "cost": 0.0235, "incumbent": ["alpha='0.13540941196908182'", "eta0='1.8117435851298527e-05'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 672.4686098098755, "wallclock_time": 679.7342700958252, "evaluations": 104, "cost": 0.0232, "incumbent": ["alpha='0.19145536288445716'", "eta0='1.020496310856775e-05'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 711.9083454608917, "wallclock_time": 719.5182740688324, "evaluations": 110, "cost": 0.0231, "incumbent": ["alpha='0.13212371034473253'", "eta0='1.0527248331336127e-05'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 940.9220752716064, "wallclock_time": 952.1463742256165, "evaluations": 145, "cost": 0.023, "incumbent": ["alpha='0.2344814019848903'", "eta0='1.0396330422650192e-05'"], "origin": "Local Search"}

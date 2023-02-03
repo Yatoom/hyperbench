@@ -1,3 +1,4 @@
+import enum
 import os
 
 import streamlit as st
@@ -30,10 +31,18 @@ class Options:
         self.target = st.selectbox("Choose the target algorithm", targets)
 
     def set_view(self):
-        self.view = st.radio("Choose your view", ('Live view', 'Static view', 'Global view'))
+        views = Views.LIVE, Views.STATIC, Views.GLOBAL
+        choices = ('Live view', 'Static view', 'Global view')
+        view = st.radio("Choose your view", choices)
+        self.view = views[choices.index(view)]
+
+
+class Views(enum.Enum):
+    LIVE = 1
+    STATIC = 2
+    GLOBAL = 3
 
 
 if __name__ == "__main__":
     options = Options(directory="results", budget=300, time_based=True)
     options.display()
-

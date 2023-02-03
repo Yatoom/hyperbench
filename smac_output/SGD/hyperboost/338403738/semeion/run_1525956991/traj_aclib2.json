@@ -1,0 +1,10 @@
+{"cpu_time": 0.0, "wallclock_time": 0.0005900859832763672, "evaluations": 0, "cost": 2147483648.0, "incumbent": ["alpha='0.00011227070295712931'", "eta0='0.0029096933833365197'"], "origin": "Sobol"}
+{"cpu_time": 5.7172956466674805, "wallclock_time": 5.7188401222229, "evaluations": 1, "cost": 0.1045, "incumbent": ["alpha='0.00011227070295712931'", "eta0='0.0029096933833365197'"], "origin": "Sobol"}
+{"cpu_time": 39.096352100372314, "wallclock_time": 39.105576276779175, "evaluations": 7, "cost": 0.0994, "incumbent": ["alpha='0.026542866188361353'", "eta0='8.075114966892127e-05'"], "origin": "Sobol"}
+{"cpu_time": 56.053051233291626, "wallclock_time": 56.067323207855225, "evaluations": 10, "cost": 0.0958, "incumbent": ["alpha='0.001'", "eta0='0.01'"], "origin": null}
+{"cpu_time": 122.69531655311584, "wallclock_time": 122.72820401191711, "evaluations": 22, "cost": 0.0948, "incumbent": ["alpha='1.715136253541309e-05'", "eta0='0.0001288871339815063'"], "origin": "Sobol"}
+{"cpu_time": 155.98247265815735, "wallclock_time": 156.02626824378967, "evaluations": 28, "cost": 0.088, "incumbent": ["alpha='0.006935621833333125'", "eta0='0.0010997603618150208'"], "origin": "Sobol"}
+{"cpu_time": 283.72133898735046, "wallclock_time": 286.1380121707916, "evaluations": 51, "cost": 0.0875, "incumbent": ["alpha='0.0069642394137344275'", "eta0='0.0011629272456562174'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 328.16603112220764, "wallclock_time": 331.43142914772034, "evaluations": 59, "cost": 0.0849, "incumbent": ["alpha='0.019402536190307927'", "eta0='0.001223823099821685'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 372.4871275424957, "wallclock_time": 376.3949692249298, "evaluations": 67, "cost": 0.0812, "incumbent": ["alpha='0.012845334286274126'", "eta0='0.0011182125897218939'"], "origin": "Random Search (sorted)"}
+{"cpu_time": 422.37479639053345, "wallclock_time": 427.70525217056274, "evaluations": 76, "cost": 0.0804, "incumbent": ["alpha='0.012456258227593862'", "eta0='0.001122546525614913'"], "origin": "Random Search (sorted)"}

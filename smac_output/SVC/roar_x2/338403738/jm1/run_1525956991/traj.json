@@ -1,0 +1,7 @@
+{"cpu_time": 0.0, "wallclock_time": 3.981590270996094e-05, "evaluations": 0, "cost": 2147483648.0, "incumbent": {"C": 1.0, "gamma": 0.1}, "budget": 0, "origin": "Default"}
+{"cpu_time": 1.3478410243988037, "wallclock_time": 1.3485009670257568, "evaluations": 1, "cost": 0.4853, "incumbent": {"C": 1.0, "gamma": 0.1}, "budget": 0, "origin": "Default"}
+{"cpu_time": 10.241421937942505, "wallclock_time": 10.247790813446045, "evaluations": 7, "cost": 0.4845, "incumbent": {"C": 1.746441318982685, "gamma": 0.0022547265063997683}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 27.59260368347168, "wallclock_time": 27.613790035247803, "evaluations": 19, "cost": 0.4683, "incumbent": {"C": 16.640050128980878, "gamma": 0.02787815770602151}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 52.80413222312927, "wallclock_time": 52.851969957351685, "evaluations": 35, "cost": 0.4668, "incumbent": {"C": 367.5161020929368, "gamma": 0.05362665544757772}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 206.26884531974792, "wallclock_time": 206.682697057724, "evaluations": 143, "cost": 0.4656, "incumbent": {"C": 396.01607827789604, "gamma": 0.03412865370006311}, "budget": 0, "origin": "Random Search"}
+{"cpu_time": 223.15972232818604, "wallclock_time": 223.622740983963, "evaluations": 154, "cost": 0.4643, "incumbent": {"C": 60.892090133809305, "gamma": 0.01973920087189567}, "budget": 0, "origin": "Random Search"}
