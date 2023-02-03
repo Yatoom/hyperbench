@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 
-from hyperbench.dashboard.options import Options
+from hyperbench.dashboard.options import Options, Views
 from hyperbench.trajectory.trajectory import Trajectory
 from hyperbench.visualization.virtual_budget import get_multiplier
 
@@ -57,6 +57,12 @@ def load_trajectories(o: Options):
 
     df = pd.DataFrame(trajectories, columns=["optimizer", "seed", "dataset", "stage", "virtual", "trajectory"])
     expanded = pd.concat([df.drop('trajectory', axis=1), df['trajectory'].apply(pd.Series)], axis=1)
+
+    if o.view == Views.LIVE:
+        expanded = live_view(expanded)
+    elif o.view == Views.STATIC:
+        expanded = static_view(expanded)
+
     return expanded
 
 

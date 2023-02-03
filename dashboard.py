@@ -13,7 +13,6 @@ with st.sidebar:
     info.display()
     filtered = aggregate.load_trajectories(options)
 
-
 main_tab, explorer_tab, leader_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets", "🥇 Leaderboard"])
 with main_tab:
     with st.expander("Datasets included in results", expanded=False):
