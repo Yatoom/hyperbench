@@ -7,11 +7,13 @@ from hyperbench.dashboard import aggregate
 
 class Options:
 
-    def __init__(self, directory, time_based):
+    def __init__(self, directory, time_based, smac_directory=None, datasets=None):
         self.directory = directory
         self.time_based = time_based
         self.target = None
         self.view = None
+        self.smac_directory = smac_directory
+        self.datasets = datasets
 
     def display(self):
         st.subheader("Options")
@@ -41,5 +43,5 @@ class Views(enum.Enum):
 
 
 if __name__ == "__main__":
-    options = Options(directory="results", budget=300, time_based=True)
+    options = Options(directory="results", time_based=True)
     options.display()

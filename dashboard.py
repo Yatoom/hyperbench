@@ -4,7 +4,7 @@ from hyperbench.dashboard.options import Options
 from run_benchmark import benchmark
 
 # Settings
-options = Options(directory="results", time_based=False)
+options = Options(directory="results", smac_directory="smac_output", time_based=False, datasets=benchmark.datasets)
 
 with st.sidebar:
     options.display()
@@ -12,6 +12,7 @@ with st.sidebar:
     filtered = aggregate.load_trajectories(options)
 
 main_tab, explorer_tab, leader_tab = st.tabs(["🔥 Benchmark results", "🧭 Explore datasets", "🥇 Leaderboard"])
+
 with main_tab:
     with st.expander("Datasets included in results", expanded=False):
         list_datasets = aggregate.get_datasets(filtered)
@@ -38,7 +39,7 @@ with main_tab:
         statistics.display(options.directory, filtered, options.target)
 
 with explorer_tab:
-    explorer.display(benchmark.datasets)
+    explorer.display(options.datasets)
 
 with leader_tab:
-    leaderboard.display("smac_output")
+    leaderboard.display(options.smac_directory)

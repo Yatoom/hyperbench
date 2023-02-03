@@ -10,6 +10,10 @@ from hyperbench.target_algorithms import get_target_by_name
 
 
 def display(smac_folder):
+    if smac_folder is None:
+        st.write("The smac_output folder is left empty. It needs to be specified in Options object")
+        return
+
     target = st.selectbox("target", os.listdir(smac_folder))
     target_folder = os.path.join(smac_folder, target)
     optimizer = st.selectbox("optimizer", os.listdir(target_folder))
@@ -17,7 +21,7 @@ def display(smac_folder):
     seed = st.selectbox("seed", os.listdir(optimizer_folder))
     seed_folder = os.path.join(smac_folder, target, optimizer, seed)
     data = st.selectbox("data", os.listdir(seed_folder))
-    st.dataframe(load_leaderboard("smac_output", target, optimizer, seed, data))
+    st.dataframe(load_leaderboard(smac_folder, target, optimizer, seed, data))
 
 
 def load_leaderboard(folder: str, target: str, optimizer: str, seed: str, dataset: str):
