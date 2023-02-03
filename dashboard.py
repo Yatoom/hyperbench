@@ -1,12 +1,10 @@
-import pandas as pd
 import streamlit as st
-from hyperbench.visualization import aggregate
-from hyperbench.dashboard import info, leaderboard, statistics, trajectories, explorer
+from hyperbench.dashboard import info, leaderboard, statistics, trajectories, explorer, aggregate
 from hyperbench.dashboard.options import Options
 from run_benchmark import benchmark
 
 # Settings
-options = Options(directory="results", budget=300, time_based=False)
+options = Options(directory="results", time_based=False)
 
 with st.sidebar:
     options.display()

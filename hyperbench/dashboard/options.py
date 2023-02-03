@@ -1,30 +1,27 @@
 import enum
-import os
 
 import streamlit as st
 
-from hyperbench.visualization import aggregate
+from hyperbench.dashboard import aggregate
 
 
 class Options:
 
-    def __init__(self, directory, budget, time_based):
+    def __init__(self, directory, time_based):
         self.directory = directory
-        self.budget = budget
         self.time_based = time_based
         self.target = None
         self.view = None
 
     def display(self):
-        self.set_budget()
+        st.subheader("Options")
         self.set_target()
+        self.set_budget()
         self.set_view()
 
     def set_budget(self):
         budget = st.radio("Budget type", ('Iterations', 'Time'), index=1 if self.time_based else 0)
-        iterations = st.number_input('Budget size', value=self.budget, step=1)
         self.time_based = budget == "Time"
-        self.budget = iterations
 
     def set_target(self):
         targets = aggregate.get_target_algorithms(self.directory)

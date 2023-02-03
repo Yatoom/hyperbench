@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from datetime import datetime, timedelta
+from datetime import timedelta
 from functools import reduce
 
 import numpy as np
@@ -10,7 +10,6 @@ import plotly.express as px
 
 from hyperbench.dashboard.options import Options, Views
 from hyperbench.trajectory.trajectory import Trajectory
-from hyperbench.visualization.virtual_budget import get_multiplier
 
 
 def get_trajectories(path, iterations, time_based, details):
@@ -35,9 +34,34 @@ def get_trajectories(path, iterations, time_based, details):
     return entries
 
 
+def get_max_iterations(directory, filter_by_target):
+    max_iter = 0
+    max_time = 0
+    for currentpath, folders, files in os.walk(directory):
+        for file in files:
+
+            if not file.endswith("search.json"):
+                continue
+
+            path = os.path.join(currentpath, file)
+            details = path.replace(".json", "").split("/")[-5:]
+            target, optimizer, seed, dataset, stage = details
+
+            if not (target == filter_by_target):
+                continue
+
+            multiplier = get_multiplier(optimizer)
+            max_iter = max(max_iter, Trajectory.load(path).max_iter / multiplier)
+            max_time = max(max_time, Trajectory.load(path).max_time / multiplier)
+    return max_iter, max_time
+
+
 def load_trajectories(o: Options):
-    directory, iterations, time_based, filter_by_target = o.directory, o.budget, o.time_based, o.target
+    directory, time_based, filter_by_target = o.directory, o.time_based, o.target
     trajectories = []
+
+    max_iter, max_time = get_max_iterations(directory, o.target)
+    maximum = max_time if time_based else max_iter
 
     for currentpath, folders, files in os.walk(directory):
         for file in files:
@@ -52,7 +76,7 @@ def load_trajectories(o: Options):
             if not (target == filter_by_target):
                 continue
 
-            for trajectory in get_trajectories(path, iterations, time_based, details):
+            for trajectory in get_trajectories(path, maximum, time_based, details):
                 trajectories.append(trajectory)
 
     df = pd.DataFrame(trajectories, columns=["optimizer", "seed", "dataset", "stage", "virtual", "trajectory"])
@@ -172,3 +196,23 @@ def visualize(dataframe):
     frame = dataframe.set_index("optimizer").T
     fig = px.line(frame)
     return fig
+
+
+def get_multiplier(optimizer: str):
+    """
+    If the optimizer has e.g. _x2 or _x3 in its name, this means that the optimizer has been given a multiple of the
+    budget of the others in the experiment. This function will retrieve that multiplier from its name.
+
+    Parameters
+    ----------
+    optimizer: str
+        The name of the optimizer
+
+    Returns
+    -------
+    multiplier: int
+        The multiplier retrieved from the name
+    """
+    has_multiplied_budget = bool(re.match(".*_x\d*", optimizer))
+    multiplier = 1 if not has_multiplied_budget else int(re.search("_x\d*", optimizer)[0].replace("_x", ""))
+    return multiplier

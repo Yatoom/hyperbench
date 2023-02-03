@@ -16,6 +16,14 @@ class Trajectory:
             json.dump([dataclasses.asdict(e) for e in self.as_list], f, indent=2)
         return self
 
+    @property
+    def max_time(self):
+        return self.as_list[-1].at_time
+
+    @property
+    def max_iter(self):
+        return self.as_list[-1].at_iteration
+
     @staticmethod
     def load(file: str):
         with open(file, "r") as f:

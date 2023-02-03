@@ -1,4 +1,4 @@
-from hyperbench.visualization import aggregate
+from hyperbench.dashboard import aggregate
 import streamlit as st
 
 

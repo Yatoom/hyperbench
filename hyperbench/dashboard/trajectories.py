@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from hyperbench.visualization import aggregate
+from hyperbench.dashboard import aggregate
 
 
 def display(dataframe):
@@ -13,9 +13,9 @@ def display(dataframe):
     with tab1:
         display_average_loss(default)
     with tab2:
-        display_average_loss(normalized)
-    with tab3:
         display_average_loss(ranked)
+    with tab3:
+        display_average_loss(normalized)
 
 
 def display_average_loss(dataframe: pd.DataFrame):
