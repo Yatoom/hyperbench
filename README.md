@@ -79,6 +79,8 @@ Hyperbench comes with a dashboard built on Streamlit.
 It can be started with `streamlit run dashboard.py`, after which it will be accessible via `localhost:8501`.
 ![img_1.png](img_1.png)
 
+A live demo of the dashboard can be found [here](https://yatoom-hyperbench-dashboard-9uw27z.streamlit.app/).
+
 The dashboard comes with a variety of graphs, tables, statistics and options. In the benchmark results, you can choose 
 which target algorithm you would like to see the graphs for, you can filter on datasets, and you can choose one of the following views:
 
