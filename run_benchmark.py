@@ -29,7 +29,7 @@ excluded = [
     167120,	 # numerai28.6
     9976,	 # madelon
     9981,	 # cnae-9
-    6,	     # letter
+    6,       # letter
 
     # Too many rows for SVM classifier
     7592,    # adult
@@ -45,13 +45,12 @@ benchmark = BenchmarkConfig(
     time_based=False,
     transformer=SimpleTransformer(),
     output_folder="results",
-    scoring="balanced_accuracy",  # make_scorer(roc_auc_score, multi_class='ovo'
+    scoring="balanced_accuracy",
 
     seeds=[2268061101, 2519249986, 338403738],
     target_algorithms=[RandomForest(), XGBoost(), SGD(), SVM()],
     datasets=[OpenMLProvider(task) for task in tasks],
     optimizers=[
-        # SMACBasedOptimizer(ROAR, "roar_x1", budget_multiplier=1)
         SMACBasedOptimizer(ROAR, "roar", budget_multiplier=2),
         SMACBasedOptimizer(SMAC4HPO, "smac", budget_multiplier=1),
         SMACBasedOptimizer(SMAC4HPO, "hyperboost", budget_multiplier=1, model=HyperboostEPM)

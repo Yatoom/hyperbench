@@ -101,7 +101,9 @@ def load_stats(directory, dataframe, target):
             row = json.load(f)
             row = {**index, **row}
             rows.append(row)
-    return pd.DataFrame(rows)
+    frame = pd.DataFrame(rows)
+    frame['epm_time_used'] = frame['wallclock_time_used'] - frame['ta_time_used']
+    return frame
 
 
 def format_stats_table(df, time_cols=None, int_cols=None):
@@ -126,7 +128,7 @@ def get_dataset_stats(df):
 
 def get_run_stats(df):
     stats = df.groupby("optimizer")[
-        ["submitted_ta_runs", "finished_ta_runs", "ta_time_used", "wallclock_time_used"]] \
+        ["submitted_ta_runs", "ta_time_used", "wallclock_time_used", "epm_time_used"]] \
         .agg(['mean', 'std'])
     return format_stats_table(stats)
 
